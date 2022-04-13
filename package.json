@@ -1,0 +1,16 @@
+{
+    "name": "steadfast-ui",
+    "private": true,
+    "description": "Koinworks internal Design System",
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "new-version": "lerna version --conventional-commits --yes",
+        "test": "lerna run test",
+        "build": "lerna run build"
+    },
+    "devDependencies": {
+        "lerna": "^4.0.0"
+    }
+} 
