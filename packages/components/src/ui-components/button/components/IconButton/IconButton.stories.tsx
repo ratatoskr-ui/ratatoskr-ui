@@ -1,4 +1,5 @@
 import { Story } from '@storybook/react';
+import { MdOutlineSearch } from "react-icons/md";
 import * as React from 'react';
 
 import IconButton, { IconButtonProps } from './IconButton';
@@ -32,6 +33,7 @@ export const Example: Story<IconButtonProps> = ({ variant, size, disabled, onCli
     disabled={disabled}
     selected={selected}
   >
+    <MdOutlineSearch />
   </IconButton>
 );
 Example.args = {
