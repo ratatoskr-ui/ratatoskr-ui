@@ -1,11 +1,11 @@
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { theme } from '../theme';
-import SteadfastProvider from './SteadfastProvider';
+import RatatoskrProvider from './RatatoskrProvider';
 
 export default {
-  title: 'Core/Foundations/SteadfastProvider',
-  component: SteadfastProvider,
+  title: 'Core/Foundations/RatatoskrProvider',
+  component: RatatoskrProvider,
   parameters: {
     jsx: { skip: 1 },
   },

@@ -1,5 +1,5 @@
 import { useTheme as defaultUseTheme } from 'styled-components';
-import  { foundations }  from '@steadfast-ui/design-token';
+import  { foundations }  from '@ratatoskr-ui/design-token';
 import componentStyles from './component-styles';
 
 export const theme = {

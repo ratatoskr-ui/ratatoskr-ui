@@ -3,7 +3,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "steadfast:src": "./src/index.ts",
+  "ratatoskr:src": "./src/index.ts",
   "files": [
     "dist",
     "src"
@@ -19,7 +19,7 @@
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
@@ -62,8 +62,8 @@
   "dependencies": {
     "@babel/core": "^7.17.9",
     "@radix-ui/react-id": "^0.1.5",
-    "@steadfast-ui/design-token": "0.1.0",
-    "@steadfast-ui/helpers": "0.1.0",
+    "@ratatoskr-ui/design-token": "0.1.0",
+    "@ratatoskr-ui/helpers": "0.1.0",
     "@styled-system/css": "^5.1.5",
     "@styled-system/should-forward-prop": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
@@ -72,9 +72,12 @@
     "@types/styled-system__css": "^5.0.16",
     "@types/styled-system__should-forward-prop": "^5.1.2",
     "@types/styled-system__theme-get": "^5.0.2",
+    "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.4",
     "babel-plugin-styled-components": "^2.0.7",
     "babel-preset-react-app": "^10.0.1",
+    "clsx": "^1.1.1",
+    "postcss": "^8.4.14",
     "styled-components": "^5.3.5",
     "styled-system": "^5.1.5",
     "typeface-inter": "^3.18.1"

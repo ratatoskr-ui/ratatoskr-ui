@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme as defaultTheme, Theme } from '../theme';
 import injectGlobalStyles from './injectGlobalStyles';
 
-export interface SteadfastProviderProps {
+export interface RatatoskrProviderProps {
   /**
    * If you want to extend the global styles set to `true` and inject them
    * manually via `injectGlobalStyles`.
@@ -18,7 +18,7 @@ export interface SteadfastProviderProps {
 
 const { GlobalStyles } = injectGlobalStyles();
 
-const SteadfastProvider: React.FC<SteadfastProviderProps> = ({ children, disableInjection, theme = defaultTheme }) => {
+const RatatoskrProvider: React.FC<RatatoskrProviderProps> = ({ children, disableInjection, theme = defaultTheme }) => {
   return (
     <ThemeProvider theme={theme}>
       <IdProvider>
@@ -29,6 +29,6 @@ const SteadfastProvider: React.FC<SteadfastProviderProps> = ({ children, disable
   );
 };
 
-SteadfastProvider.displayName = 'SteadfastProvider';
+RatatoskrProvider.displayName = 'RatatoskrProvider';
 
-export default SteadfastProvider;
+export default RatatoskrProvider;

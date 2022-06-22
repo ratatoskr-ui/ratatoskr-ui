@@ -1,5 +1,5 @@
 {
-    "name": "steadfast-ui",
+    "name": "ratatoskr-ui",
     "private": true,
     "description": "Koinworks internal Design System",
     "workspaces": [
@@ -11,6 +11,7 @@
         "build": "lerna run build"
     },
     "devDependencies": {
-        "lerna": "^4.0.0"
+        "lerna": "^4.0.0",
+        "react-icons": "^4.4.0"
     }
-} 
+}

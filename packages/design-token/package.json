@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "name": "@steadfast-ui/design-token",
+  "name": "@ratatoskr-ui/design-token",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

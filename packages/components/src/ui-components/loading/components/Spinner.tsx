@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VisuallyHidden } from '@steadfast-ui/helpers';
+import { VisuallyHidden } from '@ratatoskr-ui/helpers';
 import { Box, BoxProps } from '../../../layout';
 import { theme } from '../../../theme';
 

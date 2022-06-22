@@ -2,9 +2,9 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "paths": {
-      "@steadfast-ui/design-token": ["./packages/core/src"],
-      "@steadfast-ui/components": ["./packages/components/src"],
-      "@steadfast-ui/helpers": ["./packages/helpers/src"]
+      "@ratatoskr-ui/design-token": ["./packages/core/src"],
+      "@ratatoskr-ui/components": ["./packages/components/src"],
+      "@ratatoskr-ui/helpers": ["./packages/helpers/src"]
     }
   }
 }

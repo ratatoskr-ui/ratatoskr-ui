@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { transparentize } from 'polished';
-import { foundations } from '@steadfast-ui/design-token';
+import { foundations } from '@ratatoskr-ui/design-token';
 
 const ANIMATION_DURATION = 400;
 // TODO convert to useComponentStyle
