@@ -1,8 +1,9 @@
+import { Theme } from 'packages/components/src/theme';
 import { createGlobalStyle, css } from 'styled-components';
 import normalize from './styles/normalize';
 
 const injectGlobalStyles = (additionalStyles?: string | ReturnType<typeof css>) => {
-  const GlobalStyles = createGlobalStyle`
+  const GlobalStyles = createGlobalStyle<{theme: Theme}>`
     ${normalize}
 
     html,
