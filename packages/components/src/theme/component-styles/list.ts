@@ -1,7 +1,7 @@
-import type { DefaultTheme } from 'styled-components';
+import { Theme } from 'packages/components/src/theme';
 import type { ComponentThemeConfig, ComponentThemeScaleFn } from '../../system';
 
-const listItemBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isSelected: boolean }> = ({
+const listItemBaseStyle: ComponentThemeScaleFn<{ theme: Theme; isSelected: boolean }> = ({
   theme,
   isSelected,
 }) => ({
@@ -19,7 +19,7 @@ const listItemBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isSelected
   },
 });
 
-const listHeaderBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ theme }) => ({
+const listHeaderBaseStyle: ComponentThemeScaleFn<{ theme: Theme }> = ({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   backgroundColor: theme.colors.greylight01,
