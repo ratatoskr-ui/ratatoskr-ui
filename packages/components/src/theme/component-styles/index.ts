@@ -13,6 +13,7 @@ import optionItem from './optionItem';
 import inputRadio from './form/input-radio';
 import form from './form/form';
 import tag from './tag';
+import tabs from './tabs';
 /**
  * Custom theme props based on custom component variants.
  */
@@ -32,6 +33,7 @@ const componentStyles = {
   ...form,
   ...tag,
   ...optionItem,
+  ...tabs
 };
 
 export default componentStyles;
