@@ -4,7 +4,7 @@ import { Text, Heading } from '../../typography';
 
 interface ColorSwatchProps {
   title: string;
-  colorKey: string;
+  colorKey?: string;
   hex: string;
   hasBorder?: boolean;
 }
