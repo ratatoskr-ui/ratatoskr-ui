@@ -7,25 +7,25 @@ import { Box } from '../../../layout';
 describe('components/Avatar', () => {
   describe('<Avatar />', () => {
     test('renders image correctly', () => {
-      const { getByRole } = render(<Avatar name="Adry Muhammad" src="https://picsum.photos/id/2/400/400" />);
+      const { getByRole } = render(<Avatar name="Kiriyama Rei" src="https://picsum.photos/id/2/400/400" />);
 
       const image = getByRole('img', {
-        name: /adry muhammad/i,
+        name: /Kiriyama Rei/i,
       });
       expect(image).toBeVisible();
     });
 
     test('renders initials correctly', () => {
-      const { getByText, getByRole } = render(<Avatar name="Adry Muhammad" />);
+      const { getByText, getByRole } = render(<Avatar name="Kiriyama Rei" />);
 
-      expect(getByText(/adry muhammad/i)).toBeInTheDocument();
+      expect(getByText(/Kiriyama Rei/i)).toBeInTheDocument();
       expect(getByRole('presentation')).toBeVisible();
     });
 
     test('render presence and notification badge correctly', () => {
       const { getByTestId } = render(
         <Avatar
-          name="Adry Muhammad"
+          name="Kiriyama Rei"
           presence={<Box width="100%" height="100%" backgroundColor={'red07'} />}
           notificationBadge="99+"
         />
@@ -37,7 +37,7 @@ describe('components/Avatar', () => {
     });
 
     test('not render presence', () => {
-      const { queryByTestId } = render(<Avatar name="Adry Muhammad" />);
+      const { queryByTestId } = render(<Avatar name="Kiriyama Rei" />);
       const presence = queryByTestId('sign-badge');
       expect(presence).not.toBeInTheDocument();
       const notificationBadge = queryByTestId('notification-badge');
@@ -48,10 +48,10 @@ describe('components/Avatar', () => {
     test('generate bgColor Correctly', () => {
       const { getAllByTestId } = render(
         <>
-          <Avatar name="Adry Baba" />
-          <Avatar name="Rara Permai Sari" />
-          <Avatar name="Ardy Buba" />
-          <Avatar name="Ardy Brai" />
+          <Avatar name="Tongshan Ling" />
+          <Avatar name="Gongben Wuchang" />
+          <Avatar name="Fan Ruiyan" />
+          <Avatar name="德川 家康" />
         </>
       );
 

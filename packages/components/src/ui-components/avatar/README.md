@@ -7,7 +7,7 @@
 To use this component within your React app, import as follows:
 
 ```jsx
-import { Avatar } from '@aksara-ui/react';
+import { Avatar } from '@ratatoskr-ui/components';
 
 export default function MyApp({ children }) {
   return <Avatar src="path/to/image" />;
