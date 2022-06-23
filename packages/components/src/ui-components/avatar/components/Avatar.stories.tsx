@@ -30,20 +30,20 @@ const Template: Story<AvatarProps> = args => <Avatar {...args} />;
 export const WithInitialName = Template.bind({});
 WithInitialName.args = {
   size: 'lg',
-  name: 'Adry Muhammad',
+  name: 'Kiriyama Rei',
 };
 
 export const WithImage = Template.bind({});
 WithImage.args = {
   size: 'lg',
-  name: 'Adry Muhammad',
-  src: 'https://picsum.photos/id/2/400/400',
+  name: 'Kiriyama Rei',
+  src: 'https://64.media.tumblr.com/98da5de8e9832eb1c73d6180ce4648c0/36ac9104848b7e00-b5/s400x600/cca94e0d1cb3b61c62fc0a88151fbc92336693ad.jpg',
 };
 
 export const WithIcons: Story<AvatarProps> = args => <Avatar icon={MdOutlineAccountCircle} {...args} />;
 WithIcons.args = {
   size: 'lg',
-  name: 'Adry Muhammad',
+  name: 'Kiriyama Rei',
   color: 'greymed04',
   bg: 'greylight03',
 };
@@ -58,8 +58,8 @@ export const WithLabel: Story<AvatarProps> = ({ name, ...args }) => (
 );
 WithLabel.args = {
   size: 'lg',
-  name: 'Adry Muhammad',
-  src: 'https://picsum.photos/id/2/400/400',
+  name: 'Kiriyama Rei',
+  src: 'https://64.media.tumblr.com/98da5de8e9832eb1c73d6180ce4648c0/36ac9104848b7e00-b5/s400x600/cca94e0d1cb3b61c62fc0a88151fbc92336693ad.jpg',
 };
 
 export const WithPresence: Story<AvatarProps> = ({ name, ...args }) => {
@@ -71,8 +71,8 @@ export const WithPresence: Story<AvatarProps> = ({ name, ...args }) => {
 };
 WithPresence.args = {
   size: 'lg',
-  name: 'Adry Muhammad',
-  src: 'https://picsum.photos/id/2/400/400',
+  name: 'Kiriyama Rei',
+  src: 'https://64.media.tumblr.com/98da5de8e9832eb1c73d6180ce4648c0/36ac9104848b7e00-b5/s400x600/cca94e0d1cb3b61c62fc0a88151fbc92336693ad.jpg',
 };
 
 export const WithNotificationBadge: Story<AvatarProps> = ({ name, notificationBadge, ...args }) => {
@@ -84,7 +84,7 @@ export const WithNotificationBadge: Story<AvatarProps> = ({ name, notificationBa
 };
 WithNotificationBadge.args = {
   size: 'lg',
-  name: 'Adry Muhammad',
-  src: 'https://picsum.photos/id/2/400/400',
+  name: 'Kiriyama Rei',
+  src: 'https://64.media.tumblr.com/98da5de8e9832eb1c73d6180ce4648c0/36ac9104848b7e00-b5/s400x600/cca94e0d1cb3b61c62fc0a88151fbc92336693ad.jpg',
   notificationBadge: '99',
 };
