@@ -1,8 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import * as CSS from 'csstype';
 import * as React from 'react';
-import type { DefaultTheme } from 'styled-components';
-import { theme } from '../../../theme';
+import { Theme, theme } from '../../../theme';
 import { Box, BoxProps } from '../../box';
 import WrapItem from './WrapItem';
 
@@ -30,7 +29,7 @@ const Wrap = React.forwardRef<HTMLDivElement, WrapProps>(
         <Box
           as="ul"
           sx={{
-            '--aksara-wrap-spacing': (t: DefaultTheme) => t.space[spacing as Space] || spacing,
+            '--aksara-wrap-spacing': (t: Theme) => t.space[spacing as Space] || spacing,
             '--wrap-spacing': 'calc(var(--aksara-wrap-spacing) / 2)',
             display: 'flex',
             flexWrap: 'wrap',

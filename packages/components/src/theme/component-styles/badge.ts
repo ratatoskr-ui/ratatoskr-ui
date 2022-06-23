@@ -1,4 +1,4 @@
-import { DefaultTheme } from 'styled-components';
+import { Theme } from 'packages/components/src/theme';
 import type { ComponentThemeConfig, ComponentThemeScaleFn, CSSObject } from '../../system';
 
 const badgeBase: ComponentThemeConfig = {
@@ -103,10 +103,10 @@ const SignBadge: ComponentThemeConfig = {
   },
 };
 
-const NotificationBadgeStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({
+const NotificationBadgeStyle: ComponentThemeScaleFn<{ theme: Theme }> = ({
   theme,
 }: {
-  theme: DefaultTheme;
+  theme: Theme;
 }) => ({
   display: 'inline-flex',
   alignItems: 'center',
