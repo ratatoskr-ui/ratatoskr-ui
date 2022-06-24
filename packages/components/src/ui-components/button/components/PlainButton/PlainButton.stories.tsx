@@ -1,5 +1,6 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
+import { MdOutlineSearch } from "react-icons/md";
 
 import PlainButton, { PlainButtonProps } from './PlainButton';
 
@@ -36,7 +37,7 @@ const Template: Story<PlainButtonProps> = ({ variant, size, isLoading, icon, ico
     onClick={onClick}
     selected={selected}
   >
-    Push Me
+    Hit Me
   </PlainButton>
 );
 
@@ -50,7 +51,7 @@ Example.args = {
 export const WithIcon: Story<PlainButtonProps> = Template.bind({});
 WithIcon.args = {
   ...Example.args,
-  icon: undefined,
+  icon: MdOutlineSearch,
   iconPosition: 'left',
 };
 
@@ -61,6 +62,7 @@ export const DisclosureButton: Story<PlainButtonProps> = ({
   isLoading,
   onClick,
   selected,
+  icon
 }) => (
   <PlainButton
     type="button"
@@ -68,17 +70,17 @@ export const DisclosureButton: Story<PlainButtonProps> = ({
     size={size}
     disabled={disabled}
     isLoading={isLoading}
-    icon={undefined}
+    icon={icon}
     iconPosition="right"
     onClick={onClick}
     selected={selected}
   >
-    Push Me
+    Hit Me
   </PlainButton>
 );
 DisclosureButton.args = {
   ...Example.args,
   variant: 'disclosure',
-  icon: undefined,
+  icon: MdOutlineSearch,
   iconPosition: 'left',
 };

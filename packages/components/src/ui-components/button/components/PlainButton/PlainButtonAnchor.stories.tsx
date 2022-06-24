@@ -33,7 +33,7 @@ const Template: Story<PlainButtonAnchorProps> = ({ variant, size, isLoading, ico
     href={href}
     target={target}
   >
-    Push Me
+    Hit Me
   </PlainButtonAnchor>
 );
 
