@@ -58,7 +58,7 @@ const Template: Story<ButtonProps> = ({
     iconPosition={iconPosition}
     onClick={onClick}
   >
-    Push Me
+    Hit Me
   </Button>
 );
 
@@ -90,6 +90,6 @@ export const DisclosureButton: Story<ButtonProps> = ({ size, block, disabled, is
     iconPosition="right"
     onClick={onClick}
   >
-    Push Me
+    Hit Me
   </Button>
 );

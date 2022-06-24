@@ -40,7 +40,7 @@ const Template: Story<ButtonAnchorProps> = ({ variant, size, block, href, target
     icon={icon}
     iconPosition={iconPosition}
   >
-    Push Me
+    Hit Me
   </ButtonAnchor>
 );
 

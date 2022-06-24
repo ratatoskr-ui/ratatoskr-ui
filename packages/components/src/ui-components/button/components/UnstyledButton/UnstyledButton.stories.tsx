@@ -16,7 +16,6 @@ export default {
 
 export const Example = () => (
   <Box padding="sm">
-    <button type="button">I&apos;m a button!</button>{' '}
     <UnstyledButton type="button">I&apos;m an unstyled button!</UnstyledButton>
   </Box>
 );
