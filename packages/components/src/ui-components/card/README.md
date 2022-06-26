@@ -9,7 +9,7 @@ Renders a card based on the elevation level.
 To use this component in your app, import as follows:
 
 ```jsx
-import { Box, Card } from '@ratatoskr-ui/react';
+import { Box, Card } from '@ratatoskr-ui/component';
 
 export default function Component() {
   return (
@@ -38,7 +38,7 @@ export default function Component() {
 This component composes the `Box` component, so you can also use the styled-system hooks defined in said component
 
 ```jsx
-import { Box, Card } from '@ratatoskr-ui/react';
+import { Box, Card } from '@ratatoskr-ui/component';
 
 // Example for card with `sm` border radius.
 export default function Component({ children }) {
