@@ -7,7 +7,7 @@
 To use this component within your React app, import as follows:
 
 ```jsx
-import { ActionList, ActionListItem } from '@aksara-ui/react';
+import { ActionList, ActionListItem } from '@ratatoskr-ui/component';
 
 const Component = () => (
   <ActionList width="200px">

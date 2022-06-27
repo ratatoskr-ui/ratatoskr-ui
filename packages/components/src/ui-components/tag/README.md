@@ -9,7 +9,7 @@ To use this component within your React app, import as follows:
 ### Basic Example
 
 ```jsx
-import { Tag } from '@aksara-ui/react';
+import { Tag } from '@ratatoskr-ui/component';
 
 export default function Component() {
   return <Tag>Keyword item 1</Tag>;
@@ -19,7 +19,7 @@ export default function Component() {
 ### Closable
 
 ```jsx
-import { Tag } from '@aksara-ui/react';
+import { Tag } from '@ratatoskr-ui/component';
 
 export default function Component() {
   const handleClose = () => {

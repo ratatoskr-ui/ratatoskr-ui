@@ -29,8 +29,8 @@ const Wrap = React.forwardRef<HTMLDivElement, WrapProps>(
         <Box
           as="ul"
           sx={{
-            '--aksara-wrap-spacing': (t: Theme) => t.space[spacing as Space] || spacing,
-            '--wrap-spacing': 'calc(var(--aksara-wrap-spacing) / 2)',
+            '--var-wrap-spacing': (t: Theme) => t.space[spacing as Space] || spacing,
+            '--wrap-spacing': 'calc(var(--var-wrap-spacing) / 2)',
             display: 'flex',
             flexWrap: 'wrap',
             alignItems,
