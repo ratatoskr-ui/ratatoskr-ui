@@ -34,7 +34,7 @@ const componentStyles = {
   ...form,
   ...tag,
   ...optionItem,
-  ...popover
+  ...popover,
   ...tabs
 };
 
