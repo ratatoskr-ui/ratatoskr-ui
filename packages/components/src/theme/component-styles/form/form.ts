@@ -8,31 +8,31 @@ import formToggle from './toggle';
 // TODO: move to `componentStyles/form/utils.ts`
 const inputBase = (theme: Theme, rounded = false) => ({
   appearance: 'none',
-  backgroundColor: `var(--aks-form-bg-color, ${theme.colors.greylight01})`,
-  borderColor: `var(--aks-form-border-color, ${theme.colors.greylight05})`,
+  backgroundColor: `var(--form-bg-color, ${theme.colors.greylight01})`,
+  borderColor: `var(--form-border-color, ${theme.colors.greylight05})`,
   borderWidth: '1px',
-  borderRadius: rounded ? 9999 : 8,
+  borderRadius: rounded ? 9999 : 'sm',
   borderStyle: 'solid',
   color: theme.colors.greydark02,
   display: 'block',
   fontSize: '12px',
   lineHeight: '18px',
   padding: 0,
-  '--aks-shadow': '0 0 #0000',
+  '--shadow': '0 0 #0000',
 });
 
 // TODO: move to `componentStyles/form/utils.ts`
 const inputFocusBase = (theme: Theme) => ({
   outline: '2px solid transparent',
   'outline-offset': '2px',
-  '--aks-ring-inset': 'var(--aks-empty,/*!*/ /*!*/)',
-  '--aks-ring-width': '2px',
-  '--aks-ring-offset-width': '0px',
-  '--aks-ring-offset-color': '#fff',
-  '--aks-ring-color': transparentize(0.7, theme.colors.blue06),
-  '--aks-ring-offset-shadow': 'var(--aks-ring-inset) 0 0 0 var(--aks-ring-offset-width) var(--aks-ring-offset-color)',
-  '--aks-ring-shadow': `var(--aks-ring-inset) 0 0 0 calc(var(--aks-ring-width) + var(--aks-ring-offset-width)) var(--aks-ring-color)`,
-  'box-shadow': 'var(--aks-ring-offset-shadow), var(--aks-ring-shadow), var(--aks-shadow)',
+  '--ring-inset': 'var(--empty,/*!*/ /*!*/)',
+  '--ring-width': '2px',
+  '--ring-offset-width': '0px',
+  '--ring-offset-color': '#fff',
+  '--ring-color': transparentize(0.7, theme.colors.blue06),
+  '--ring-offset-shadow': 'var(--ring-inset) 0 0 0 var(--ring-offset-width) var(--ring-offset-color)',
+  '--ring-shadow': `var(--ring-inset) 0 0 0 calc(var(--ring-width) + var(--ring-offset-width)) var(--ring-color)`,
+  'box-shadow': 'var(--ring-offset-shadow), var(--ring-shadow), var(--shadow)',
 });
 
 // TODO: move to `componentStyles/form/text.ts`
@@ -43,8 +43,8 @@ const inputText: ComponentThemeConfig = {
       ...inputFocusBase(theme),
     },
     '&[disabled]': {
-      '--aks-form-bg-color': theme.colors.greylight02,
-      '--aks-form-border-color': transparentize(0.5, theme.colors.greylight05),
+      '--form-bg-color': theme.colors.greylight02,
+      '--form-border-color': transparentize(0.5, theme.colors.greylight05),
       color: theme.colors.greymed01,
       cursor: 'not-allowed',
       '&::placeholder': {
@@ -68,16 +68,16 @@ const inputText: ComponentThemeConfig = {
     variants: {
       default: ({ theme }: { theme: Theme }) => ({
         '&:not([disabled])': {
-          '--aks-form-bg-color': theme.colors.greylight01,
-          '--aks-form-border-color': theme.colors.greylight05,
+          '--form-bg-color': theme.colors.greylight01,
+          '--form-border-color': theme.colors.greylight05,
           '&:hover': {
-            '--aks-form-bg-color': theme.colors.greylight03,
-            '--aks-form-border-color': theme.colors.greymed01,
+            '--form-bg-color': theme.colors.greylight03,
+            '--form-border-color': theme.colors.greymed01,
           },
           '&:focus, &:active': {
-            '--aks-form-bg-color': theme.colors.greylight01,
-            '--aks-form-border-color': theme.colors.blue06,
-            '--aks-ring-color': transparentize(0.3, theme.colors.blue03),
+            '--form-bg-color': theme.colors.greylight01,
+            '--form-border-color': theme.colors.blue06,
+            '--ring-color': transparentize(0.3, theme.colors.blue03),
           },
           '&::placeholder': {
             color: theme.colors.greymed01,
@@ -86,16 +86,16 @@ const inputText: ComponentThemeConfig = {
       }),
       error: ({ theme }: { theme: Theme }) => ({
         '&:not([disabled])': {
-          '--aks-form-bg-color': theme.colors.red01,
-          '--aks-form-border-color': theme.colors.red07,
+          '--form-bg-color': theme.colors.red01,
+          '--form-border-color': theme.colors.red07,
           '&:hover': {
-            '--aks-form-bg-color': theme.colors.red01,
-            '--aks-form-border-color': theme.colors.red07,
+            '--form-bg-color': theme.colors.red01,
+            '--form-border-color': theme.colors.red07,
           },
           '&:focus, &:active': {
-            '--aks-form-bg-color': theme.colors.red01,
-            '--aks-form-border-color': theme.colors.red07,
-            '--aks-ring-color': transparentize(0.7, theme.colors.red07),
+            '--form-bg-color': theme.colors.red01,
+            '--form-border-color': theme.colors.red07,
+            '--ring-color': transparentize(0.7, theme.colors.red07),
           },
           '&::placeholder': {
             color: theme.colors.greymed01,
@@ -114,8 +114,8 @@ const inputTextarea: ComponentThemeConfig = {
       ...inputFocusBase(theme),
     },
     '&[disabled]': {
-      '--aks-form-bg-color': theme.colors.greylight02,
-      '--aks-form-border-color': transparentize(0.5, theme.colors.greylight05),
+      '--form-bg-color': theme.colors.greylight02,
+      '--form-border-color': transparentize(0.5, theme.colors.greylight05),
       color: theme.colors.greymed01,
       cursor: 'not-allowed',
       '&::placeholder': {
@@ -128,16 +128,16 @@ const inputTextarea: ComponentThemeConfig = {
     variants: {
       default: ({ theme }: { theme: Theme }) => ({
         '&:not([disabled])': {
-          '--aks-form-bg-color': theme.colors.greylight01,
-          '--aks-form-border-color': theme.colors.greylight05,
+          '--form-bg-color': theme.colors.greylight01,
+          '--form-border-color': theme.colors.greylight05,
           '&:hover': {
-            '--aks-form-bg-color': theme.colors.greylight03,
-            '--aks-form-border-color': theme.colors.greymed01,
+            '--form-bg-color': theme.colors.greylight03,
+            '--form-border-color': theme.colors.greymed01,
           },
           '&:focus, &:active': {
-            '--aks-form-bg-color': theme.colors.greylight01,
-            '--aks-form-border-color': theme.colors.blue06,
-            '--aks-ring-color': transparentize(0.3, theme.colors.blue03),
+            '--form-bg-color': theme.colors.greylight01,
+            '--form-border-color': theme.colors.blue06,
+            '--ring-color': transparentize(0.3, theme.colors.blue03),
           },
           '&::placeholder': {
             color: theme.colors.greymed01,
@@ -146,16 +146,16 @@ const inputTextarea: ComponentThemeConfig = {
       }),
       error: ({ theme }: { theme: Theme }) => ({
         '&:not([disabled])': {
-          '--aks-form-bg-color': theme.colors.red01,
-          '--aks-form-border-color': theme.colors.red07,
+          '--form-bg-color': theme.colors.red01,
+          '--form-border-color': theme.colors.red07,
           '&:hover': {
-            '--aks-form-bg-color': theme.colors.red01,
-            '--aks-form-border-color': theme.colors.red07,
+            '--form-bg-color': theme.colors.red01,
+            '--form-border-color': theme.colors.red07,
           },
           '&:focus, &:active': {
-            '--aks-form-bg-color': theme.colors.red01,
-            '--aks-form-border-color': theme.colors.red07,
-            '--aks-ring-color': transparentize(0.7, theme.colors.red07),
+            '--form-bg-color': theme.colors.red01,
+            '--form-border-color': theme.colors.red07,
+            '--ring-color': transparentize(0.7, theme.colors.red07),
           },
           '&::placeholder': {
             color: theme.colors.greymed01,
@@ -174,8 +174,8 @@ const inputTags: ComponentThemeConfig = {
       ...inputFocusBase(theme),
     },
     '&[disabled]': {
-      '--aks-form-bg-color': theme.colors.greylight02,
-      '--aks-form-border-color': transparentize(0.5, theme.colors.greylight05),
+      '--form-bg-color': theme.colors.greylight02,
+      '--form-border-color': transparentize(0.5, theme.colors.greylight05),
       color: theme.colors.greymed01,
       cursor: 'not-allowed',
       '&::placeholder': {
@@ -188,16 +188,16 @@ const inputTags: ComponentThemeConfig = {
     variants: {
       default: ({ theme }: { theme: Theme }) => ({
         '&:not([disabled])': {
-          '--aks-form-bg-color': theme.colors.greylight01,
-          '--aks-form-border-color': theme.colors.greylight05,
+          '--form-bg-color': theme.colors.greylight01,
+          '--form-border-color': theme.colors.greylight05,
           '&:hover': {
-            '--aks-form-bg-color': theme.colors.greylight03,
-            '--aks-form-border-color': theme.colors.greymed01,
+            '--form-bg-color': theme.colors.greylight03,
+            '--form-border-color': theme.colors.greymed01,
           },
           '&:focus-within, &:focus, &:active': {
-            '--aks-form-bg-color': theme.colors.greylight01,
-            '--aks-form-border-color': theme.colors.blue06,
-            '--aks-ring-color': transparentize(0.7, theme.colors.blue06),
+            '--form-bg-color': theme.colors.greylight01,
+            '--form-border-color': theme.colors.blue06,
+            '--ring-color': transparentize(0.7, theme.colors.blue06),
           },
           '&::placeholder': {
             color: theme.colors.greymed01,
@@ -206,13 +206,13 @@ const inputTags: ComponentThemeConfig = {
       }),
       focused: ({ theme }: { theme: Theme }) => ({
         '&:not([disabled])': {
-          '--aks-form-bg-color': theme.colors.greylight01,
-          '--aks-form-border-color': theme.colors.blue06,
-          '--aks-ring-color': transparentize(0.7, theme.colors.blue06),
+          '--form-bg-color': theme.colors.greylight01,
+          '--form-border-color': theme.colors.blue06,
+          '--ring-color': transparentize(0.7, theme.colors.blue06),
           '&:hover, &:focus-within, &:focus, &:active': {
-            '--aks-form-bg-color': theme.colors.greylight01,
-            '--aks-form-border-color': theme.colors.blue06,
-            '--aks-ring-color': transparentize(0.7, theme.colors.blue06),
+            '--form-bg-color': theme.colors.greylight01,
+            '--form-border-color': theme.colors.blue06,
+            '--ring-color': transparentize(0.7, theme.colors.blue06),
           },
           '&::placeholder': {
             color: theme.colors.greymed01,
@@ -221,16 +221,16 @@ const inputTags: ComponentThemeConfig = {
       }),
       error: ({ theme }: { theme: Theme }) => ({
         '&:not([disabled])': {
-          '--aks-form-bg-color': theme.colors.red01,
-          '--aks-form-border-color': theme.colors.red07,
+          '--form-bg-color': theme.colors.red01,
+          '--form-border-color': theme.colors.red07,
           '&:hover': {
-            '--aks-form-bg-color': theme.colors.red01,
-            '--aks-form-border-color': theme.colors.red07,
+            '--form-bg-color': theme.colors.red01,
+            '--form-border-color': theme.colors.red07,
           },
           '&:focus-within, &:focus, &:active': {
-            '--aks-form-bg-color': theme.colors.red01,
-            '--aks-form-border-color': theme.colors.red07,
-            '--aks-ring-color': transparentize(0.7, theme.colors.red07),
+            '--form-bg-color': theme.colors.red01,
+            '--form-border-color': theme.colors.red07,
+            '--ring-color': transparentize(0.7, theme.colors.red07),
           },
           '&::placeholder': {
             color: theme.colors.greymed01,
@@ -238,8 +238,8 @@ const inputTags: ComponentThemeConfig = {
         },
       }),
       disabled: ({ theme }: { theme: Theme }) => ({
-        '--aks-form-bg-color': theme.colors.greylight02,
-        '--aks-form-border-color': transparentize(0.5, theme.colors.greylight05),
+        '--form-bg-color': theme.colors.greylight02,
+        '--form-border-color': transparentize(0.5, theme.colors.greylight05),
         color: theme.colors.greymed01,
         cursor: 'not-allowed',
         '&::placeholder': {
