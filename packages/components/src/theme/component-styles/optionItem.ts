@@ -12,7 +12,7 @@ const baseStyle: ComponentThemeScaleFn<{ theme: Theme; isActive: boolean; disabl
   alignItems: 'center',
   cursor: 'pointer',
   outline: 'none',
-  borderRadius: '12px',
+  borderRadius: 'sm',
   border: '1px solid transparent',
   background: isActive ? theme.colors.blue01 : theme.colors.grey01,
   [pseudoSelectors._checked]: {
