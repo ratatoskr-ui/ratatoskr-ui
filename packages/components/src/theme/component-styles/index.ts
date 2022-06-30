@@ -15,6 +15,7 @@ import form from './form/form';
 import tag from './tag';
 import popover from './popover';
 import tabs from './tabs';
+import message from './message';
 /**
  * Custom theme props based on custom component variants.
  */
@@ -35,7 +36,8 @@ const componentStyles = {
   ...tag,
   ...optionItem,
   ...popover,
-  ...tabs
+  ...tabs,
+  ...message
 };
 
 export default componentStyles;

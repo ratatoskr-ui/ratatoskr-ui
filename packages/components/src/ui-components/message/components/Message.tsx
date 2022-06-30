@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Heading, Paragraph } from '../../../typography';
-import { UnstyledButton } from '../../button';
+import { IconButton } from '../../button';
 
 export type MessageStates = 'default' | 'info' | 'warning' | 'critical' | 'success';
 
@@ -93,19 +93,13 @@ const Message: React.FC<MessageProps> = ({
       </Box>
       {onClose && (
         <Box display="flex" alignItems="flex-start" justifyContent="center" p="md" color="greymed04">
-          <UnstyledButton
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            width={24}
-            height={24}
-            type="button"
-            aria-label="Close"
-            data-testid="Banner-closeButton"
-            onClick={handleClose}
-          >
+          <IconButton
+          aria-label="Close"
+          data-testid="Banner-closeButton"
+          variant="secondary"
+          onClick={handleClose}>
             <MdClose size={24} aria-hidden fill="currentColor" />
-          </UnstyledButton>
+          </IconButton>
         </Box>
       )}
     </Box>
