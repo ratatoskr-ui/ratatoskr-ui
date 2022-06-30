@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { theme as defaultTheme, Theme } from '../theme';
 import injectGlobalStyles from './injectGlobalStyles';
+import { ToastProvider } from '../ui-components/toast';
 
 export interface RatatoskrProviderProps {
   /**
@@ -22,8 +23,10 @@ const RatatoskrProvider: React.FC<RatatoskrProviderProps> = ({ children, disable
   return (
     <ThemeProvider theme={theme}>
       <IdProvider>
+          <ToastProvider>
           {!disableInjection && <GlobalStyles />}
           {children}
+          </ToastProvider>
       </IdProvider>
     </ThemeProvider>
   );
