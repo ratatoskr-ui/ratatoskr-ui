@@ -16,6 +16,7 @@ import tag from './tag';
 import popover from './popover';
 import tabs from './tabs';
 import message from './message';
+import stepper from './stepper';
 /**
  * Custom theme props based on custom component variants.
  */
@@ -37,6 +38,7 @@ const componentStyles = {
   ...optionItem,
   ...popover,
   ...tabs,
+  ...stepper,
   ...message
 };
 
