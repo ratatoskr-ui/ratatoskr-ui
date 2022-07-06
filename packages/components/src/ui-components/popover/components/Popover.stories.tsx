@@ -41,7 +41,7 @@ export const Example: Story<PopoverProps & Pick<PopoverContentProps, 'placement'
         <PopoverContent placement={placement} align={align}>
           <Box width="100%" maxWidth={300}>
             <Box py="md" px="lg" borderBottom="1px solid" borderBottomColor="greylight04">
-              <Heading scale={300}>这是heading</Heading>
+              <Heading scale={300}>这是heading ma?</Heading>
             </Box>
             <Box p="lg">
               <Paragraph scale={200}>
