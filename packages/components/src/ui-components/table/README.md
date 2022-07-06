@@ -16,7 +16,7 @@ import {
   TableBody,
   TableBodyRow,
   TableBodyCell,
-} from '@ratatoskr-ui/react';
+} from '@ratatoskr-ui/component';
 
 export default function Component() {
   return (

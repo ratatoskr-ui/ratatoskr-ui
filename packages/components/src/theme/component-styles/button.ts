@@ -14,7 +14,7 @@ const baseStyle: CSSObject = {
   lineHeight: '16px',
   letterSpacing: '0.2px',
   border: '1px solid transparent',
-  borderRadius: 8,
+  borderRadius: 'sm',
   '&:not([disabled])': {
     '&:focus': {
       outline: 'none',

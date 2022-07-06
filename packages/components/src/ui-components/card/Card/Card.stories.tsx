@@ -45,7 +45,7 @@ export const BodyCard: Story<{ elevation: CardElevation }> = ({ elevation }) => 
 export const Tags = () => {
   return (
     <Box display="inline-flex">
-      <Card p="lg" width={300}>
+      <Card p="md" width={300}>
         <Stack spacing="md">
           <CardHeader
             title="Deno"
@@ -83,8 +83,8 @@ export const HorizontalCard = () => {
           <Avatar size={'xl'} name="Title" src="https://64.media.tumblr.com/98da5de8e9832eb1c73d6180ce4648c0/36ac9104848b7e00-b5/s400x600/cca94e0d1cb3b61c62fc0a88151fbc92336693ad.jpg" />
           <Box>
             <Stack spacing="xs">
-              <Heading scale={400}>Title</Heading>
-              <Badge variant="info">Badge</Badge>
+              <Heading scale={400}>プロ棋士</Heading>
+              <Badge variant="info">5th-dan</Badge>
             </Stack>
           </Box>
         </Stack>

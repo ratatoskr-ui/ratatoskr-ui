@@ -26,7 +26,7 @@ export default {
 export const Example: Story<IconButtonProps> = ({ variant, size, disabled, onClick, selected }) => (
   <IconButton
     type="button"
-    aria-label="Push Me"
+    aria-label="Hit Me"
     onClick={onClick}
     variant={variant}
     size={size}

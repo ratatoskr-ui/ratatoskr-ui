@@ -1,13 +1,13 @@
 # Form
 
-> Basic form elements used with Aksara UI.
+> Basic form elements.
 
 ## Usage
 
 To use this component in your app, import as follows:
 
 ```jsx
-import { Box, FormGroup, FormLabel, InputText, InputTextarea } from '@aksara-ui/react';
+import { Box, FormGroup, FormLabel, InputText, InputTextarea } from '@ratatoskr-ui/components';
 
 const Component = () => {
   return (

@@ -11,7 +11,7 @@ import {
 } from './components';
 import { Box } from '../../layout/box';
 import { Text } from '../../typography';
-import { Stack } from '@ratatoskr-ui/components';
+import { Stack } from '../../layout/stack';
 
 describe('components/Form', () => {
   test('renders standard text input correctly', () => {

@@ -12,7 +12,7 @@ const inputSelectBase = (theme: Theme) => ({
   backgroundColor: theme.colors.grey01,
   border: '1px solid',
   borderColor: theme.colors.grey04,
-  borderRadius: '8px',
+  borderRadius: 'sm',
   outline: 'none',
 });
 
