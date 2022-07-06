@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
-import { IconChevronRight } from '@aksara-ui/icons';
+import { MdChevronRight } from "react-icons/md";
 import Breadcrumb from './Breadcrumb';
 import BreadcrumbItem from './BreadcrumbItem';
 
@@ -19,7 +19,7 @@ export const Example = () => {
           Item 2
         </BreadcrumbItem>,
       ]}
-      separator={IconChevronRight}
+      separator={MdChevronRight}
     />
   );
 };
@@ -36,7 +36,7 @@ export const Overflow = () => {
           Item 4
         </BreadcrumbItem>,
       ]}
-      separator={IconChevronRight}
+      separator={MdChevronRight}
     />
   );
 };
