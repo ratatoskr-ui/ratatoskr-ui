@@ -7,7 +7,7 @@
 To use this component within your React app, import as follows:
 
 ```jsx
-import { Popover, PopoverTrigger, PopoverContent, Button, Card } from '@ratatoskr-ui/component';
+import { Popover, PopoverTrigger, PopoverContent, Button, Card } from '@ratatoskr-ui/components';
 
 export default function Component() {
   return (
