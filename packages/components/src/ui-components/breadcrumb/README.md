@@ -9,7 +9,7 @@
 To use this component within your app, import as follows:
 
 ```jsx
-import { Breadcrumb, BreadcrumbItem } from '@ratatoskr-ui/react';
+import { Breadcrumb, BreadcrumbItem } from '@ratatoskr-ui/components';
 
 export default function BasicExample() {
   return (
