@@ -1,6 +1,6 @@
 {
     "name": "ratatoskr-ui",
-    "private": true,
+    "private": false,
     "description": "Koinworks internal Design System",
     "workspaces": [
         "packages/*"
