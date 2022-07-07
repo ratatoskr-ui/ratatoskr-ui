@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/ratatoskr-ui/ratatoskr-ui/compare/v0.2.0...v0.3.0) (2022-07-07)
+
+
+### Features
+
+* **action-list:** adjust action-list radius ([0c7a701](https://github.com/ratatoskr-ui/ratatoskr-ui/commit/0c7a701bdf2e4648a2da0a58d67baac282845e73))
+* **box-header-footer:** component initialization ([603a407](https://github.com/ratatoskr-ui/ratatoskr-ui/commit/603a40720807ee23dbc3737b6a5f61720a48072e))
+* **breadcrumb:** initialize component ([ec656b0](https://github.com/ratatoskr-ui/ratatoskr-ui/commit/ec656b0783ab864ac71278b25cb30165b1b44109))
+* **dropdown:** update dropdown's radius ([1102e80](https://github.com/ratatoskr-ui/ratatoskr-ui/commit/1102e809ce379b9bef6701702a9af11ca2b581f2))
+* **modal:** adjust modal with icon ([ec4375a](https://github.com/ratatoskr-ui/ratatoskr-ui/commit/ec4375ad11a6fa55b28e4fb59a6f7f47f5e09155))
+* **modal:** component initialization ([96fc8ff](https://github.com/ratatoskr-ui/ratatoskr-ui/commit/96fc8ff314dc554c305534ad7ba98728961cf3b5))
+* **pagination:** component initialization ([9d957ca](https://github.com/ratatoskr-ui/ratatoskr-ui/commit/9d957ca2b30e73f6e4e0a13e237e242dc527ec3f))
+* **skeleton:** component initialization ([c31d6d5](https://github.com/ratatoskr-ui/ratatoskr-ui/commit/c31d6d58a985c9a2ce0150db48376e6ee937b578))
+* **slider:** component initialization ([d4e99d9](https://github.com/ratatoskr-ui/ratatoskr-ui/commit/d4e99d97cee9e064cd00e2e8bc15e524d3af0d8b))
+
+
+
+
+
 # 0.2.0 (2022-07-05)
 
 
