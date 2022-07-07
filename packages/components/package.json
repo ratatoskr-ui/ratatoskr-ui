@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "license": "MIT",
+  "name": "@ratatoskr-ui/components",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "ratatoskr:src": "./src/index.ts",
@@ -36,7 +37,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "components",
   "author": "firstaroyand",
   "module": "dist/components.esm.js",
   "devDependencies": {
