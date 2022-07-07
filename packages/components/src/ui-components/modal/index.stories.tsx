@@ -22,10 +22,9 @@ export const BasicExample = () => {
 
   return (
     <Box p="md">
-      <Text as="p">Click the button below to open the modal.</Text>
-      <button type="button" onClick={() => setIsOpen(!isOpen)}>
+      <Button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Modal
-      </button>
+      </Button>
       <Modal labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <BoxHeader
           centerTitle
@@ -64,10 +63,9 @@ export const WithCloseButton = () => {
 
   return (
     <Box p="md">
-      <Text as="p">Click the button below to open the modal.</Text>
-      <button type="button" onClick={() => setIsOpen(!isOpen)}>
+      <Button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Modal
-      </button>
+      </Button>
       <Modal labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <BoxHeader
           closeButton={<CloseButton onClick={() => setIsOpen(false)} />}
@@ -107,10 +105,9 @@ export const WithFocusTrap = () => {
 
   return (
     <Box p="md">
-      <Text as="p">Click the button below to open the modal.</Text>
-      <button type="button" onClick={() => setIsOpen(!isOpen)}>
+      <Button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Modal
-      </button>
+      </Button>
       <Modal labelledById="stories-title" enableFocusTrap isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <BoxHeader
           centerTitle
@@ -149,10 +146,9 @@ export const WithIcon = () => {
 
   return (
     <Box p="md">
-      <Text as="p">Click the button below to open the modal.</Text>
-      <button type="button" onClick={() => setIsOpen(!isOpen)}>
+      <Button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Modal
-      </button>
+      </Button>
       <Modal labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <ModalHeaderIcon
           id="stories-title"
