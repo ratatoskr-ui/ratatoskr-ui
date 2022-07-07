@@ -9,7 +9,7 @@ const Trigger = styled(RadixDropdownMenu.Trigger)`
   }
 `;
 
-const DropdownMenuTrigger: React.FC = ({ children }) => {
+const DropdownMenuTrigger: React.FC<{children?: React.ReactNode}> = ({ children }) => {
   return <Trigger asChild>{children}</Trigger>;
 };
 

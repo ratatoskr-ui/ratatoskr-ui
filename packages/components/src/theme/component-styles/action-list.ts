@@ -8,7 +8,7 @@ const actionListItemBaseStyle: ComponentThemeScaleFn<{ theme: Theme }> = ({ them
   height: 'auto',
   display: 'flex',
   alignItems: 'stretch',
-  borderRadius: '8px',
+  borderRadius: 'sm',
   cursor: 'pointer',
 
   '&:focus-visible': {
