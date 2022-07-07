@@ -9,7 +9,7 @@ To use this component in your app, import as follows:
 ### `<Skeleton />`
 
 ```jsx
-import { Box, Skeleton } from '@aksara-ui/react';
+import { Box, Skeleton } from '@ratatoskr-ui/components';
 
 export default function Component({ isLoading }) {
   return <Box>{isLoading ? <Skeleton /> : <LoadedContent />}</Box>;
