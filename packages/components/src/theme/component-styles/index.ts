@@ -19,6 +19,7 @@ import message from './message';
 import stepper from './stepper';
 import toast from './toast';
 import pagination from './pagination';
+import slider from './slider';
 /**
  * Custom theme props based on custom component variants.
  */
@@ -43,7 +44,8 @@ const componentStyles = {
   ...stepper,
   ...toast,
   ...message,
-  ...pagination
+  ...pagination,
+  ...slider
 };
 
 export default componentStyles;
