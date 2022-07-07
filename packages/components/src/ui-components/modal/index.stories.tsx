@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconTrash } from '@aksara-ui/icons';
+import { MdDelete } from "react-icons/md";
 
 import { Stack, Box } from '../../layout';
 import { Heading, Text, Paragraph } from '../../typography';
@@ -157,7 +157,7 @@ export const WithIcon = () => {
         <ModalHeaderIcon
           id="stories-title"
           title="Delete item?"
-          icon={IconTrash}
+          icon={MdDelete}
           iconContainerStyle={{
             backgroundColor: 'red01',
             color: 'red07',
@@ -165,7 +165,7 @@ export const WithIcon = () => {
         />
         <ModalContent>
           <Stack textAlign="center">
-            <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
+            <Paragraph scale={300}>Delete dis?</Paragraph>
           </Stack>
         </ModalContent>
         <BoxFooter
