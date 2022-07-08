@@ -1,5 +1,5 @@
 {
-  "version": "0.5.6",
+  "version": "0.5.7",
   "license": "MIT",
   "name": "@ratatoskr-ui/components",
   "main": "dist/index.js",
@@ -76,8 +76,8 @@
     "@radix-ui/react-id": "^0.1.5",
     "@radix-ui/react-popover": "^0.1.6",
     "@radix-ui/react-radio-group": "^0.1.5",
-    "@ratatoskr-ui/design-token": "^0.3.2",
-    "@ratatoskr-ui/helpers": "^0.3.2",
+    "@ratatoskr-ui/design-token": "^0.5.7",
+    "@ratatoskr-ui/helpers": "^0.5.7",
     "@styled-system/css": "^5.1.5",
     "@styled-system/should-forward-prop": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
