@@ -1,5 +1,5 @@
 {
-  "version": "0.5.2",
+  "version": "0.5.3",
   "name": "@ratatoskr-ui/helpers",
   "license": "MIT",
   "main": "dist/index.js",
@@ -62,7 +62,8 @@
   "dependencies": {
     "@radix-ui/react-portal": "^0.1.4",
     "@radix-ui/react-visually-hidden": "^0.1.4",
-    "@ratatoskr-ui/design-token": "^0.5.2",
+    "@ratatoskr-ui/design-token": "^0.5.3",
     "focus-trap": "^6.7.3"
-  }
+  },
+  "gitHead": "706ac39cb27a97de9dba7495d4b7ab1ef5457931"
 }

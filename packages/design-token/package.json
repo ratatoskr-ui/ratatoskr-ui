@@ -1,5 +1,5 @@
 {
-  "version": "0.5.2",
+  "version": "0.5.3",
   "name": "@ratatoskr-ui/design-token",
   "license": "MIT",
   "main": "dist/index.js",
@@ -50,5 +50,6 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
     "typescript": "^4.6.3"
-  }
+  },
+  "gitHead": "706ac39cb27a97de9dba7495d4b7ab1ef5457931"
 }
