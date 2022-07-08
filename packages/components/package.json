@@ -1,5 +1,5 @@
 {
-  "version": "0.5.5",
+  "version": "0.5.6",
   "license": "MIT",
   "name": "@ratatoskr-ui/components",
   "main": "dist/index.js",
@@ -11,6 +11,9 @@
   ],
   "engines": {
     "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsdx build --transpileOnly --tsconfig tsconfig.build.json",
@@ -73,8 +76,8 @@
     "@radix-ui/react-id": "^0.1.5",
     "@radix-ui/react-popover": "^0.1.6",
     "@radix-ui/react-radio-group": "^0.1.5",
-    "@ratatoskr-ui/design-token": "^0.5.5",
-    "@ratatoskr-ui/helpers": "^0.5.5",
+    "@ratatoskr-ui/design-token": "^0.3.2",
+    "@ratatoskr-ui/helpers": "^0.3.2",
     "@styled-system/css": "^5.1.5",
     "@styled-system/should-forward-prop": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
@@ -97,6 +100,5 @@
     "styled-components": "^5.3.5",
     "styled-system": "^5.1.5",
     "typeface-inter": "^3.18.1"
-  },
-  "gitHead": "706ac39cb27a97de9dba7495d4b7ab1ef5457931"
+  }
 }
