@@ -1,5 +1,5 @@
 {
-  "version": "0.5.0",
+  "version": "0.5.1",
   "name": "@ratatoskr-ui/design-token",
   "license": "MIT",
   "main": "dist/index.js",
