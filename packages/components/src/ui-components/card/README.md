@@ -1,6 +1,5 @@
 # Card
-
-Renders a card based on the elevation level.
+Cards are used to group information about subjects and their related actions. Cards can include images, text, buttons, links, and data visualizations.
 
 ## Usage
 

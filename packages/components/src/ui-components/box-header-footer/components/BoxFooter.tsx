@@ -9,6 +9,7 @@ export interface BoxFooterProps extends Omit<BoxProps, 'children'> {
   size?: 'sm' | 'md' | 'lg';
   caption?: string;
   actions?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const BoxFooter: React.FC<BoxFooterProps> = ({

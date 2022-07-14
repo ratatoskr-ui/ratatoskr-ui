@@ -1,6 +1,6 @@
 # Accordion
 
-A vertically stacked set of interactive headings that each reveal an associated section of content.
+An accordion displays summary information that can be expanded to reveal content or collapsed to hide it. Can be used to group or hide complex regions to keep the page clean.
 
 > Delivers large amounts of content in a small space through progressive disclosure
 

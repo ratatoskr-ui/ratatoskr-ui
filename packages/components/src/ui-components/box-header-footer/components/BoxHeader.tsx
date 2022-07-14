@@ -11,6 +11,7 @@ export interface BoxHeaderProps extends Omit<BoxProps, 'children'> {
   backButton?: React.ReactNode;
   actions?: React.ReactNode;
   closeButton?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const BoxHeader: React.FC<BoxHeaderProps> = ({

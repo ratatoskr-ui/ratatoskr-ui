@@ -7,7 +7,7 @@ import { Spinner } from '../../../../loading';
 interface ButtonChildrenProps {
   isLoading?: boolean;
   children?: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline' | 'destructive' | 'disclosure' | 'outline-destructive';
+  variant?: 'primary' | 'secondary' | 'outline' | 'destructive' | 'disclosure' | 'outline-destructive' | 'segment-item';
 }
 
 const renderButtonChildren = ({ isLoading, variant, children }: ButtonChildrenProps) => {

@@ -1,6 +1,5 @@
 import { Theme } from '../../theme';
 import { transparentize } from 'polished';
-import type { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig } from '../../system';
 
 const sliderTrack: ComponentThemeConfig = {
