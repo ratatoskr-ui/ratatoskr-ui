@@ -24,7 +24,7 @@
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006",
     "deploy-storybook": "gh-pages -d storybook-static",
     "build-storybook": "build-storybook"
   },
@@ -73,6 +73,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.17.9",
+    "@heroicons/react": "^1.0.6",
     "@radix-ui/react-accordion": "^0.1.6",
     "@radix-ui/react-checkbox": "^0.1.5",
     "@radix-ui/react-dropdown-menu": "^0.1.6",

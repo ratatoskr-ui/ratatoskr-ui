@@ -9,7 +9,7 @@ const popoverContent: ComponentThemeConfig = {
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: 'var(--popover-border)',
-    borderRadius: 12,
+    borderRadius: 'sm',
     boxShadow: 4,
     zIndex: 1000,
   }),

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { MdCancel } from 'react-icons/md';
 import { Box, Stack } from '../../../layout';
 import { Text } from '../../../typography';
 import { useComponentStyles } from '../../../system';
 import { UnstyledButton, UnstyledButtonProps } from '../../button';
+import { XCircleIcon } from '@heroicons/react/solid';
 
 export interface TagProps extends Omit<UnstyledButtonProps, 'size'>, React.ComponentPropsWithoutRef<'button'> {
   /** Additional CSS classes to give to the component. */
@@ -41,8 +41,8 @@ const Tag = React.forwardRef<HTMLButtonElement, TagProps>(
           {icon}
           <Text scale={200}>{children}</Text>
           {hasCloseIcon && (
-            <Box fontSize={12} width={12} height={12}>
-              <MdCancel size={12} fill="currentColor" aria-hidden="true" />
+            <Box width={16} height={16}>
+              <XCircleIcon fill="currentColor" aria-hidden="true" width={16}/>
             </Box>
           )}
         </Stack>

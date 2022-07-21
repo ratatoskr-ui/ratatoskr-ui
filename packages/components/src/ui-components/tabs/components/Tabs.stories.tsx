@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { MdFavorite } from "react-icons/md";
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Tabs, { TabsProps } from './Tabs';
 import TabList from './TabList';
 import Tab from './Tab';
 import TabPanels from './TabPanels';
 import TabPanel from './TabPanel';
+import { QrcodeIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Tabs',
@@ -17,7 +17,7 @@ const Template: Story<TabsProps> = args => (
     <TabList>
       <Tab>Tab Item 1</Tab>
       <Tab badgeText="Badge">Tab Item 2</Tab>
-      <Tab icon={MdFavorite}>Tab Item 3</Tab>
+      <Tab icon={QrcodeIcon}>Tab Item 3</Tab>
     </TabList>
     <TabPanels>
       <TabPanel>

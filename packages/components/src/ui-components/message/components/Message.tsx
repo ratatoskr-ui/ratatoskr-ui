@@ -1,9 +1,10 @@
-import { MdClose, MdInfo, MdCheckCircle, MdError, MdWarning } from "react-icons/md";
 import * as React from 'react';
 import { Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Heading, Paragraph } from '../../../typography';
 import { IconButton } from '../../button';
+import { CheckCircleIcon, ExclamationCircleIcon, ExclamationIcon, InformationCircleIcon } from "@heroicons/react/solid";
+import { XIcon } from "@heroicons/react/outline";
 
 export type MessageStates = 'default' | 'info' | 'warning' | 'critical' | 'success';
 
@@ -46,19 +47,19 @@ const Message: React.FC<MessageProps> = ({
   const renderIconStates = () => {
     switch (variant) {
       case 'default': {
-        return <MdInfo size={24} aria-hidden fill="currentColor" />;
+        return <CheckCircleIcon width={24} aria-hidden fill="currentColor" />;
       }
       case 'success': {
-        return <MdCheckCircle size={24} aria-hidden fill="currentColor" />;
+        return <CheckCircleIcon width={24} aria-hidden fill="currentColor" />;
       }
       case 'info': {
-        return <MdInfo size={24} aria-hidden fill="currentColor" />;
+        return <InformationCircleIcon width={24} aria-hidden fill="currentColor" />;
       }
       case 'warning': {
-        return <MdWarning size={24} aria-hidden fill="currentColor" />;
+        return <ExclamationIcon width={24} aria-hidden fill="currentColor" />;
       }
       case 'critical': {
-        return <MdError size={24} aria-hidden fill="currentColor" />;
+        return <ExclamationCircleIcon width={24} aria-hidden fill="currentColor" />;
       }
       default: {
         return null;
@@ -98,7 +99,7 @@ const Message: React.FC<MessageProps> = ({
           data-testid="Banner-closeButton"
           variant="secondary"
           onClick={handleClose}>
-            <MdClose size={24} aria-hidden fill="currentColor" />
+            <XIcon width={24} aria-hidden fill="currentColor" />
           </IconButton>
         </Box>
       )}

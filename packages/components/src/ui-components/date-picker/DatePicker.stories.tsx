@@ -1,10 +1,10 @@
-import { MdDateRange } from "react-icons/md";
 import * as React from 'react';
 import { Stack } from '../../layout';
 import { FormLabel, InputGroup, InputIcon, InputText } from '../form';
 import { Popover, PopoverContent, PopoverTrigger } from '../popover';
 import { DatePicker } from './DatePicker';
 import { AdvancedOption, OptionAdvancedDatePicker } from './AdvancedOption';
+import { CalendarIcon } from "@heroicons/react/solid";
 
 export default {
   title: 'Core/Components/Date Picker',
@@ -17,7 +17,6 @@ export const SingleDatePicker = () => {
       type="picker"
       selected={selectedDate}
       onChange={date => {
-        console.log(date);
         setSelectedDate(date);
       }}
     />
@@ -41,7 +40,7 @@ export const InputSingleDatePicker = () => {
               width="100%"
               pr={36}
             />
-            <InputIcon icon={MdDateRange} iconPosition="right" iconText="calendar" />
+            <InputIcon icon={CalendarIcon} iconPosition="right" iconText="calendar" />
           </InputGroup>
         </PopoverTrigger>
         <PopoverContent
@@ -72,7 +71,6 @@ export const MultipleDateRangePicker = () => {
       multiDatePicker
       selected={selectedDate}
       onChange={date => {
-        console.log(date);
         setSelectedDate(date);
       }}
     />
@@ -101,7 +99,7 @@ export const InputMultipleDateRangePicker = () => {
               width="100%"
               pr={36}
             />
-            <InputIcon icon={MdDateRange} iconPosition="right" iconText="calendar" />
+            <InputIcon icon={CalendarIcon} iconPosition="right" iconText="calendar" />
           </InputGroup>
         </PopoverTrigger>
         <PopoverContent
@@ -116,7 +114,6 @@ export const InputMultipleDateRangePicker = () => {
             multiDatePicker
             selected={selectedDate}
             onChange={date => {
-              console.log(date);
               setSelectedDate(date);
             }}
           />
@@ -207,7 +204,6 @@ const options: OptionAdvancedDatePicker[] = [
 
 export const AdvancedDatePickerRange = () => {
   const [{ selectedDate }, dispatch] = React.useReducer(dateReducer, { selectedDate: undefined });
-  console.log('selectedDate', selectedDate);
 
   const optionHandler = (value: DatePickerKindValue) => {
     dispatch({ type: value });
@@ -220,7 +216,6 @@ export const AdvancedDatePickerRange = () => {
       selected={selectedDate}
       multiDatePicker
       onChange={date => {
-        console.log(date);
         dispatch({ type: DatePickerKind.UPDATE, payload: date });
       }}
     />
@@ -253,7 +248,7 @@ export const InputAdvancedDatePickerRange = () => {
               width="100%"
               pr={36}
             />
-            <InputIcon icon={MdDateRange} iconPosition="right" iconText="calendar" />
+            <InputIcon icon={CalendarIcon} iconPosition="right" iconText="calendar" />
           </InputGroup>
         </PopoverTrigger>
         <PopoverContent sideOffset={4} placement={'bottom'} align={'end'} disableArrow>
@@ -264,7 +259,6 @@ export const InputAdvancedDatePickerRange = () => {
             selected={selectedDate}
             multiDatePicker
             onChange={date => {
-              console.log(date);
               dispatch({ type: DatePickerKind.UPDATE, payload: date });
             }}
           />

@@ -6,7 +6,7 @@ const tagStyle: ComponentThemeScaleFn<{ selected: boolean }> = ({ selected }) =>
   alignItems: 'center',
   height: 24,
   px: 'xs',
-  borderRadius: 'lg',
+  borderRadius: 'sm',
   backgroundColor: selected ? 'greydark02' : 'greylight04',
   color: selected ? 'greylight01' : 'inherit',
   '&:not([disabled])': {

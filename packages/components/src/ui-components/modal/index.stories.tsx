@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { MdDelete } from "react-icons/md";
 
 import { Stack, Box } from '../../layout';
-import { Heading, Text, Paragraph } from '../../typography';
+import { Heading, Paragraph } from '../../typography';
 
 import Modal from './components/Modal';
 import BoxHeader from '../box-header-footer/components/BoxHeader';
@@ -11,6 +10,7 @@ import ModalContent from './components/ModalContent';
 import BoxFooter from '../box-header-footer/components/BoxFooter';
 import { Button } from '../button';
 import { CloseButton } from '../box-header-footer';
+import { TrashIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Modal',
@@ -153,7 +153,7 @@ export const WithIcon = () => {
         <ModalHeaderIcon
           id="stories-title"
           title="Delete item?"
-          icon={MdDelete}
+          icon={TrashIcon}
           iconContainerStyle={{
             backgroundColor: 'red01',
             color: 'red07',

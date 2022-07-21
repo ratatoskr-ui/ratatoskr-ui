@@ -4,7 +4,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import * as React from 'react';
 import { useSelect, UseSelectStateChange } from 'downshift';
-import { MdChevronRight } from "react-icons/md";
 import { Text } from '../../../../typography';
 import { Box, Stack } from '../../../../layout';
 import { CSSObject, useComponentStyles } from '../../../../system';
@@ -12,6 +11,7 @@ import { FormLabel } from '../FormLabel';
 import { UnstyledButton } from '../../../button';
 import { Card } from '../../../card';
 import { ActionList, ActionListItem } from '../../../action-list';
+import { ChevronDownIcon } from '@heroicons/react/solid';
 
 export interface InputSelectProps<T> {
   /** The input select label */
@@ -132,7 +132,7 @@ function InputSelect<T>({
           {renderInputValue()}
 
           <Box position="absolute" right={8}>
-            <MdChevronRight size={16} />
+            <ChevronDownIcon width={16} />
           </Box>
         </UnstyledButton>
         <Card
@@ -155,7 +155,7 @@ function InputSelect<T>({
                   <ActionListItem
                     containerStyle={
                       highlightedIndex === index && (!selectedItem || !selected)
-                        ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
+                        ? { backgroundColor: 'greylight03', borderRadius: 'sm' }
                         : {}
                     }
                     isActive={selected}

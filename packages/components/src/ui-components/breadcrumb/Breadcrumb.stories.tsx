@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
-import { MdChevronRight } from "react-icons/md";
 import Breadcrumb from './Breadcrumb';
 import BreadcrumbItem from './BreadcrumbItem';
+import { ChevronRightIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Breadcrumb',
@@ -19,7 +19,7 @@ export const Example = () => {
           Item 2
         </BreadcrumbItem>,
       ]}
-      separator={MdChevronRight}
+      separator={ChevronRightIcon}
     />
   );
 };
@@ -36,7 +36,7 @@ export const Overflow = () => {
           Item 4
         </BreadcrumbItem>,
       ]}
-      separator={MdChevronRight}
+      separator={ChevronRightIcon}
     />
   );
 };

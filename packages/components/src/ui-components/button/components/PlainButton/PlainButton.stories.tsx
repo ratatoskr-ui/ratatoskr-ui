@@ -1,6 +1,6 @@
+import { SearchIcon } from '@heroicons/react/solid';
 import { Story } from '@storybook/react';
 import * as React from 'react';
-import { MdOutlineSearch } from "react-icons/md";
 
 import PlainButton, { PlainButtonProps } from './PlainButton';
 
@@ -51,7 +51,7 @@ Example.args = {
 export const WithIcon: Story<PlainButtonProps> = Template.bind({});
 WithIcon.args = {
   ...Example.args,
-  icon: MdOutlineSearch,
+  icon: SearchIcon,
   iconPosition: 'left',
 };
 
@@ -81,6 +81,6 @@ export const DisclosureButton: Story<PlainButtonProps> = ({
 DisclosureButton.args = {
   ...Example.args,
   variant: 'disclosure',
-  icon: MdOutlineSearch,
+  icon: SearchIcon,
   iconPosition: 'left',
 };

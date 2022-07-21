@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Story } from '@storybook/react';
 import Button, { ButtonProps } from './Button';
 
-import { MdOutlineSearch } from "react-icons/md";
+import { SearchIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Button/Button',
@@ -75,7 +75,7 @@ Example.args = {
 export const WithIcon: Story<ButtonProps> = Template.bind({});
 WithIcon.args = {
   ...Example.args,
-  icon: MdOutlineSearch,
+  icon: SearchIcon,
   iconPosition: 'left',
 };
 

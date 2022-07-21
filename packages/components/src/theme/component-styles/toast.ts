@@ -10,7 +10,7 @@ const toastInner: ComponentThemeConfig = {
     maxWidth: TOASTER_WIDTH,
     p: 'md',
     textAlign: 'left',
-    borderRadius: 8,
+    borderRadius: 'sm',
   },
   propToScaleMap: [['variant', 'variants']],
   scales: {

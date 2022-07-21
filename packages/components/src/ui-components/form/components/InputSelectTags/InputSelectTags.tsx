@@ -2,7 +2,6 @@
 /* eslint-disable no-shadow */
 import * as React from 'react';
 import { useCombobox, useMultipleSelection, UseMultipleSelectionStateChange } from 'downshift';
-import { MdChevronRight } from "react-icons/md";
 
 import { Tag } from '../../../tag';
 import { Card } from '../../../card';
@@ -10,6 +9,7 @@ import { FormLabel } from '../FormLabel';
 import { useComponentStyles } from '../../../../system';
 import { Box, Wrap, WrapItem, Stack } from '../../../../layout';
 import { ActionList, ActionListItem } from '../../../action-list';
+import { ChevronRightIcon } from '@heroicons/react/solid';
 
 export interface InputSelectTagsProps {
   onChange?: (value: string[]) => void;
@@ -223,7 +223,7 @@ function InputSelectTags({
             </WrapItem>
           </Wrap>
           <Box position="absolute" right={8} lineHeight="normal">
-            <MdChevronRight size={16} />
+            <ChevronRightIcon width={16} />
           </Box>
         </Box>
         <Card
@@ -243,7 +243,7 @@ function InputSelectTags({
                 return (
                   <ActionListItem
                     containerStyle={
-                      highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'lg' } : {}
+                      highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'sm' } : {}
                     }
                     key={`${item}_${index}`}
                     {...getItemProps({ item, index })}

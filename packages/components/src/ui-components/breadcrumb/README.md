@@ -29,7 +29,7 @@ export default function BasicExample() {
 By default, breadcrumbs use the slash character (`/`) as the separator. However, if you want to include a custom SVG icon as a separator, you can use the `separator` prop.
 
 ```jsx
-import { MdOutlineAdd } from 'react-icons/md';
+import { ChevronDoubleRightIcon } from '@heroicons/react/solid';
 import { Breadcrumb, BreadcrumbItem } from '@ratatoskr-ui/components';
 
 export default function BasicExample() {
@@ -40,7 +40,7 @@ export default function BasicExample() {
         <BreadcrumbItem href="/item-1">Item 1</BreadcrumbItem>,
         <BreadcrumbItem href="/item-2">Item 2</BreadcrumbItem>,
       ]}
-      separator={MdOutlineAdd}
+      separator={ChevronDoubleRightIcon}
     />
   );
 }

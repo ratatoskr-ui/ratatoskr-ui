@@ -1,10 +1,10 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
-import { MdDone } from 'react-icons/md';
 import { Stack, Box } from '../../layout';
 import { Heading, Text } from '../../typography';
 import { ActionList, ActionListItem, ActionListItemVariant } from '.';
 import { CheckboxContainer, CheckboxIndicator } from '../form/components/InputCheckbox/components/CheckboxIndicator';
+import { CheckIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/ActionList',
@@ -55,19 +55,19 @@ export const ActionListWithIconExample: Story = () => {
     <ActionList width="200px">
       <ActionListItem marginX="sm" isActive>
         <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
-          <MdDone width={16} height={16} fill="currentColor" aria-hidden />
+          <CheckIcon width={16} height={16} fill="currentColor" aria-hidden />
           <Text scale={300}>item sample 1</Text>
         </Stack>
       </ActionListItem>
       <ActionListItem marginX="sm">
         <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
-          <MdDone width={16} height={16} fill="currentColor" aria-hidden />
+          <CheckIcon width={16} height={16} fill="currentColor" aria-hidden />
           <Text scale={300}>item sample 1</Text>
         </Stack>
       </ActionListItem>
       <ActionListItem marginX="sm">
         <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
-          <MdDone width={16} height={16} fill="currentColor" aria-hidden />
+          <CheckIcon width={16} height={16} fill="currentColor" aria-hidden />
           <Text scale={300}>item sample 1</Text>
         </Stack>
       </ActionListItem>

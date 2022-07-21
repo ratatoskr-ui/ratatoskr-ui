@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useCombobox, UseComboboxStateChange } from 'downshift';
-import { MdChevronRight } from "react-icons/md";
 
 import { Box, Stack } from '../../../../layout';
 import { InputText } from '../InputText';
@@ -10,6 +9,7 @@ import { Text } from '../../../../typography';
 import { ActionList, ActionListItem } from '../../../action-list';
 
 import { useComponentStyles } from '../../../../system';
+import { ChevronRightIcon } from '@heroicons/react/solid';
 
 export interface InputSelectSearchProps<T> {
   /** The input select label */
@@ -198,7 +198,7 @@ function InputSelect<T>({
           />
           {/* right 9, because container box doesn't have border 1 */}
           <Box position="absolute" right={9} lineHeight="normal">
-            <MdChevronRight size={16} />
+            <ChevronRightIcon width={16} />
           </Box>
         </Box>
 

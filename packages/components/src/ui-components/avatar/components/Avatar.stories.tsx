@@ -1,10 +1,10 @@
-import { MdOutlineAccountCircle } from "react-icons/md";
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
 import { Box } from '../../../layout';
 import { Heading } from '../../../typography';
 import Avatar, { AvatarProps } from './Avatar';
+import { UserCircleIcon } from "@heroicons/react/solid";
 
 export default {
   title: 'Core/Components/Avatar',
@@ -40,7 +40,7 @@ WithImage.args = {
   src: 'https://64.media.tumblr.com/98da5de8e9832eb1c73d6180ce4648c0/36ac9104848b7e00-b5/s400x600/cca94e0d1cb3b61c62fc0a88151fbc92336693ad.jpg',
 };
 
-export const WithIcons: Story<AvatarProps> = args => <Avatar icon={MdOutlineAccountCircle} {...args} />;
+export const WithIcons: Story<AvatarProps> = args => <Avatar icon={UserCircleIcon} {...args} />;
 WithIcons.args = {
   size: 'lg',
   name: 'Kiriyama Rei',

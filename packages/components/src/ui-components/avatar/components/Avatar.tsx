@@ -92,7 +92,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
       }
 
       if (icon) {
-        return React.createElement(icon, { fill: 'currentColor', size: iconSizes(size), 'aria-hidden': true });
+        return React.createElement(icon, { fill: 'currentColor', width: iconSizes(size), 'aria-hidden': true });
       }
 
       return renderInitials();

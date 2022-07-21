@@ -1,5 +1,5 @@
+import { SearchIcon, XCircleIcon } from '@heroicons/react/solid';
 import * as React from 'react';
-import { MdCancel, MdOutlineSearch } from "react-icons/md";
 
 import { InputGroup } from '../InputGroup';
 import { InputIcon, InputIconButton } from '../InputIcon';
@@ -33,7 +33,7 @@ const InputSearchbox = React.forwardRef<HTMLInputElement, InputSearchboxProps>(
 
     return (
       <InputGroup id={groupId} className={groupClassName} style={groupStyle} width="100%" maxWidth={360}>
-        <InputIcon icon={MdOutlineSearch} iconPosition="left" iconText="Username" disabled={disabled} />
+        <InputIcon icon={SearchIcon} iconPosition="left" iconText="Username" disabled={disabled} />
         <InputText
           ref={ref}
           id={id}
@@ -51,7 +51,7 @@ const InputSearchbox = React.forwardRef<HTMLInputElement, InputSearchboxProps>(
         {value.length > 0 && (
           <InputIconButton
             type="button"
-            icon={MdCancel}
+            icon={XCircleIcon}
             iconPosition="right"
             iconText="Clear"
             disabled={disabled}

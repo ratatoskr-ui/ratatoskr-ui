@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { MdExpandMore } from 'react-icons/md';
+import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Box } from '../../../layout';
 import { Heading } from '../../../typography';
 import { UnstyledButton } from '../../button';
@@ -29,7 +29,7 @@ const BoxContent = styled(Box)`
   }
 `;
 
-const AccordionChevron = styled(MdExpandMore)`
+const AccordionChevron = styled(ChevronDownIcon)`
   transition: transform 300ms;
   [data-state='open'] & {
     transform: rotate(180deg);
@@ -64,7 +64,7 @@ describe('Component/ScrollArea', () => {
                         }}
                       >
                         Title
-                        <AccordionChevron size={16} />
+                        <AccordionChevron width={16} />
                       </UnstyledButton>
                     </AccordionTrigger>
                   </Heading>
@@ -100,7 +100,7 @@ describe('Component/ScrollArea', () => {
                         }}
                       >
                         Title
-                        <AccordionChevron size={16} />
+                        <AccordionChevron width={16} />
                       </UnstyledButton>
                     </AccordionTrigger>
                   </Heading>

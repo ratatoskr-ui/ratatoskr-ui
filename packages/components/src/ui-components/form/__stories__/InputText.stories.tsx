@@ -1,10 +1,10 @@
 import { Meta, Story } from '@storybook/react';
-import { MdLock, MdWarning } from "react-icons/md";
 import * as React from 'react';
 
 import { Stack } from '../../../layout';
 import { InputGroup, InputIcon, FormLabel, InputPrefix, InputSuffix } from '../components';
 import { InputText, InputTextProps } from '../components/InputText';
+import { ExclamationIcon, LockClosedIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Form/InputText',
@@ -48,7 +48,7 @@ export const WithIcons: Story<InputTextProps> = ({ errors, inputSize, disabled }
     <Stack spacing="xs">
       <FormLabel htmlFor="textDummy">Text input</FormLabel>
       <InputGroup width="100%" maxWidth={360}>
-        <InputIcon icon={MdLock} iconPosition="left" iconText="Username" disabled={disabled} />
+        <InputIcon icon={LockClosedIcon} iconPosition="left" iconText="Username" disabled={disabled} />
         <InputText
           id="textDummy"
           name="textDummy"
@@ -60,7 +60,7 @@ export const WithIcons: Story<InputTextProps> = ({ errors, inputSize, disabled }
           pl={36}
           pr={36}
         />
-        <InputIcon icon={MdWarning} iconPosition="right" iconText="Username" disabled={disabled} />
+        <InputIcon icon={ExclamationIcon} iconPosition="right" iconText="Username" disabled={disabled} />
       </InputGroup>
     </Stack>
   );

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { MdWhatshot } from "react-icons/md";
 import { Story, Meta } from '@storybook/react';
 import { Box } from '../../../layout';
 import Tag, { TagProps } from './Tag';
+import MoonIcon from '@heroicons/react/solid/MoonIcon';
 
 export default {
   title: 'Core/Components/Tag',
@@ -54,7 +54,7 @@ export const WithCustomIcon: Story<TagProps> = ({
       selected={selected}
       hasCloseIcon={withCloseIcon}
       onClick={onClick}
-      icon={<MdWhatshot aria-hidden fill="currentColor" size={16} />}
+      icon={<MoonIcon aria-hidden fill="currentColor" width={16}/>}
       disabled={disabled}
     >
       {children}

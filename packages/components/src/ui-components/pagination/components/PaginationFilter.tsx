@@ -1,4 +1,4 @@
-import { MdExpandMore } from "react-icons/md";
+import { ChevronDownIcon } from "@heroicons/react/solid";
 import * as React from 'react';
 import Box from '../../../layout/box/components/Box';
 import { Text } from '../../../typography';
@@ -33,7 +33,7 @@ const PaginationFilter = ({
       </Text>
       <DropdownMenu maxWidth={300}>
         <DropdownMenuTrigger>
-          <Button type="button" size="md" icon={MdExpandMore} iconPosition="right">
+          <Button type="button" size="md" icon={ChevronDownIcon} iconPosition="right">
             {selectedItem}
           </Button>
         </DropdownMenuTrigger>

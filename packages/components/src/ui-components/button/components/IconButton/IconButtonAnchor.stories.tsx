@@ -1,6 +1,6 @@
+import { SearchIcon } from '@heroicons/react/solid';
 import { Story } from '@storybook/react';
 import * as React from 'react';
-import { MdOutlineSearch } from "react-icons/md";
 
 import IconButtonAnchor, { IconButtonAnchorProps } from './IconButtonAnchor';
 
@@ -32,7 +32,7 @@ export const Example: Story<IconButtonAnchorProps> = ({ variant, size, href, tar
     href={href}
     target={target}
   >
-    <MdOutlineSearch />
+    <SearchIcon />
   </IconButtonAnchor>
 );
 

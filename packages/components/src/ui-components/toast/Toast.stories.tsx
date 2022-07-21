@@ -1,4 +1,5 @@
 import { action } from '@storybook/addon-actions';
+import { Button } from '../button';
 import * as React from 'react';
 import { Box } from '../../layout';
 import useToast from './useToast';
@@ -11,18 +12,18 @@ export const Example = () => {
   const { addToast } = useToast();
   return (
     <Box sx={{ '> :not([hidden]) ~ :not([hidden])': { marginLeft: 'md' } }}>
-      <button type="button" onClick={() => addToast({ message: 'Single line' })}>
+      <Button type="button" onClick={() => addToast({ message: 'Single line' })}>
         Single line
-      </button>
-      <button
+      </Button>
+      <Button
         type="button"
         onClick={() =>
           addToast({ message: 'Single line with action', actionText: 'Action', onAction: () => action('click') })
         }
       >
         Single line with action
-      </button>
-      <button
+      </Button>
+      <Button
         type="button"
         onClick={() =>
           addToast({
@@ -32,8 +33,8 @@ export const Example = () => {
         }
       >
         Single line dismissable
-      </button>
-      <button
+      </Button>
+      <Button
         type="button"
         onClick={() =>
           addToast({
@@ -43,8 +44,8 @@ export const Example = () => {
         }
       >
         Multiple line
-      </button>
-      <button
+      </Button>
+      <Button
         type="button"
         onClick={() =>
           addToast({
@@ -56,9 +57,9 @@ export const Example = () => {
         }
       >
         Multiple line with action
-      </button>
+      </Button>
 
-      <button
+      <Button
         type="button"
         onClick={() =>
           addToast({
@@ -69,7 +70,7 @@ export const Example = () => {
         }
       >
         Error with action
-      </button>
+      </Button>
     </Box>
   );
 };

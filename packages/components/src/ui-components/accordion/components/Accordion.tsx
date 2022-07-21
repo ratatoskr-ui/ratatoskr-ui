@@ -2,11 +2,11 @@ import * as React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { AccordionMultipleProps, AccordionSingleProps } from '@radix-ui/react-accordion';
 import styled, { keyframes } from 'styled-components';
-import { MdExpandMore } from 'react-icons/md';
 import { Heading } from '../../../typography';
 import { UnstyledButton } from '../../button';
 import { Box } from '../../../layout';
 import { CSSObject } from '../../../system';
+import { ChevronDownIcon } from '@heroicons/react/solid';
 
 export const Accordion: React.FC<(AccordionSingleProps | AccordionMultipleProps) & { style?: CSSObject }> = ({
   children,
@@ -42,7 +42,7 @@ export const AccordionTrigger: React.FC<AccordionPrimitive.AccordionTriggerProps
   );
 };
 
-const AccordionChevron = styled(MdExpandMore)`
+const AccordionChevron = styled(ChevronDownIcon)`
   transition: transform 300ms;
   [data-state='open'] & {
     transform: rotate(180deg);
@@ -65,7 +65,7 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({ children, size
             minHeight={size === 'md' ? 40 : 48}
             display={'flex'}
             flex={1}
-            borderRadius={'lg'}
+            borderRadius={'sm'}
             justifyContent={'space-between'}
             alignItems={'center'}
             _hover={{ backgroundColor: 'greylight03' }}
@@ -78,7 +78,7 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({ children, size
           >
             {children}
             <Box width={16} height={16}>
-              <AccordionChevron size={16} />
+              <AccordionChevron width={16} />
             </Box>
           </UnstyledButton>
         </AccordionTrigger>

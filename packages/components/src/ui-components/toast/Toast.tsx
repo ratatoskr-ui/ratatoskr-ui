@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
-import { MdCancel } from 'react-icons/md';
+import {XIcon} from '@heroicons/react/outline';
 import { Box, BoxProps } from '../../layout';
 import { Text } from '../../typography';
 import { useComponentStyles } from '../../system';
@@ -174,7 +174,7 @@ const Toast: React.FC<ToastProps> = ({
                   sx={toastCloseButtonStyles}
                   onClick={() => close()}
                 >
-                  <MdCancel aria-hidden fill="currentColor" size={16} />
+                  <XIcon aria-hidden fill="currentColor" width={16}/>
                 </UnstyledButton>
               </Box>
             )}

@@ -50,7 +50,7 @@ const ModalHeaderIcon: React.FC<ModalHeaderIconProps> = ({
         borderRadius={72}
         sx={{ ...iconContainerStyle }}
       >
-        {React.createElement(icon, { 'aria-hidden': true, size: 40, fill: 'currentColor' })}
+        {React.createElement(icon, { 'aria-hidden': true, width: 40, fill: 'currentColor' })}
       </Box>
     </Box>
   );

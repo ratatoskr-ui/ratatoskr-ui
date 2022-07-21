@@ -17,7 +17,7 @@ const renderButtonIcon = ({ icon, iconPosition, size, isLoading }: ButtonIconPro
         ml={iconPosition === 'right' ? 'xs' : null}
         style={isLoading ? { visibility: 'hidden' } : undefined}
       >
-        {React.createElement(icon, { fill: 'currentColor', size: iconPosition === 'right' && size !== 'lg' ? 12 : 16 })}
+        {React.createElement(icon, { fill: 'currentColor', width: iconPosition === 'right' && size !== 'lg' ? 12 : 16 })}
       </Box>
     );
   }

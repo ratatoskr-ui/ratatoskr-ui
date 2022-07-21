@@ -1,12 +1,12 @@
 import React from 'react';
 import { RenderProps, Calendar, DateObj } from 'dayzed';
-import { MdArrowBack, MdArrowForward } from "react-icons/md";
 import { CSSObject } from '../../../system';
 import { Box, Stack } from '../../../layout';
 import { Button, IconButton } from '../../button';
 import { Text } from '../../../typography';
 import DateNumberButton, { DateNumberVariants } from './DateNumber';
 import { monthNamesFull, weekdayNamesShort } from './calendar-utils';
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/solid';
 
 export interface CalendarProp extends RenderProps {
   containerStyle?: CSSObject;
@@ -52,11 +52,11 @@ const CalendarBox = ({
     return (
       <Box display={['flex']} justifyContent="space-between" alignItems="center" pt="xs" px="md" pb="0px">
         <IconButton variant="plain" aria-label="Back" {...getBackProps({ calendars })}>
-          <MdArrowBack aria-hidden fill="currentColor" />
+          <ArrowLeftIcon aria-hidden fill="currentColor" />
         </IconButton>
 
         <IconButton variant="plain" aria-label="Next" {...getForwardProps({ calendars })}>
-          <MdArrowForward aria-hidden fill="currentColor" />
+          <ArrowRightIcon aria-hidden fill="currentColor" />
         </IconButton>
       </Box>
     );

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import { useTable, useSortBy } from 'react-table';
-import { MdExpandMore } from "react-icons/md";
 import { InputCheckbox } from '../form';
 import {
   Table,
@@ -21,6 +20,7 @@ import { Badge } from '../badge';
 import { Text, Anchor } from '../../typography';
 import IconColorfulInstagram from './IconColorfulInstagram';
 import IconColorfulWhatsapp from './IconColorfulWhatsapp';
+import { ChevronDownIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Table',
@@ -162,7 +162,7 @@ export const Example = () => {
                         <PlainButton
                           type="button"
                           size="sm"
-                          icon={MdExpandMore}
+                          icon={ChevronDownIcon}
                           iconPosition="right"
                           variant="disclosure"
                           disabled={agentMeta.disabled}

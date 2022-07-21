@@ -1,5 +1,5 @@
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/solid';
 import * as React from 'react';
-import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { Box, BoxProps, Stack } from '../../../../layout';
 import { Text } from '../../../../typography';
 
@@ -17,15 +17,15 @@ const renderIconSort = (sortType: SortType) => {
   if (sortType === 'noSort') {
     return (
       <Stack direction="vertical" marginRight={5.5} paddingTop={2}>
-        <MdArrowDropUp style={{ marginBottom: '-2px' }} size={9} />
-        <MdArrowDropDown style={{ marginTop: '-2px' }} size={9} />
+        <ChevronUpIcon style={{ marginBottom: '-2px' }} width={9} />
+        <ChevronDownIcon style={{ marginTop: '-2px' }} width={9} />
       </Stack>
     );
   }
   return (
     <Box marginRight={5.5}>
-      {sortType === 'asc' && <MdArrowDropUp size={9} />}
-      {sortType === 'desc' && <MdArrowDropDown size={9} />}
+      {sortType === 'asc' && <ChevronUpIcon width={9} />}
+      {sortType === 'desc' && <ChevronDownIcon width={9} />}
     </Box>
   );
 };

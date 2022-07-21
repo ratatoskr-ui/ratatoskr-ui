@@ -1,4 +1,4 @@
-import { MdKeyboardBackspace, MdExpandMore } from 'react-icons/md';
+import { ArrowLeftIcon, ChevronDownIcon } from '@heroicons/react/solid';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { theme } from '../../theme';
@@ -20,7 +20,7 @@ export const WithActions = () => {
       title="Title"
       actions={
         <ButtonGroup size="md">
-          <Button type="button" icon={MdKeyboardBackspace} iconPosition="right" onClick={action('click')}>
+          <Button type="button" icon={ArrowLeftIcon} iconPosition="right" onClick={action('click')}>
             Label
           </Button>
           <Button variant="primary">Label</Button>
@@ -36,7 +36,7 @@ export const WithBackButton = () => {
       title="Title"
       actions={
         <ButtonGroup size="md">
-          <Button type="button" icon={MdExpandMore} iconPosition="right" onClick={action('click')}>
+          <Button type="button" icon={ChevronDownIcon} iconPosition="right" onClick={action('click')}>
             Label
           </Button>
           <Button variant="primary">Label</Button>
@@ -44,7 +44,7 @@ export const WithBackButton = () => {
       }
       backButton={
         <IconButton variant="plain" aria-label="Back" size="lg">
-          <MdKeyboardBackspace aria-hidden fill={theme.colors.greydark02} />
+          <ArrowLeftIcon aria-hidden fill={theme.colors.greydark02} />
         </IconButton>
       }
     />
@@ -57,7 +57,7 @@ export const WithChildren = () => {
       title="Title"
       actions={
         <ButtonGroup size="md">
-          <Button type="button" icon={MdExpandMore} iconPosition="right" onClick={action('click')}>
+          <Button type="button" icon={ChevronDownIcon} iconPosition="right" onClick={action('click')}>
             Label
           </Button>
           <Button variant="primary">Label</Button>
@@ -65,7 +65,7 @@ export const WithChildren = () => {
       }
       backButton={
         <IconButton variant="plain" aria-label="Back" size="lg">
-          <MdKeyboardBackspace aria-hidden fill="currentColor" />
+          <ArrowLeftIcon aria-hidden fill="currentColor" />
         </IconButton>
       }
     >

@@ -101,7 +101,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, err
     <Box
       sx={inputTagsStyles}
       display="flex"
-      p="md"
+      p="sm"
       cursor={disabled ? 'not-allowed' : 'text'}
       onClick={handleFocusInput}
     >

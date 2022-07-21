@@ -1,6 +1,6 @@
-import { MdClose } from "react-icons/md";
 import * as React from 'react';
 import { UnstyledButton } from '../../button/components/UnstyledButton';
+import { XIcon } from "@heroicons/react/solid";
 
 export interface CloseButtonProps {
   onClick?: () => void;
@@ -25,7 +25,7 @@ const CloseButton: React.FC<CloseButtonProps> = ({ onClick }) => {
       }}
       onClick={onClick}
     >
-      <MdClose aria-hidden size={24} fill="currentColor" />
+      <XIcon aria-hidden width={24} fill="currentColor" />
     </UnstyledButton>
   );
 };

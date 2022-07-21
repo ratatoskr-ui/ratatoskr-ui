@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { MdCheckCircle } from "react-icons/md";
 import { Box } from '../../../layout/box';
 import { Text } from '../../../typography/components/Text';
 import { useComponentStyles } from '../../../system';
+import { CheckCircleIcon } from '@heroicons/react/solid';
 
 interface StepInternalConfig {
   index?: number;
@@ -22,7 +22,7 @@ const StepHead: React.FC<StepInternalConfig> = ({ isCompletedStep, isCurrentStep
     if (isCompletedStep) {
       return (
         <Box display="flex" alignItems="center" color="green07">
-          <MdCheckCircle width={16} height={16} fill="currentColor" />
+          <CheckCircleIcon width={16} height={16} fill="currentColor" />
         </Box>
       );
     }

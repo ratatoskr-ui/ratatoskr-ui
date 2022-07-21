@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MdCheckCircle, MdInfo, MdWarning, MdOutlineError } from "react-icons/md";
+import { CheckCircleIcon, ExclamationCircleIcon, ExclamationIcon, InformationCircleIcon } from "@heroicons/react/solid";
 
 import { Box, BoxProps } from '../../../../layout';
 import { Text } from '../../../../typography';
@@ -17,19 +17,19 @@ export interface InputMessageProps extends BoxProps, React.ComponentPropsWithout
 function messageIcon(variant: InputMessageVariants = 'info') {
   switch (variant) {
     case 'success': {
-      return <MdCheckCircle size={16} fill="currentColor" />;
+      return <CheckCircleIcon width={16} fill="currentColor" />;
     }
     case 'info': {
-      return <MdInfo size={16} fill="currentColor" />;
+      return <InformationCircleIcon width={16} fill="currentColor" />;
     }
     case 'warning': {
-      return <MdWarning size={16} fill="currentColor" />;
+      return <ExclamationIcon width={16} fill="currentColor" />;
     }
     case 'critical': {
-      return <MdOutlineError size={16} fill="currentColor" />;
+      return <ExclamationCircleIcon width={16} fill="currentColor" />;
     }
     default: {
-      return <MdCheckCircle size={16} fill="currentColor" />;
+      return <CheckCircleIcon width={16} fill="currentColor" />;
     }
   }
 }

@@ -20,7 +20,7 @@ const Arrow = styled(RadixDropdownMenu.Arrow)`
 const ContentBox = React.forwardRef<HTMLDivElement, React.PropsWithChildren<BoxProps>>(
   ({ children, ...props }, ref) => {
     return (
-      <Box ref={ref} textAlign="left" maxWidth="100vw" borderRadius="lg" overflow="hidden" boxShadow={3} {...props}>
+      <Box ref={ref} textAlign="left" maxWidth="100vw" borderRadius="sm" overflow="hidden" boxShadow={3} {...props}>
         {children}
       </Box>
     );

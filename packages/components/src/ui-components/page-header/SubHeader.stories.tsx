@@ -1,4 +1,3 @@
-import { MdExpandMore, MdModeEdit } from 'react-icons/md';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { Stack } from '../../layout';
@@ -8,6 +7,7 @@ import { Button, IconButton } from '../button';
 import { ButtonGroup } from '../button-group';
 import { InputSelect } from '../form/components/InputSelect';
 import SubHeader from './SubHeader';
+import { ChevronDownIcon, PencilIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Page Header/Sub Header',
@@ -21,7 +21,7 @@ export const StickSubHeader = () => {
       variant="stick"
       actions={
         <ButtonGroup size="md">
-          <Button type="button" icon={MdExpandMore} iconPosition="right" onClick={action('click')}>
+          <Button type="button" icon={ChevronDownIcon} iconPosition="right" onClick={action('click')}>
             Label
           </Button>
           <Button variant="primary">Label</Button>
@@ -47,7 +47,7 @@ export const StandSubHeader = () => {
             type="button"
             variant="plain"
           >
-            <MdModeEdit aria-hidden fill="currentColor" />
+            <PencilIcon aria-hidden fill="currentColor" />
           </IconButton>
           <InputSelect
             width="200px"
@@ -74,7 +74,7 @@ export const StandSubHeader = () => {
             Caption
           </Text>
           <ButtonGroup size="md" spacing="xs">
-            <Button type="button" icon={MdExpandMore} iconPosition="right" onClick={action('click')}>
+            <Button type="button" icon={ChevronDownIcon} iconPosition="right" onClick={action('click')}>
               Label
             </Button>
             <Button variant="primary">Label</Button>

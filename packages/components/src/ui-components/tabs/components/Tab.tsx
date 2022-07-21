@@ -29,7 +29,7 @@ const Tab: React.FC<TabProps> = ({ children, index = 0, badgeText, icon, ...rest
           sx={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', size: 32, borderRadius: 'sm' }}
         >
           <VisuallyHidden>{children}</VisuallyHidden>
-          {React.createElement(icon, { size: 16, fill: 'currentColor', 'aria-hidden': true })}
+          {React.createElement(icon, { width: 24, fill: 'currentColor', 'aria-hidden': true })}
         </Box>
       ) : (
         <Box sx={tabButtonInnerStyles}>

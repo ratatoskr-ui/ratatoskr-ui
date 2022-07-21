@@ -12,7 +12,6 @@
         "npm-publish": "lerna publish"
     },
     "devDependencies": {
-        "lerna": "^4.0.0",
-        "react-icons": "^4.4.0"
+        "lerna": "^4.0.0"
     }
 }

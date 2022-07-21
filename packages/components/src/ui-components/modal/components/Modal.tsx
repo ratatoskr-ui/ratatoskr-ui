@@ -182,7 +182,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           display="flex"
           flexDirection="column"
           backgroundColor="white"
-          borderRadius={'lg'}
+          borderRadius={'md'}
           overflow={overflow}
           height={height}
           width={width || '100%'}

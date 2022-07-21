@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Box } from '../../../../../layout';
 import { UnstyledButton } from '../../../../button/components/UnstyledButton';
-import { MdCheck, MdOutlineRemove } from "react-icons/md";
 import { useComponentStyles } from '../../../../../system';
+import { CheckIcon, MinusIcon } from '@heroicons/react/solid';
 
 export interface CheckboxContainerProps extends React.ComponentPropsWithoutRef<'button'> {
   errors?: boolean;
@@ -30,7 +30,7 @@ export const CheckboxIndicator = ({ errors, disabled }: CheckboxIndicatorProps) 
   const checkboxIndicatorStyle = useComponentStyles('checkboxIndicator', { errors, disabled });
   return (
     <Box sx={checkboxIndicatorStyle}>
-      <MdCheck size={8} fill="currentColor" />
+      <CheckIcon width={14} fill="currentColor" />
     </Box>
   );
 };
@@ -39,7 +39,7 @@ export const CheckboxIndeterminate = ({ errors, disabled }: CheckboxIndicatorPro
   const checkboxIndicatorStyle = useComponentStyles('checkboxIndicator', { errors, disabled });
   return (
     <Box sx={checkboxIndicatorStyle}>
-      <MdOutlineRemove size={8} fill="currentColor" />
+      <MinusIcon width={14} fill="currentColor" />
     </Box>
   );
 };

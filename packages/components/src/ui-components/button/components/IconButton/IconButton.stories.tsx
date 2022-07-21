@@ -1,5 +1,5 @@
 import { Story } from '@storybook/react';
-import { MdOutlineSearch } from "react-icons/md";
+import { SearchIcon } from '@heroicons/react/solid';
 import * as React from 'react';
 
 import IconButton, { IconButtonProps } from './IconButton';
@@ -33,7 +33,7 @@ export const Example: Story<IconButtonProps> = ({ variant, size, disabled, onCli
     disabled={disabled}
     selected={selected}
   >
-    <MdOutlineSearch />
+    <SearchIcon />
   </IconButton>
 );
 Example.args = {

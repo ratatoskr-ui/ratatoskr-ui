@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import { MdKeyboardBackspace, MdExpandMore } from 'react-icons/md';
 import * as React from 'react';
 import { Button, IconButton } from '../button';
 import PageHeader from './PageHeader';
 import { ButtonGroup } from '../button-group';
+import { ArrowLeftIcon, ChevronDownIcon } from '@heroicons/react/solid';
 
 describe('Components/PageHeader', () => {
   describe('PageHeader', () => {
@@ -32,7 +32,7 @@ describe('Components/PageHeader', () => {
           actions={<Button variant="primary">Label</Button>}
           backButton={
             <IconButton variant="plain" aria-label="Back">
-              <MdKeyboardBackspace aria-hidden fill="currentColor" />
+              <ArrowLeftIcon aria-hidden fill="currentColor" />
             </IconButton>
           }
         />
@@ -50,7 +50,7 @@ describe('Components/PageHeader', () => {
           title="Title"
           actions={
             <ButtonGroup size="md">
-              <Button type="button" icon={MdExpandMore} iconPosition="right">
+              <Button type="button" icon={ChevronDownIcon} iconPosition="right">
                 Label
               </Button>
               <Button variant="primary">Label</Button>
@@ -58,7 +58,7 @@ describe('Components/PageHeader', () => {
           }
           backButton={
             <IconButton variant="plain" aria-label="Back">
-              <MdKeyboardBackspace aria-hidden fill="currentColor" />
+              <ChevronDownIcon aria-hidden fill="currentColor" />
             </IconButton>
           }
         >
@@ -73,7 +73,7 @@ describe('Components/PageHeader', () => {
           title="Title"
           actions={
             <ButtonGroup size="md">
-              <Button type="button" icon={MdExpandMore} iconPosition="right">
+              <Button type="button" icon={ChevronDownIcon} iconPosition="right">
                 Label
               </Button>
               <Button variant="primary">Label</Button>
@@ -81,7 +81,7 @@ describe('Components/PageHeader', () => {
           }
           backButton={
             <IconButton variant="plain" aria-label="Back">
-              <MdKeyboardBackspace aria-hidden fill="currentColor" />
+              <ChevronDownIcon aria-hidden fill="currentColor" />
             </IconButton>
           }
         >

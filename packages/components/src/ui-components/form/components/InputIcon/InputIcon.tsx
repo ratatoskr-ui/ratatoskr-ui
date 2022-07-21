@@ -39,7 +39,7 @@ const InputIcon = React.forwardRef<HTMLDivElement, InputIconProps>(
         {...rest}
       >
         {iconText && <VisuallyHidden>{iconText}</VisuallyHidden>}
-        {React.createElement(icon, { fill: 'currentColor', size: 16 })}
+        {React.createElement(icon, { fill: 'currentColor', width: 16 })}
       </Box>
     );
   }

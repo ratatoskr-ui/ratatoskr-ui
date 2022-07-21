@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import { MdKeyboardBackspace } from "react-icons/md";
 import { Stack, Box } from '../../layout';
 import { Heading } from '../../typography';
 
 import { Button, IconButton } from '../button';
 import { Avatar } from '../avatar';
 import { BoxFooter, BoxHeader, CloseButton } from '.';
+import { ArrowLeftIcon } from '@heroicons/react/outline';
 
 export default {
   title: 'Core/Components/Box Header Footer/Header',
@@ -61,7 +61,7 @@ export const BackAndCloseIcon = ({ size }: { size: 'sm' | 'lg' }) => {
         closeButton={<CloseButton />}
         backButton={
           <IconButton variant="plain" size={size}>
-            <MdKeyboardBackspace aria-hidden size={24} fill="currentColor" />
+            <ArrowLeftIcon aria-hidden width={24} fill="currentColor" />
           </IconButton>
         }
         title={

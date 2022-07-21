@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import { MdExpandMore, MdAdd } from 'react-icons/md';
 
 import ButtonGroup, { ButtonGroupProps } from './ButtonGroup';
 import { Button } from '../../../button';
+import { ChevronDownIcon, PlusIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Button Group',
@@ -68,10 +68,10 @@ export const SegmentedWithIcon: Story<ButtonGroupProps> = args => {
 
   return (
     <ButtonGroup {...args}>
-      <Button icon={MdAdd} selected={selected === 'page1'} onClick={() => setSelected('page1')}>
+      <Button icon={PlusIcon} selected={selected === 'page1'} onClick={() => setSelected('page1')}>
         Label
       </Button>
-      <Button icon={MdAdd} selected={selected === 'page2'} onClick={() => setSelected('page2')}>
+      <Button icon={PlusIcon} selected={selected === 'page2'} onClick={() => setSelected('page2')}>
         Label
       </Button>
     </ButtonGroup>
@@ -85,7 +85,7 @@ export const SegmentedDisclosure: Story<ButtonGroupProps> = args => {
   return (
     <ButtonGroup {...args}>
       <Button
-        icon={MdExpandMore}
+        icon={ChevronDownIcon}
         iconPosition="right"
         selected={selected === 'page1'}
         onClick={() => setSelected('page1')}
@@ -93,7 +93,7 @@ export const SegmentedDisclosure: Story<ButtonGroupProps> = args => {
         Label
       </Button>
       <Button
-        icon={MdExpandMore}
+        icon={ChevronDownIcon}
         iconPosition="right"
         selected={selected === 'page2'}
         onClick={() => setSelected('page2')}
