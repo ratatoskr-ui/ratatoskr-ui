@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/ratatoskr-ui/ratatoskr-ui/compare/v0.6.2...v0.7.0) (2022-07-22)
+
+
+### Features
+
+* add action list stories ([9e0bac0](https://github.com/ratatoskr-ui/ratatoskr-ui/commit/9e0bac03be43a8a5bfc85af66c3ddcf4128844ee))
+
+
+
+
+
 ## [0.6.2](https://github.com/ratatoskr-ui/ratatoskr-ui/compare/v0.6.1...v0.6.2) (2022-07-22)
 
 **Note:** Version bump only for package @ratatoskr-ui/components
