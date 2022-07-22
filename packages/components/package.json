@@ -1,6 +1,6 @@
 {
   "homepage": "http://ratatoskr-ui.github.io/ratatoskr-ui",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "license": "MIT",
   "name": "@ratatoskr-ui/components",
   "main": "dist/index.js",
