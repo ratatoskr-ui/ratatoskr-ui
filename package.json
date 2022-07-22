@@ -6,10 +6,10 @@
         "packages/*"
     ],
     "scripts": {
-        "new-version": "lerna version --conventional-commits --yes",
+        "new-version": "lerna version --conventional-commits",
         "test": "lerna run test",
         "build": "lerna run build",
-        "npm-publish": "lerna publish"
+        "npm-publish": "lerna publish from-git"
     },
     "devDependencies": {
         "lerna": "^4.0.0"
