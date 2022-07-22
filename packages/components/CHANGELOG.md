@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/ratatoskr-ui/ratatoskr-ui/compare/v0.5.7...v0.6.0) (2022-07-22)
+
+
+### Features
+
+* migrate react-icon to heroicon ([eb39661](https://github.com/ratatoskr-ui/ratatoskr-ui/commit/eb39661e241bc6d565ad15eb5a64e90bee004413))
+
+
+
+
+
 # [0.3.0](https://github.com/ratatoskr-ui/ratatoskr-ui/compare/v0.2.0...v0.3.0) (2022-07-07)
 
 
