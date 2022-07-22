@@ -44,7 +44,7 @@ const InputIconButton = React.forwardRef<HTMLButtonElement, InputIconButtonProps
         {...rest}
       >
         {iconText && <VisuallyHidden>{iconText}</VisuallyHidden>}
-        {React.createElement(icon, { fill: 'currentColor', size: 16 })}
+        {React.createElement(icon, { fill: 'currentColor', width: 16 })}
       </UnstyledButton>
     );
   }

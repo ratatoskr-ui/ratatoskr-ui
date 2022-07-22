@@ -13,7 +13,7 @@ describe('components/ActionList', () => {
       expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('renders actionList with item correctly', () => {
+    test('should renders actionList with item correctly', () => {
       const { container } = render(
         <ActionList>
           <ActionListItem isActive>Label 1</ActionListItem>
