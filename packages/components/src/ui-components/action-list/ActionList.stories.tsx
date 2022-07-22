@@ -25,6 +25,7 @@ export const ActionListItemExample: Story<{ variant: ActionListItemVariant }> = 
   return (
     <Box width="200px">
       <ActionListItem variant={variant}>item sample 1</ActionListItem>
+      <ActionListItem variant={variant}>item sample 2</ActionListItem>
     </Box>
   );
 };
