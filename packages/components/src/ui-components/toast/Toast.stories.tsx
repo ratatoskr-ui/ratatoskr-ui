@@ -39,7 +39,7 @@ export const Example = () => {
         onClick={() =>
           addToast({
             message:
-              'Multiple line. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras morbi enim, nisl in.',
+              'Multiple line. Lorem ipsum dolor sit, consectetur adipiscing elit. Cras morbi enim, nisl in.',
           })
         }
       >
