@@ -19,6 +19,7 @@ describe('components/ActionList', () => {
           <ActionListItem isActive>Label 1</ActionListItem>
           <ActionListItem disabled>Label 2</ActionListItem>
           <ActionListItem disabled>Label 2</ActionListItem>
+          <ActionListItem isActive>Label 3</ActionListItem>
         </ActionList>
       );
 
