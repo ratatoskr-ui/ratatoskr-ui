@@ -4,7 +4,7 @@
 
 ## Usage
 
-To use this component in your app, import as follows:
+To use this component in your app, import as instruction follows:
 
 ```tsx
 import { useToast } from '@ratatoskr-ui/components';
