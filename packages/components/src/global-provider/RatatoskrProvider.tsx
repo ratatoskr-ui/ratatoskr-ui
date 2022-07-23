@@ -14,19 +14,23 @@ export interface RatatoskrProviderProps {
   disableInjection?: boolean;
   /** Custom theme object. */
   theme?: Theme;
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const { GlobalStyles } = injectGlobalStyles();
 
-const RatatoskrProvider: React.FC<RatatoskrProviderProps> = ({ children, disableInjection, theme = defaultTheme }) => {
+const RatatoskrProvider: React.FC<RatatoskrProviderProps> = ({
+  children,
+  disableInjection,
+  theme = defaultTheme,
+}) => {
   return (
     <ThemeProvider theme={theme}>
       <IdProvider>
-          <ToastProvider>
+        <ToastProvider>
           {!disableInjection && <GlobalStyles />}
           {children}
-          </ToastProvider>
+        </ToastProvider>
       </IdProvider>
     </ThemeProvider>
   );

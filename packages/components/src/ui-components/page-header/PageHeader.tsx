@@ -9,17 +9,32 @@ export interface PageHeaderProps extends BoxProps {
   children?: React.ReactNode;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ title, actions, backButton, children }) => {
+const PageHeader: React.FC<PageHeaderProps> = ({
+  title,
+  actions,
+  backButton,
+  children,
+}) => {
   return (
     <Box display={['block', 'flex']} flexDirection="column">
-      <Box display={['block', 'flex']} alignItems={[null, 'center']} justifyContent={[null, 'space-between']}>
+      <Box
+        display={['block', 'flex']}
+        alignItems={[null, 'center']}
+        justifyContent={[null, 'space-between']}
+      >
         {backButton && (
           <Box marginRight={[0, 'md']} marginBottom={['xs', 0]}>
             {backButton}
           </Box>
         )}
         <Box flex="1 1 0%" minWidth={0}>
-          <Heading scale={600} fontWeight={700} overflow="hidden" textOverflow="wllipsis" whiteSpace="nowrap">
+          <Heading
+            scale={600}
+            fontWeight={700}
+            overflow="hidden"
+            textOverflow="wllipsis"
+            whiteSpace="nowrap"
+          >
             {title}
           </Heading>
         </Box>

@@ -16,7 +16,9 @@ export default {
   },
 };
 
-export const Example: Story<SkeletonProps> = ({ numberOfLines }) => <Skeleton numberOfLines={numberOfLines} />;
+export const Example: Story<SkeletonProps> = ({ numberOfLines }) => (
+  <Skeleton numberOfLines={numberOfLines} />
+);
 
 Example.args = {
   numberOfLines: 1,

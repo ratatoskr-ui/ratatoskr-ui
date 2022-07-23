@@ -120,3 +120,72 @@ exports[`components/ActionList <ActionList /> renders correctly 1`] = `
   class="c0"
 />
 `;
+
+exports[`components/ActionList <ActionList /> should renders actionList with item correctly 1`] = `
+<div
+  class="cBsPvL"
+>
+  <div
+    class=""
+  >
+    <div
+      class="bXTZSk"
+    />
+    <div
+      class="hcYiLQ"
+    >
+      <span
+        class=""
+      >
+        Label 1
+      </span>
+    </div>
+  </div>
+  <div
+    aria-disabled="true"
+    class=""
+    data-disabled="true"
+  >
+    <div
+      class="hcYiLQ"
+    >
+      <span
+        class=""
+      >
+        Label 2
+      </span>
+    </div>
+  </div>
+  <div
+    aria-disabled="true"
+    class=""
+    data-disabled="true"
+  >
+    <div
+      class="hcYiLQ"
+    >
+      <span
+        class=""
+      >
+        Label 2
+      </span>
+    </div>
+  </div>
+  <div
+    class=""
+  >
+    <div
+      class="bXTZSk"
+    />
+    <div
+      class="hcYiLQ"
+    >
+      <span
+        class=""
+      >
+        Label 3
+      </span>
+    </div>
+  </div>
+</div>
+`;

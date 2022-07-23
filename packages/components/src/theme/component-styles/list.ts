@@ -1,25 +1,31 @@
-import { Theme } from 'packages/components/src/theme';
+import { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig, ComponentThemeScaleFn } from '../../system';
 
-const listItemBaseStyle: ComponentThemeScaleFn<{ theme: Theme; isSelected: boolean }> = ({
-  theme,
-  isSelected,
-}) => ({
+const listItemBaseStyle: ComponentThemeScaleFn<{
+  theme: DefaultTheme;
+  isSelected: boolean;
+}> = ({ theme, isSelected }) => ({
   display: 'flex',
   alignItems: 'center',
   backgroundColor: isSelected ? theme.colors.blue01 : theme.colors.greylight01,
   color: theme.colors.greydark02,
   minHeight: '48px',
   px: 'md',
-  boxShadow: isSelected ? 'inset 0px -1px 0px #E5EAEF' : 'inset 0px -1px 0px #eff2f5',
+  boxShadow: isSelected
+    ? 'inset 0px -1px 0px #E5EAEF'
+    : 'inset 0px -1px 0px #eff2f5',
 
   '&:hover': {
-    backgroundColor: isSelected ? theme.colors.blue01 : theme.colors.greylight03,
+    backgroundColor: isSelected
+      ? theme.colors.blue01
+      : theme.colors.greylight03,
     boxShadow: 'none',
   },
 });
 
-const listHeaderBaseStyle: ComponentThemeScaleFn<{ theme: Theme }> = ({ theme }) => ({
+const listHeaderBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({
+  theme,
+}) => ({
   display: 'flex',
   alignItems: 'center',
   backgroundColor: theme.colors.greylight01,

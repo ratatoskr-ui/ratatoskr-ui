@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
-import { Button } from '../button';
 import * as React from 'react';
+import { Button } from '../button';
 import { Box } from '../../layout';
 import useToast from './useToast';
 
@@ -8,17 +8,24 @@ export default {
   title: 'Core/Components/Toast',
 };
 
-export const Example = () => {
+export function Example() {
   const { addToast } = useToast();
   return (
     <Box sx={{ '> :not([hidden]) ~ :not([hidden])': { marginLeft: 'md' } }}>
-      <Button type="button" onClick={() => addToast({ message: 'Single line' })}>
+      <Button
+        type="button"
+        onClick={() => addToast({ message: 'Single line' })}
+      >
         Single line
       </Button>
       <Button
         type="button"
         onClick={() =>
-          addToast({ message: 'Single line with action', actionText: 'Action', onAction: () => action('click') })
+          addToast({
+            message: 'Single line with action',
+            actionText: 'Action',
+            onAction: () => action('click'),
+          })
         }
       >
         Single line with action
@@ -73,4 +80,4 @@ export const Example = () => {
       </Button>
     </Box>
   );
-};
+}

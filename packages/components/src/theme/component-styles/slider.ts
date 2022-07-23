@@ -1,9 +1,9 @@
-import { Theme } from '../../theme';
 import { transparentize } from 'polished';
+import { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig } from '../../system';
 
 const sliderTrack: ComponentThemeConfig = {
-  baseStyle: ({ theme }: { theme: Theme }) => ({
+  baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     height: 8,
     background: theme.colors.blue01,
     borderRadius: 8,
@@ -11,7 +11,7 @@ const sliderTrack: ComponentThemeConfig = {
 };
 
 const sliderHandle: ComponentThemeConfig = {
-  baseStyle: ({ theme }: { theme: Theme }) => ({
+  baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     width: 16,
     height: 16,
     borderRadius: 9999,

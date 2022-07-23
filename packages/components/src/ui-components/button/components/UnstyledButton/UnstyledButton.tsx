@@ -10,7 +10,10 @@ import {
   componentStylesMixin,
 } from '../../../../system';
 
-export interface UnstyledButtonProps extends AllSystemProps, PseudoSystemProps, SxProps {
+export interface UnstyledButtonProps
+  extends AllSystemProps,
+    PseudoSystemProps,
+    SxProps {
   /**
    * Extended color props. We need this because default `color` prop clashes with `styled-system`.
    */
@@ -18,7 +21,9 @@ export interface UnstyledButtonProps extends AllSystemProps, PseudoSystemProps, 
 }
 
 /** A button element with all styling elements removed (incl. hover/focus effects). */
-const UnstyledButton = styled('button').withConfig<UnstyledButtonProps>({ shouldForwardProp })(
+const UnstyledButton = styled('button').withConfig<UnstyledButtonProps>({
+  shouldForwardProp,
+})(
   componentStylesMixin('unstyledButton'),
   sxMixin,
   allSystemProps,

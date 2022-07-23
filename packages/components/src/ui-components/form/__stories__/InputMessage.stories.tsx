@@ -13,9 +13,9 @@ export default {
   },
 };
 
-const Template = ({ variant }: InputMessageProps) => {
+function Template({ variant }: InputMessageProps) {
   return <InputMessage variant={variant}>Input Helper Text</InputMessage>;
-};
+}
 
 export const Example: Story<InputMessageProps> = Template.bind({});
 Example.args = {

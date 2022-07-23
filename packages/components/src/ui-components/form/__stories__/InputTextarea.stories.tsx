@@ -21,7 +21,11 @@ export default {
   },
 } as Meta<InputTextareaProps>;
 
-export const Example: Story<InputTextareaProps> = ({ errors, disabled, rows }) => {
+export const Example: Story<InputTextareaProps> = ({
+  errors,
+  disabled,
+  rows,
+}) => {
   return (
     <Stack spacing="xs">
       <FormLabel htmlFor="textDummy">Text input</FormLabel>

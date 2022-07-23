@@ -8,9 +8,14 @@ import { SxProps, useComponentStyles } from '../../../system';
 
 export type PopoverProps = PopoverPrimitive.PopoverProps;
 
-export type PopoverTriggerProps = Omit<PopoverPrimitive.PopoverTriggerProps, 'asChild'>;
+export type PopoverTriggerProps = Omit<
+  PopoverPrimitive.PopoverTriggerProps,
+  'asChild'
+>;
 
-export interface PopoverContentProps extends Omit<PopoverPrimitive.PopoverContentProps, 'side'>, SxProps {
+export interface PopoverContentProps
+  extends Omit<PopoverPrimitive.PopoverContentProps, 'side'>,
+    SxProps {
   /** Classname to pass to the popover content. */
   className?: string;
   /** CSS properties to pass to the popover content. */
@@ -22,9 +27,22 @@ export interface PopoverContentProps extends Omit<PopoverPrimitive.PopoverConten
   disableArrow?: boolean;
 }
 
-export const Popover: React.FC<PopoverProps> = ({ children, defaultOpen, open, onOpenChange, modal, ...rest }) => {
+export const Popover: React.FC<PopoverProps> = ({
+  children,
+  defaultOpen,
+  open,
+  onOpenChange,
+  modal,
+  ...rest
+}) => {
   return (
-    <PopoverPrimitive.Root defaultOpen={defaultOpen} open={open} onOpenChange={onOpenChange} modal={modal} {...rest}>
+    <PopoverPrimitive.Root
+      defaultOpen={defaultOpen}
+      open={open}
+      onOpenChange={onOpenChange}
+      modal={modal}
+      {...rest}
+    >
       {children}
     </PopoverPrimitive.Root>
   );
@@ -32,7 +50,10 @@ export const Popover: React.FC<PopoverProps> = ({ children, defaultOpen, open, o
 
 Popover.displayName = 'Popover';
 
-export const PopoverTrigger: React.FC<PopoverTriggerProps> = ({ children, ...rest }) => {
+export const PopoverTrigger: React.FC<PopoverTriggerProps> = ({
+  children,
+  ...rest
+}) => {
   return (
     <PopoverPrimitive.Trigger asChild {...rest}>
       {children}
@@ -40,16 +61,17 @@ export const PopoverTrigger: React.FC<PopoverTriggerProps> = ({ children, ...res
   );
 };
 
-const PopOverContentBox = React.forwardRef<HTMLDivElement, React.PropsWithChildren<BoxProps>>(
-  ({ children, sx, ...props }, ref) => {
-    const popoverContentStyles = useComponentStyles('popoverContent');
-    return (
-      <Box ref={ref} sx={{ ...popoverContentStyles, ...sx }} {...props}>
-        {children}
-      </Box>
-    );
-  }
-);
+const PopOverContentBox = React.forwardRef<
+  HTMLDivElement,
+  React.PropsWithChildren<BoxProps>
+>(({ children, sx, ...props }, ref) => {
+  const popoverContentStyles = useComponentStyles('popoverContent');
+  return (
+    <Box ref={ref} sx={{ ...popoverContentStyles, ...sx }} {...props}>
+      {children}
+    </Box>
+  );
+});
 const BoxFilterDropdShadowSupport = styled(PopOverContentBox)`
   @supports (filter: drop-shadow(0px 2px 4px #000)) {
     filter: drop-shadow(${theme.shadows[2]});
@@ -57,7 +79,10 @@ const BoxFilterDropdShadowSupport = styled(PopOverContentBox)`
   }
 `;
 
-export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>(
+export const PopoverContent = React.forwardRef<
+  HTMLDivElement,
+  PopoverContentProps
+>(
   (
     {
       children,
@@ -83,10 +108,20 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
         alignOffset={alignOffset}
         {...rest}
       >
-        <BoxFilterDropdShadowSupport ref={ref} className={className} style={style} sx={{ ...sx }}>
+        <BoxFilterDropdShadowSupport
+          ref={ref}
+          className={className}
+          style={style}
+          sx={{ ...sx }}
+        >
           {children}
           {!disableArrow && (
-            <PopoverPrimitive.Arrow offset={arrowOffset} width={20} height={8} fill="var(--popover-border)" />
+            <PopoverPrimitive.Arrow
+              offset={arrowOffset}
+              width={20}
+              height={8}
+              fill="var(--popover-border)"
+            />
           )}
         </BoxFilterDropdShadowSupport>
       </PopoverPrimitive.Content>

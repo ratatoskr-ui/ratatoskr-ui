@@ -29,7 +29,12 @@ const Wrapper = styled('div')`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, ${theme.colors.grey03}, ${theme.colors.grey02}, ${theme.colors.grey03});
+    background: linear-gradient(
+      90deg,
+      ${theme.colors.grey03},
+      ${theme.colors.grey02},
+      ${theme.colors.grey03}
+    );
     animation: ${progress} 1s ease-in-out infinite;
   }
 
@@ -55,12 +60,19 @@ export interface SkeletonProps {
   small?: boolean;
 }
 
-const Skeleton: React.FC<SkeletonProps> = ({ className, numberOfLines, small }) => {
+const Skeleton: React.FC<SkeletonProps> = ({
+  className,
+  numberOfLines,
+  small,
+}) => {
   if (numberOfLines && numberOfLines > 1) {
     return (
       <Multiline>
         {[...Array(numberOfLines)].map((_, i) => (
-          <Wrapper key={i.toString()} className={clsx(className, small && 'is-small')} />
+          <Wrapper
+            key={i.toString()}
+            className={clsx(className, small && 'is-small')}
+          />
         ))}
       </Multiline>
     );

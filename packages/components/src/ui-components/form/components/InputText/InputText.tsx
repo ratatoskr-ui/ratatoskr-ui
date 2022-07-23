@@ -15,8 +15,15 @@ export interface InputTextProps
 }
 
 const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
-  ({ className, errors, inputSize = 'md', rounded, sx, pl, pr, ...rest }, ref) => {
-    const styles = useComponentStyles('inputText', { size: inputSize, variant: errors ? 'error' : 'default', rounded });
+  (
+    { className, errors, inputSize = 'md', rounded, sx, pl, pr, ...rest },
+    ref
+  ) => {
+    const styles = useComponentStyles('inputText', {
+      size: inputSize,
+      variant: errors ? 'error' : 'default',
+      rounded,
+    });
 
     return (
       <Box

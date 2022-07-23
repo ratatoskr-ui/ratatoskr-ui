@@ -1,8 +1,8 @@
 import * as React from 'react';
+import { CheckCircleIcon } from '@heroicons/react/solid';
 import { Box } from '../../../layout/box';
 import { Text } from '../../../typography/components/Text';
 import { useComponentStyles } from '../../../system';
-import { CheckCircleIcon } from '@heroicons/react/solid';
 
 interface StepInternalConfig {
   index?: number;
@@ -12,11 +12,27 @@ interface StepInternalConfig {
   label: string;
 }
 
-const StepHead: React.FC<StepInternalConfig> = ({ isCompletedStep, isCurrentStep, label: labelProp }) => {
-  const stepperHeaderStyles = useComponentStyles('stepHeader', { isCompletedStep, isCurrentStep });
-  const stepperHeaderBorderStyles = useComponentStyles('stepHeaderBorder', { isCompletedStep, isCurrentStep });
-  const circleIconStyles = useComponentStyles('circleIcon', { isCompletedStep, isCurrentStep });
-  const labelStyles = useComponentStyles('stepHeaderLabel', { isCompletedStep, isCurrentStep });
+const StepHead: React.FC<StepInternalConfig> = ({
+  isCompletedStep,
+  isCurrentStep,
+  label: labelProp,
+}) => {
+  const stepperHeaderStyles = useComponentStyles('stepHeader', {
+    isCompletedStep,
+    isCurrentStep,
+  });
+  const stepperHeaderBorderStyles = useComponentStyles('stepHeaderBorder', {
+    isCompletedStep,
+    isCurrentStep,
+  });
+  const circleIconStyles = useComponentStyles('circleIcon', {
+    isCompletedStep,
+    isCurrentStep,
+  });
+  const labelStyles = useComponentStyles('stepHeaderLabel', {
+    isCompletedStep,
+    isCurrentStep,
+  });
 
   const renderIcon = () => {
     if (isCompletedStep) {

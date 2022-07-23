@@ -27,7 +27,13 @@ export default {
   },
 };
 
-export const BasicExample = ({ size, caption }: { size: 'sm' | 'md' | 'lg'; caption: string }) => {
+export function BasicExample({
+  size,
+  caption,
+}: {
+  size: 'sm' | 'md' | 'lg';
+  caption: string;
+}) {
   return (
     <Box p="md" width={400}>
       <BoxFooter
@@ -46,14 +52,14 @@ export const BasicExample = ({ size, caption }: { size: 'sm' | 'md' | 'lg'; capt
       />
     </Box>
   );
-};
+}
 
 BasicExample.args = {
   size: 'sm',
   caption: '',
 };
 
-export const FullWidthButton = ({ size }: { size: 'sm' | 'md' | 'lg' }) => {
+export function FullWidthButton({ size }: { size: 'sm' | 'md' | 'lg' }) {
   return (
     <Box p="md" width={400}>
       <BoxFooter
@@ -71,7 +77,7 @@ export const FullWidthButton = ({ size }: { size: 'sm' | 'md' | 'lg' }) => {
       />
     </Box>
   );
-};
+}
 
 FullWidthButton.args = {
   size: 'lg',

@@ -1,8 +1,11 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import { VisuallyHidden } from '@ratatoskr-ui/helpers';
 import { UnstyledButton, UnstyledButtonProps } from '../../../button';
 
-export interface InputIconButtonProps extends UnstyledButtonProps, React.ComponentPropsWithoutRef<'button'> {
+export interface InputIconButtonProps
+  extends UnstyledButtonProps,
+    React.ComponentPropsWithoutRef<'button'> {
   icon: React.ComponentType<any>;
   iconPosition?: 'left' | 'right';
   iconText?: string;
@@ -23,8 +26,23 @@ function renderIconPosition(iconPosition: 'left' | 'right' = 'left') {
   }
 }
 
-const InputIconButton = React.forwardRef<HTMLButtonElement, InputIconButtonProps>(
-  ({ className, children, type = 'button', icon, iconPosition = 'left', iconText, disabled, ...rest }, ref) => {
+const InputIconButton = React.forwardRef<
+  HTMLButtonElement,
+  InputIconButtonProps
+>(
+  (
+    {
+      className,
+      children,
+      type = 'button',
+      icon,
+      iconPosition = 'left',
+      iconText,
+      disabled,
+      ...rest
+    },
+    ref
+  ) => {
     return (
       <UnstyledButton
         ref={ref}

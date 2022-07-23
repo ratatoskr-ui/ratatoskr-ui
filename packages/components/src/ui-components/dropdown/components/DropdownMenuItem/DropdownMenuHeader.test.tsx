@@ -5,7 +5,9 @@ import { DropdownMenuHeader } from '.';
 describe('components/Dropdown', () => {
   describe('<DropdownMenuDivider />', () => {
     test('renders correctly', () => {
-      const { container } = render(<DropdownMenuHeader>title</DropdownMenuHeader>);
+      const { container } = render(
+        <DropdownMenuHeader>title</DropdownMenuHeader>
+      );
 
       expect(container.firstChild).toBeInTheDocument();
     });

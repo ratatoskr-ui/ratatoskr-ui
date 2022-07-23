@@ -15,14 +15,21 @@ export interface Steps {
   content: React.ReactNode;
 }
 
-const Stepper: React.FC<StepsProps> = ({ children, activeStep, title, labels }) => {
+const Stepper: React.FC<StepsProps> = ({
+  children,
+  activeStep,
+  title,
+  labels,
+}) => {
   const childArr = React.Children.toArray(children);
   const stepCount = childArr.length;
-  const stepperHeaderContainerStyles = useComponentStyles('stepHeaderContainer');
+  const stepperHeaderContainerStyles = useComponentStyles(
+    'stepHeaderContainer'
+  );
 
   const renderContent = () => {
     if (activeStep <= childArr.length) {
-      return React.Children.map(childArr[activeStep], node => {
+      return React.Children.map(childArr[activeStep], (node) => {
         if (!React.isValidElement(node)) return null;
         return React.cloneElement(node, node.props);
       });
@@ -39,7 +46,9 @@ const Stepper: React.FC<StepsProps> = ({ children, activeStep, title, labels }) 
       )}
       <Box sx={stepperHeaderContainerStyles}>
         {React.Children.map(children, (child, i) => {
-          const isCompletedStep = (React.isValidElement(child) && child.props.isCompletedStep) ?? i < activeStep;
+          const isCompletedStep =
+            (React.isValidElement(child) && child.props.isCompletedStep) ??
+            i < activeStep;
           const isLastStep = i === stepCount - 1;
           const isCurrentStep = i === activeStep;
 
@@ -50,7 +59,9 @@ const Stepper: React.FC<StepsProps> = ({ children, activeStep, title, labels }) 
             isLastStep,
           };
 
-          return React.isValidElement(child) ? <StepHead {...stepProps} label={labels[i]} /> : null;
+          return React.isValidElement(child) ? (
+            <StepHead {...stepProps} label={labels[i]} />
+          ) : null;
         })}
       </Box>
       <Box>{renderContent()}</Box>

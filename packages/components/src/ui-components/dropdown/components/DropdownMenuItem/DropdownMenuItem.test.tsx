@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { DropdownMenuContent, DropdownMenuDivider, DropdownMenuItem, DropdownMenuTrigger } from '.';
+import {
+  DropdownMenuContent,
+  DropdownMenuDivider,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '.';
 import { DropdownMenu } from '../DropdownMenu';
 import { Box } from '../../../../layout';
 

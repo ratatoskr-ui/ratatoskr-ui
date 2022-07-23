@@ -10,11 +10,19 @@ export interface StickSubHeaderProps extends BoxProps {
   variant: StickVariant;
 }
 
-const SubHeader: React.FC<StickSubHeaderProps> = ({ label, actions, variant }) => {
+const SubHeader: React.FC<StickSubHeaderProps> = ({
+  label,
+  actions,
+  variant,
+}) => {
   const subHeaderStyle = useComponentStyles('subHeaderBase', { variant });
   return (
     <Box sx={subHeaderStyle}>
-      <Box display={['block', 'flex']} alignItems={[null, 'center']} justifyContent={[null, 'space-between']}>
+      <Box
+        display={['block', 'flex']}
+        alignItems={[null, 'center']}
+        justifyContent={[null, 'space-between']}
+      >
         <Box flex="1 1 0%" minWidth={0}>
           {label}
         </Box>

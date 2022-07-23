@@ -71,7 +71,11 @@ export const InSection: Story<MessageProps> = ({ message, variant }) => {
         message={
           <Paragraph display="inline-block" scale={200}>
             {message}{' '}
-            <Anchor href="https://www.youtube.com/watch?v=P_mQpbCSQOo" target="_blank" rel="noopener noreferrer">
+            <Anchor
+              href="https://www.youtube.com/watch?v=P_mQpbCSQOo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Random link
             </Anchor>
           </Paragraph>
@@ -107,7 +111,11 @@ export const Page: Story<MessageProps> = ({ title, message, variant }) => {
         message={
           <Paragraph display="inline-block" scale={200}>
             {message}{' '}
-            <Anchor href="https://www.youtube.com/watch?v=P_mQpbCSQOo" target="_blank" rel="noopener noreferrer">
+            <Anchor
+              href="https://www.youtube.com/watch?v=P_mQpbCSQOo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Random link
             </Anchor>
           </Paragraph>
@@ -138,14 +146,22 @@ Page.args = {
 export const Closable: Story<MessageProps> = ({ message, title, variant }) => {
   return (
     <Stack spacing="md">
-      <Visible render={handleClose => <Message message={message} variant={variant} onClose={handleClose} />} />
       <Visible
-        render={handleClose => (
+        render={(handleClose) => (
+          <Message message={message} variant={variant} onClose={handleClose} />
+        )}
+      />
+      <Visible
+        render={(handleClose) => (
           <Message
             message={
               <Paragraph display="inline-block" scale={200}>
                 {message}{' '}
-                <Anchor href="https://www.youtube.com/watch?v=P_mQpbCSQOo" target="_blank" rel="noopener noreferrer">
+                <Anchor
+                  href="https://www.youtube.com/watch?v=P_mQpbCSQOo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Random link
                 </Anchor>
               </Paragraph>
@@ -156,7 +172,7 @@ export const Closable: Story<MessageProps> = ({ message, title, variant }) => {
         )}
       />
       <Visible
-        render={handleClose => (
+        render={(handleClose) => (
           <Message
             message={
               <Stack spacing="xs">
@@ -172,16 +188,27 @@ export const Closable: Story<MessageProps> = ({ message, title, variant }) => {
         )}
       />
       <Visible
-        render={handleClose => <Message title={title} message={message} variant={variant} onClose={handleClose} />}
+        render={(handleClose) => (
+          <Message
+            title={title}
+            message={message}
+            variant={variant}
+            onClose={handleClose}
+          />
+        )}
       />
       <Visible
-        render={handleClose => (
+        render={(handleClose) => (
           <Message
             title={title}
             message={
               <Paragraph display="inline-block" scale={200}>
                 {message}{' '}
-                <Anchor href="https://www.youtube.com/watch?v=P_mQpbCSQOo" target="_blank" rel="noopener noreferrer">
+                <Anchor
+                  href="https://www.youtube.com/watch?v=P_mQpbCSQOo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Random link
                 </Anchor>
               </Paragraph>
@@ -192,7 +219,7 @@ export const Closable: Story<MessageProps> = ({ message, title, variant }) => {
         )}
       />
       <Visible
-        render={handleClose => (
+        render={(handleClose) => (
           <Message
             title={title}
             message={

@@ -1,9 +1,13 @@
 /* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 
 function isFunction(value: any): value is Function {
   return typeof value === 'function';
 }
 
-export default function runIfFn<Result, Args>(valueOrFn: Result | ((...fnArgs: Args[]) => Result), ...args: Args[]) {
+export default function runIfFn<Result, Args>(
+  valueOrFn: Result | ((...fnArgs: Args[]) => Result),
+  ...args: Args[]
+) {
   return isFunction(valueOrFn) ? valueOrFn(...args) : valueOrFn;
 }

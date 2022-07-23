@@ -10,7 +10,10 @@ import {
   componentStylesMixin,
 } from '../../../system';
 
-export interface UnstyledAnchorProps extends AllSystemProps, PseudoSystemProps, SxProps {
+export interface UnstyledAnchorProps
+  extends AllSystemProps,
+    PseudoSystemProps,
+    SxProps {
   /**
    * Extended color props. We need this because default `color` prop clashes with `styled-system`.
    */
@@ -18,7 +21,9 @@ export interface UnstyledAnchorProps extends AllSystemProps, PseudoSystemProps, 
 }
 
 /** An anchor element with all styling elements removed (incl. hover/focus effects). */
-const UnstyledAnchor = styled('a').withConfig<UnstyledAnchorProps>({ shouldForwardProp })(
+const UnstyledAnchor = styled('a').withConfig<UnstyledAnchorProps>({
+  shouldForwardProp,
+})(
   componentStylesMixin('unstyledAnchor'),
   allSystemProps,
   pseudoSystemProps,

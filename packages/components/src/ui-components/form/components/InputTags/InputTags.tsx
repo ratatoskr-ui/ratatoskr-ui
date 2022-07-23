@@ -32,12 +32,21 @@ function inputTagsVariant({
   return 'disabled';
 }
 
-const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, errors, onChange, onInputChange }) => {
+const InputTags: React.FC<InputTagsProps> = ({
+  value,
+  placeholder,
+  disabled,
+  errors,
+  onChange,
+  onInputChange,
+}) => {
   const [tags, setTags] = React.useState(value || []);
   const [focused, setFocused] = React.useState(false);
 
   const tagInputRef = React.useRef<HTMLInputElement>(null);
-  const inputTagsStyles = useComponentStyles('inputTags', { variant: inputTagsVariant({ focused, errors, disabled }) });
+  const inputTagsStyles = useComponentStyles('inputTags', {
+    variant: inputTagsVariant({ focused, errors, disabled }),
+  });
 
   const handleFocusInput = (e: React.MouseEvent<HTMLDivElement>) => {
     // Prevent accidentally focusing on the input text when tag are clicked
@@ -68,7 +77,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, err
     const val = e.currentTarget.value || '';
     if ((val && e.key === 'Enter') || e.key === ',') {
       e.preventDefault(); // prevent accidently submiting form
-      if (tags.find(tag => tag.toLowerCase() === val.toLowerCase())) {
+      if (tags.find((tag) => tag.toLowerCase() === val.toLowerCase())) {
         return;
       }
       const newTags = [...tags, val];
@@ -90,7 +99,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, err
     if (!val) {
       return;
     }
-    const listTagRaw = val.split(/[\n,]+/).map(item => item.trim());
+    const listTagRaw = val.split(/[\n,]+/).map((item) => item.trim());
     const newListTag = new Set([...tags, ...listTagRaw]);
     const newTags = Array.from(newListTag);
     setTags(newTags);

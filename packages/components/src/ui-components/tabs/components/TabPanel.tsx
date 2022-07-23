@@ -6,9 +6,20 @@ export interface TabPanelProps extends BoxProps {
   children?: React.ReactNode;
 }
 
-const TabPanel: React.FC<TabPanelProps> = ({ children, className, style, ...rest }) => {
+const TabPanel: React.FC<TabPanelProps> = ({
+  children,
+  className,
+  style,
+  ...rest
+}) => {
   return (
-    <Box width="100%" outline="none" className={clsx('tabpanel', className)} style={style} {...rest}>
+    <Box
+      width="100%"
+      outline="none"
+      className={clsx('tabpanel', className)}
+      style={style}
+      {...rest}
+    >
       {children}
     </Box>
   );

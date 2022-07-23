@@ -6,7 +6,10 @@ import { useComponentStyles } from '../../../../system';
 import { UnstyledButton } from '../../../button';
 
 export interface InputToggleProps
-  extends Omit<React.ComponentPropsWithoutRef<'button'>, 'size' | 'onClick' | 'onChange'> {
+  extends Omit<
+    React.ComponentPropsWithoutRef<'button'>,
+    'size' | 'onClick' | 'onChange'
+  > {
   className?: string;
   style?: React.CSSProperties;
   label: string;
@@ -15,11 +18,17 @@ export interface InputToggleProps
 }
 
 const InputToggle = React.forwardRef<HTMLButtonElement, InputToggleProps>(
-  ({ id, className, style, label, checked, onChange, disabled, ...rest }, ref) => {
+  (
+    { id, className, style, label, checked, onChange, disabled, ...rest },
+    ref
+  ) => {
     const inputToggleButtonStyles = useComponentStyles('inputToggleButton');
     const inputToggleCircleStyles = useComponentStyles('inputToggleCircle');
 
-    const toggle = React.useCallback(() => onChange?.(!checked), [onChange, checked]);
+    const toggle = React.useCallback(
+      () => onChange?.(!checked),
+      [onChange, checked]
+    );
     const handleClick = React.useCallback(
       (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
@@ -45,7 +54,10 @@ const InputToggle = React.forwardRef<HTMLButtonElement, InputToggleProps>(
       >
         <Box
           as="span"
-          sx={{ ...inputToggleCircleStyles, transform: checked ? 'translateX(20px)' : 'translateX(0px)' }}
+          sx={{
+            ...inputToggleCircleStyles,
+            transform: checked ? 'translateX(20px)' : 'translateX(0px)',
+          }}
           aria-hidden
         />
         <VisuallyHidden>{label}</VisuallyHidden>

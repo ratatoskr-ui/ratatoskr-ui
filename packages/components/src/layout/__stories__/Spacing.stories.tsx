@@ -11,15 +11,17 @@ export default {
   },
 };
 
-export const Spacing = () => (
-  <Stack spacing="lg">
-    <SpacingBlock spacing="xxxs" />
-    <SpacingBlock spacing="xxs" />
-    <SpacingBlock spacing="xs" />
-    <SpacingBlock spacing="sm" />
-    <SpacingBlock spacing="md" />
-    <SpacingBlock spacing="lg" />
-    <SpacingBlock spacing="xl" />
-    <SpacingBlock spacing="xxl" />
-  </Stack>
-);
+export function Spacing() {
+  return (
+    <Stack spacing="lg">
+      <SpacingBlock spacing="xxxs" />
+      <SpacingBlock spacing="xxs" />
+      <SpacingBlock spacing="xs" />
+      <SpacingBlock spacing="sm" />
+      <SpacingBlock spacing="md" />
+      <SpacingBlock spacing="lg" />
+      <SpacingBlock spacing="xl" />
+      <SpacingBlock spacing="xxl" />
+    </Stack>
+  );
+}

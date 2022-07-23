@@ -11,7 +11,10 @@ export interface NotificationBadgeProps {
   value?: string | number;
 }
 
-const NotificationBadge: React.FC<NotificationBadgeProps> = ({ value, ...rest }) => {
+const NotificationBadge: React.FC<NotificationBadgeProps> = ({
+  value,
+  ...rest
+}) => {
   const notificationBadgeStyle = useComponentStyles('notificationBadge');
   return (
     <Box data-testid="notification-badge" sx={notificationBadgeStyle} {...rest}>

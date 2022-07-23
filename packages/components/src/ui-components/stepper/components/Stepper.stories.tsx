@@ -49,7 +49,12 @@ export const Example: Story = () => {
     <Box>
       <Stepper activeStep={activeStep} title="Title" labels={stepLabel}>
         {steps.map(({ content }) => (
-          <Box minHeight="20vh" display="flex" justifyContent="center" alignItems="center">
+          <Box
+            minHeight="20vh"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
             {content}
           </Box>
         ))}

@@ -1,12 +1,12 @@
 import React from 'react';
 import { RenderProps, Calendar, DateObj } from 'dayzed';
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/solid';
 import { CSSObject } from '../../../system';
 import { Box, Stack } from '../../../layout';
 import { Button, IconButton } from '../../button';
 import { Text } from '../../../typography';
 import DateNumberButton, { DateNumberVariants } from './DateNumber';
 import { monthNamesFull, weekdayNamesShort } from './calendar-utils';
-import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/solid';
 
 export interface CalendarProp extends RenderProps {
   containerStyle?: CSSObject;
@@ -16,7 +16,10 @@ export interface CalendarProp extends RenderProps {
   onCancel?: () => void;
 }
 
-const getVariant = ({ today, selected, date }: DateObj, selectedDate?: Date[]) => {
+const getVariant = (
+  { today, selected, date }: DateObj,
+  selectedDate?: Date[]
+) => {
   let variant: DateNumberVariants = 'default';
   if (today) {
     variant = 'currentDate';
@@ -24,7 +27,11 @@ const getVariant = ({ today, selected, date }: DateObj, selectedDate?: Date[]) =
   if (selected) {
     variant = 'selected';
   }
-  if (selectedDate && selectedDate.length === 2 && selectedDate[0].toDateString() !== selectedDate[1].toDateString()) {
+  if (
+    selectedDate &&
+    selectedDate.length === 2 &&
+    selectedDate[0].toDateString() !== selectedDate[1].toDateString()
+  ) {
     if (selectedDate[0].toDateString() === date.toDateString()) {
       variant = 'start';
     } else if (selectedDate[1].toDateString() === date.toDateString()) {
@@ -36,7 +43,7 @@ const getVariant = ({ today, selected, date }: DateObj, selectedDate?: Date[]) =
   return variant;
 };
 
-const CalendarBox = ({
+function CalendarBox({
   calendars,
   getBackProps,
   getForwardProps,
@@ -46,16 +53,31 @@ const CalendarBox = ({
   onCancel,
   selected,
   containerStyle,
-}: CalendarProp) => {
+}: CalendarProp) {
   const multiDatePicker = calendars.length > 1;
   const renderHeader = () => {
     return (
-      <Box display={['flex']} justifyContent="space-between" alignItems="center" pt="xs" px="md" pb="0px">
-        <IconButton variant="plain" aria-label="Back" {...getBackProps({ calendars })}>
+      <Box
+        display={['flex']}
+        justifyContent="space-between"
+        alignItems="center"
+        pt="xs"
+        px="md"
+        pb="0px"
+      >
+        <IconButton
+          variant="plain"
+          aria-label="Back"
+          {...getBackProps({ calendars })}
+        >
           <ArrowLeftIcon aria-hidden fill="currentColor" />
         </IconButton>
 
-        <IconButton variant="plain" aria-label="Next" {...getForwardProps({ calendars })}>
+        <IconButton
+          variant="plain"
+          aria-label="Next"
+          {...getForwardProps({ calendars })}
+        >
           <ArrowRightIcon aria-hidden fill="currentColor" />
         </IconButton>
       </Box>
@@ -85,7 +107,11 @@ const CalendarBox = ({
         // background = !selectable ? 'teal' : background;
 
         return (
-          <DateNumberButton key={key} {...getDateProps({ dateObj })} variant={getVariant(dateObj, selected)}>
+          <DateNumberButton
+            key={key}
+            {...getDateProps({ dateObj })}
+            variant={getVariant(dateObj, selected)}
+          >
             {selectable ? date.getDate() : 'X'}
           </DateNumberButton>
         );
@@ -93,14 +119,20 @@ const CalendarBox = ({
     );
   };
   const renderWeekLabel = (calendar: Calendar) => {
-    return weekdayNamesShort.map(weekday => (
+    return weekdayNamesShort.map((weekday) => (
       <Box
         display={['inline-block']}
         width="32px"
         key={`${calendar.month}${calendar.year}${weekday}`}
         textAlign="center"
       >
-        <Text fontSize="10px" lineHeight="16px" fontWeight="400" color="greymed04" width="32px">
+        <Text
+          fontSize="10px"
+          lineHeight="16px"
+          fontWeight="400"
+          color="greymed04"
+          width="32px"
+        >
           {weekday}
         </Text>
       </Box>
@@ -109,7 +141,14 @@ const CalendarBox = ({
 
   const renderFooter = () => {
     return (
-      <Stack direction="horizontal" spacing="md" flex={1} pt="xs" px="md" pb="md">
+      <Stack
+        direction="horizontal"
+        spacing="md"
+        flex={1}
+        pt="xs"
+        px="md"
+        pb="md"
+      >
         <Button block size="md" onClick={onCancel}>
           Cancel
         </Button>
@@ -122,13 +161,18 @@ const CalendarBox = ({
 
   if (calendars.length) {
     return (
-      <Box borderRadius="lg" display={'inline-flex'} backgroundColor={'greylight01'} sx={{ ...containerStyle }}>
+      <Box
+        borderRadius="lg"
+        display={'inline-flex'}
+        backgroundColor={'greylight01'}
+        sx={{ ...containerStyle }}
+      >
         {advanceView}
         {/* Header */}
         <Box>
           {renderHeader()}
           <Stack direction="horizontal" spacing={'xl'} p="md">
-            {calendars.map(calendar => (
+            {calendars.map((calendar) => (
               <Box
                 maxWidth="224px"
                 key={`${calendar.month}${calendar.year}`}
@@ -146,7 +190,12 @@ const CalendarBox = ({
                   top="-43px"
                   pointerEvents="none"
                 >
-                  <Text fontSize="12px" lineHeight="18px" fontWeight="400" color="grey09">
+                  <Text
+                    fontSize="12px"
+                    lineHeight="18px"
+                    fontWeight="400"
+                    color="grey09"
+                  >
                     {monthNamesFull[calendar.month]} {calendar.year}
                   </Text>
                 </Box>
@@ -161,5 +210,5 @@ const CalendarBox = ({
     );
   }
   return null;
-};
+}
 export default CalendarBox;

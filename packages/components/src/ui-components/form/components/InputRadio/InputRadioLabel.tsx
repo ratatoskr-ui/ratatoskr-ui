@@ -1,12 +1,19 @@
 import * as React from 'react';
 import { Box, BoxProps } from '../../../../layout';
 
-export interface InputCheckboxLabelProps extends BoxProps, React.LabelHTMLAttributes<HTMLLabelElement> {
+export interface InputCheckboxLabelProps
+  extends BoxProps,
+    React.LabelHTMLAttributes<HTMLLabelElement> {
   className?: string;
   style?: React.CSSProperties;
 }
 
-const InputRadioLabel: React.FC<InputCheckboxLabelProps> = ({ className, style, children, ...rest }) => {
+const InputRadioLabel: React.FC<InputCheckboxLabelProps> = ({
+  className,
+  style,
+  children,
+  ...rest
+}) => {
   return (
     <Box
       as="label"

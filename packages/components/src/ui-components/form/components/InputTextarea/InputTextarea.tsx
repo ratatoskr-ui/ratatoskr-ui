@@ -3,7 +3,9 @@ import * as React from 'react';
 import { Box, BoxProps } from '../../../../layout';
 import { useComponentStyles } from '../../../../system';
 
-export interface InputTextareaProps extends BoxProps, React.ComponentPropsWithoutRef<'textarea'> {
+export interface InputTextareaProps
+  extends BoxProps,
+    React.ComponentPropsWithoutRef<'textarea'> {
   /** True if the input has errors. */
   errors?: boolean;
   _wrapperProps?: BoxProps;
@@ -11,7 +13,9 @@ export interface InputTextareaProps extends BoxProps, React.ComponentPropsWithou
 
 const InputTextarea = React.forwardRef<HTMLTextAreaElement, InputTextareaProps>(
   ({ className, errors, sx, pt, px, pb, _wrapperProps, ...rest }, ref) => {
-    const styles = useComponentStyles('inputTextarea', { variant: errors ? 'error' : 'default' });
+    const styles = useComponentStyles('inputTextarea', {
+      variant: errors ? 'error' : 'default',
+    });
 
     return (
       <Box position="relative" borderRadius={8} {..._wrapperProps}>

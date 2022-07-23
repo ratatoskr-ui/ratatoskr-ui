@@ -26,7 +26,15 @@ export interface SpinnerProps extends BoxProps {
  */
 const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
   (
-    { className, style, speed = '0.5s', spinnerColor = theme.colors.blue07, size = 24, label = 'Loading...', ...rest },
+    {
+      className,
+      style,
+      speed = '0.5s',
+      spinnerColor = theme.colors.blue07,
+      size = 24,
+      label = 'Loading...',
+      ...rest
+    },
     ref
   ) => {
     return (
@@ -40,7 +48,13 @@ const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
         color={spinnerColor}
         {...rest}
       >
-        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden
+        >
           <path
             fillRule="evenodd"
             clipRule="evenodd"

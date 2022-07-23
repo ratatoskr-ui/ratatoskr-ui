@@ -1,8 +1,10 @@
 import { transparentize } from 'polished';
+import { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig, ComponentThemeScaleFn } from '../../system';
-import { Theme } from 'packages/components/src/theme';
 
-const actionListItemBaseStyle: ComponentThemeScaleFn<{ theme: Theme }> = ({ theme }) => ({
+const actionListItemBaseStyle: ComponentThemeScaleFn<{
+  theme: DefaultTheme;
+}> = ({ theme }) => ({
   position: 'relative',
   overflow: 'hidden',
   height: 'auto',
@@ -24,10 +26,10 @@ const actionListItemBaseStyle: ComponentThemeScaleFn<{ theme: Theme }> = ({ them
   },
 });
 
-const actionListItemDefaultStyle: ComponentThemeScaleFn<{ theme: Theme; isActive: boolean }> = ({
-  theme,
-  isActive,
-}) => ({
+const actionListItemDefaultStyle: ComponentThemeScaleFn<{
+  theme: DefaultTheme;
+  isActive: boolean;
+}> = ({ theme, isActive }) => ({
   backgroundColor: isActive ? theme.colors.blue01 : theme.colors.grey01,
   color: isActive ? theme.colors.blue07 : theme.colors.greydark02,
   '&:hover': {
@@ -39,10 +41,10 @@ const actionListItemDefaultStyle: ComponentThemeScaleFn<{ theme: Theme; isActive
   },
 });
 
-const actionListItemDestructiveStyle: ComponentThemeScaleFn<{ theme: Theme; isActive: boolean }> = ({
-  theme,
-  isActive,
-}) => ({
+const actionListItemDestructiveStyle: ComponentThemeScaleFn<{
+  theme: DefaultTheme;
+  isActive: boolean;
+}> = ({ theme, isActive }) => ({
   backgroundColor: isActive ? theme.colors.blue01 : theme.colors.grey01,
   color: theme.colors.red07,
   '&:hover': {

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useCombobox, UseComboboxStateChange } from 'downshift';
 
+import { ChevronRightIcon } from '@heroicons/react/solid';
 import { Box, Stack } from '../../../../layout';
 import { InputText } from '../InputText';
 import { FormLabel } from '../FormLabel';
@@ -9,7 +10,6 @@ import { Text } from '../../../../typography';
 import { ActionList, ActionListItem } from '../../../action-list';
 
 import { useComponentStyles } from '../../../../system';
-import { ChevronRightIcon } from '@heroicons/react/solid';
 
 export interface InputSelectSearchProps<T> {
   /** The input select label */
@@ -56,8 +56,8 @@ function InputSelect<T>({
   placeholder = 'Select an item',
   items,
   selectedItem,
-  itemToString = item => (item ? String(item) : ''),
-  itemValue = item => (item ? String(item) : ''),
+  itemToString = (item) => (item ? String(item) : ''),
+  itemValue = (item) => (item ? String(item) : ''),
   handleSelectedItemChange,
   itemRenderer,
   inputValueRenderer,
@@ -117,7 +117,7 @@ function InputSelect<T>({
           return changes;
       }
     },
-    onSelectedItemChange: changes => {
+    onSelectedItemChange: (changes) => {
       if (handleSelectedItemChange) {
         handleSelectedItemChange(changes);
       }
@@ -138,7 +138,13 @@ function InputSelect<T>({
     },
     onInputValueChange: ({ inputValue: _inputValue }) => {
       setInputItems(
-        _inputValue ? items.filter(item => itemToString(item).toLowerCase().includes(_inputValue.toLowerCase())) : items
+        _inputValue
+          ? items.filter((item) =>
+              itemToString(item)
+                .toLowerCase()
+                .includes(_inputValue.toLowerCase())
+            )
+          : items
       );
     },
   });
@@ -165,7 +171,10 @@ function InputSelect<T>({
       </Box>
     );
   };
-  const styles = useComponentStyles('inputText', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
+  const styles = useComponentStyles('inputText', {
+    size,
+    variant: errors ? 'error' : isOpen ? 'active' : 'default',
+  });
   return (
     <Box width={width}>
       <Stack spacing="xxs" display="block" position="relative">
@@ -174,7 +183,12 @@ function InputSelect<T>({
             {label}
           </FormLabel>
         )}
-        <Box display="flex" position="relative" alignItems="center" {...getComboboxProps()}>
+        <Box
+          display="flex"
+          position="relative"
+          alignItems="center"
+          {...getComboboxProps()}
+        >
           {renderValueLabel()}
           <InputText
             disabled={disabled}
@@ -214,10 +228,16 @@ function InputSelect<T>({
           overflow="hidden"
           zIndex={1}
         >
-          <ActionList px="sm" overflowY="auto" maxHeight={maxHeight} {...getMenuProps()}>
+          <ActionList
+            px="sm"
+            overflowY="auto"
+            maxHeight={maxHeight}
+            {...getMenuProps()}
+          >
             {inputItems.length !== 0 ? (
               inputItems.map((item, index) => {
-                const selected = selectedItem && itemValue(selectedItem) === itemValue(item);
+                const selected =
+                  selectedItem && itemValue(selectedItem) === itemValue(item);
                 return (
                   <ActionListItem
                     containerStyle={
@@ -229,7 +249,11 @@ function InputSelect<T>({
                     key={`${itemToString(item)}`}
                     {...getItemProps({ item, index })}
                   >
-                    {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
+                    {itemRenderer
+                      ? itemRenderer(item)
+                      : itemToString
+                      ? itemToString(item)
+                      : item}
                   </ActionListItem>
                 );
               })

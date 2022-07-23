@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import { useTable, useSortBy } from 'react-table';
+import { ChevronDownIcon } from '@heroicons/react/solid';
 import { InputCheckbox } from '../form';
 import {
   Table,
@@ -20,25 +21,25 @@ import { Badge } from '../badge';
 import { Text, Anchor } from '../../typography';
 import IconColorfulInstagram from './IconColorfulInstagram';
 import IconColorfulWhatsapp from './IconColorfulWhatsapp';
-import { ChevronDownIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Table',
   component: Table,
 };
 
-export const Example = () => {
+export function Example() {
   const data = React.useMemo(() => dummyData, []);
   const columns = React.useMemo(() => dummyColumns, []);
   const [selectedRows, setSelectedRows] = React.useState<number[]>([]);
 
-  const { getTableProps, getTableBodyProps, headers, rows, prepareRow } = useTable(
-    {
-      columns,
-      data,
-    },
-    useSortBy
-  );
+  const { getTableProps, getTableBodyProps, headers, rows, prepareRow } =
+    useTable(
+      {
+        columns,
+        data,
+      },
+      useSortBy
+    );
 
   const getSortTypeValue = (column: any) => {
     if (!column.canSortHeader) return '';
@@ -53,9 +54,11 @@ export const Example = () => {
             <TableHeadCell>
               <InputCheckbox
                 checked={
-                  selectedRows.length > 0 && selectedRows.length < data.length ? 'indeterminate' : !!selectedRows.length
+                  selectedRows.length > 0 && selectedRows.length < data.length
+                    ? 'indeterminate'
+                    : !!selectedRows.length
                 }
-                onCheckedChange={checked => {
+                onCheckedChange={(checked) => {
                   if (checked) {
                     setSelectedRows(data.map(({ id }) => id));
                   } else {
@@ -88,28 +91,56 @@ export const Example = () => {
           {rows.map((row: any) => {
             prepareRow(row);
             const rowValues: DummyData = row.original;
-            const { id, contactMeta, channelMeta, receivedAt, lastUpdatedAt, statusMeta, agentMeta } = rowValues;
+            const {
+              id,
+              contactMeta,
+              channelMeta,
+              receivedAt,
+              lastUpdatedAt,
+              statusMeta,
+              agentMeta,
+            } = rowValues;
 
             return (
-              <TableBodyRow selected={selectedRows.findIndex(selectedRow => selectedRow === id) !== -1}>
+              <TableBodyRow
+                selected={
+                  selectedRows.findIndex(
+                    (selectedRow) => selectedRow === id
+                  ) !== -1
+                }
+              >
                 <TableBodyCell>
                   <InputCheckbox
-                    checked={selectedRows.findIndex(selectedRow => selectedRow === id) !== -1}
-                    onCheckedChange={checked => {
+                    checked={
+                      selectedRows.findIndex(
+                        (selectedRow) => selectedRow === id
+                      ) !== -1
+                    }
+                    onCheckedChange={(checked) => {
                       if (checked) {
-                        setSelectedRows(prev => [...prev, id]);
+                        setSelectedRows((prev) => [...prev, id]);
                       } else {
-                        setSelectedRows(prev => prev.filter(item => item !== id));
+                        setSelectedRows((prev) =>
+                          prev.filter((item) => item !== id)
+                        );
                       }
                     }}
                   />
                 </TableBodyCell>
                 <TableBodyCell>
                   <Box alignItems="center" display="inline-flex">
-                    <Avatar bg={contactMeta.avatarColor} name={contactMeta.name} size="sm" />
+                    <Avatar
+                      bg={contactMeta.avatarColor}
+                      name={contactMeta.name}
+                      size="sm"
+                    />
                     <Text as="span" ml="xs" scale={300}>
                       {contactMeta.link ? (
-                        <Anchor href={`https://${contactMeta.link}`} target="_blank" rel="noopener noreferrer">
+                        <Anchor
+                          href={`https://${contactMeta.link}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           {contactMeta.name}
                         </Anchor>
                       ) : (
@@ -125,7 +156,8 @@ export const Example = () => {
                       name={channelMeta.name}
                       size="sm"
                       icon={() => {
-                        if (channelMeta.icon === 'wa') return <IconColorfulWhatsapp />;
+                        if (channelMeta.icon === 'wa')
+                          return <IconColorfulWhatsapp />;
                         return <IconColorfulInstagram />;
                       }}
                     />
@@ -158,7 +190,7 @@ export const Example = () => {
                 <TableBodyCell>
                   <Box>
                     {agentMeta ? (
-                      agentMeta.agents.map(agent => (
+                      agentMeta.agents.map((agent) => (
                         <PlainButton
                           type="button"
                           size="sm"
@@ -184,4 +216,4 @@ export const Example = () => {
       </Table>
     </TableContainer>
   );
-};
+}

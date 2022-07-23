@@ -1,10 +1,10 @@
 /* eslint-disable no-underscore-dangle */
-import { Theme } from '@ratatoskr-ui/components';
 import { transparentize } from 'polished';
+import { DefaultTheme } from 'styled-components';
 import { ComponentThemeConfig, ComponentThemeScaleFn } from '../../../system';
 
 const checkboxContainerBaseStyle: ComponentThemeScaleFn<{
-  theme: Theme;
+  theme: DefaultTheme;
   errors: boolean;
   disabled: boolean;
 }> = ({ disabled }) => ({
@@ -28,7 +28,7 @@ const checkboxButton: ComponentThemeConfig = {
 };
 
 const checkboxUnselectedBoxBaseStyle: ComponentThemeScaleFn<{
-  theme: Theme;
+  theme: DefaultTheme;
   errors: boolean;
   disabled: boolean;
 }> = ({ disabled, errors, theme }) => ({
@@ -48,7 +48,10 @@ const checkboxUnselectedBoxBaseStyle: ComponentThemeScaleFn<{
     },
   },
   ...(errors && { borderColor: 'red07' }),
-  ...(disabled && { borderColor: transparentize(0.5, theme.colors.greylight05), backgroundColor: 'greylight02' }),
+  ...(disabled && {
+    borderColor: transparentize(0.5, theme.colors.greylight05),
+    backgroundColor: 'greylight02',
+  }),
 });
 
 const checkboxUnselectedBox: ComponentThemeConfig = {
@@ -56,7 +59,7 @@ const checkboxUnselectedBox: ComponentThemeConfig = {
 };
 
 const checkboxIndicatorBaseStyle: ComponentThemeScaleFn<{
-  theme: Theme;
+  theme: DefaultTheme;
   errors: boolean;
   disabled: boolean;
 }> = ({ disabled, errors }) => ({

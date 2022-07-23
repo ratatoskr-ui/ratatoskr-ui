@@ -1,5 +1,11 @@
 import * as CSS from 'csstype';
-import { Config, RequiredTheme, ResponsiveValue, system, Theme } from 'styled-system';
+import {
+  Config,
+  RequiredTheme,
+  ResponsiveValue,
+  system,
+  Theme,
+} from 'styled-system';
 
 export interface OtherProps<ThemeType extends Theme = RequiredTheme> {
   /**

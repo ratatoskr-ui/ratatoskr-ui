@@ -15,8 +15,14 @@ const TableBodyRow = React.forwardRef<HTMLTableRowElement, TableBodyRowProps>(
         ref={ref}
         backgroundColor={selected ? 'blue01' : 'greylight01'}
         _hover={{ backgroundColor: selected ? 'blue01' : 'greylight03' }}
-        _focus={{ backgroundColor: 'blue01', outline: '2px solid rgba(0, 111, 230, 0.4)' }}
-        _active={{ backgroundColor: 'blue01', outline: '2px solid rgba(0, 111, 230, 0.4)' }}
+        _focus={{
+          backgroundColor: 'blue01',
+          outline: '2px solid rgba(0, 111, 230, 0.4)',
+        }}
+        _active={{
+          backgroundColor: 'blue01',
+          outline: '2px solid rgba(0, 111, 230, 0.4)',
+        }}
         {...rest}
       >
         {children}

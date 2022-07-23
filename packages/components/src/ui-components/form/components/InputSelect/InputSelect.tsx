@@ -4,6 +4,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import * as React from 'react';
 import { useSelect, UseSelectStateChange } from 'downshift';
+import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Text } from '../../../../typography';
 import { Box, Stack } from '../../../../layout';
 import { CSSObject, useComponentStyles } from '../../../../system';
@@ -11,7 +12,6 @@ import { FormLabel } from '../FormLabel';
 import { UnstyledButton } from '../../../button';
 import { Card } from '../../../card';
 import { ActionList, ActionListItem } from '../../../action-list';
-import { ChevronDownIcon } from '@heroicons/react/solid';
 
 export interface InputSelectProps<T> {
   /** The input select label */
@@ -61,8 +61,8 @@ function InputSelect<T>({
   placeholder = 'Select an item',
   items,
   selectedItem,
-  itemToString = item => (item ? String(item) : ''),
-  itemValue = item => (item ? String(item) : ''),
+  itemToString = (item) => (item ? String(item) : ''),
+  itemValue = (item) => (item ? String(item) : ''),
   handleSelectedItemChange,
   inputValueRenderer,
   itemRenderer,
@@ -76,7 +76,14 @@ function InputSelect<T>({
   maxHeight,
   inputStyle,
 }: InputSelectProps<T>) {
-  const { isOpen, getToggleButtonProps, getLabelProps, getMenuProps, highlightedIndex, getItemProps } = useSelect<T>({
+  const {
+    isOpen,
+    getToggleButtonProps,
+    getLabelProps,
+    getMenuProps,
+    highlightedIndex,
+    getItemProps,
+  } = useSelect<T>({
     items,
     itemToString,
     selectedItem,
@@ -84,7 +91,10 @@ function InputSelect<T>({
     initialSelectedItem,
   });
 
-  const styles = useComponentStyles('inputSelect', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
+  const styles = useComponentStyles('inputSelect', {
+    size,
+    variant: errors ? 'error' : isOpen ? 'active' : 'default',
+  });
 
   const renderInputValue = () => {
     if (!selectedItem) {
@@ -101,7 +111,7 @@ function InputSelect<T>({
 
     return (
       <Text scale={200} color={!disabled ? 'greydark02' : 'greymed01'}>
-        {itemToString ? itemToString(selectedItem) : selectedItem as any}
+        {itemToString ? itemToString(selectedItem) : (selectedItem as any)}
       </Text>
     );
   };
@@ -147,10 +157,16 @@ function InputSelect<T>({
           overflow="hidden"
           zIndex={1}
         >
-          <ActionList px="sm" overflowY="auto" maxHeight={maxHeight} {...getMenuProps()}>
+          <ActionList
+            px="sm"
+            overflowY="auto"
+            maxHeight={maxHeight}
+            {...getMenuProps()}
+          >
             {items.length !== 0 ? (
               items.map((item, index) => {
-                const selected = selectedItem && itemValue(selectedItem) === itemValue(item);
+                const selected =
+                  selectedItem && itemValue(selectedItem) === itemValue(item);
                 return (
                   <ActionListItem
                     containerStyle={
@@ -162,7 +178,11 @@ function InputSelect<T>({
                     key={`${itemToString(item)}`}
                     {...getItemProps({ item, index })}
                   >
-                    {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
+                    {itemRenderer
+                      ? itemRenderer(item)
+                      : itemToString
+                      ? itemToString(item)
+                      : item}
                   </ActionListItem>
                 );
               })

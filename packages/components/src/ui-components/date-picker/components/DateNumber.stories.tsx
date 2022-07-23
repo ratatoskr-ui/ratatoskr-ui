@@ -15,7 +15,9 @@ const defaultArgs: DateNumberProps = {
   variant: 'default',
 };
 
-const Template: Story<DateNumberProps> = ({ variant }) => <DateNumber variant={variant}>1</DateNumber>;
+const Template: Story<DateNumberProps> = ({ variant }) => (
+  <DateNumber variant={variant}>1</DateNumber>
+);
 
 export const Example = Template.bind({});
 Example.args = defaultArgs;

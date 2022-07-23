@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Story, Meta } from '@storybook/react';
+import MoonIcon from '@heroicons/react/solid/MoonIcon';
 import { Box } from '../../../layout';
 import Tag, { TagProps } from './Tag';
-import MoonIcon from '@heroicons/react/solid/MoonIcon';
 
 export default {
   title: 'Core/Components/Tag',
@@ -25,9 +25,20 @@ const defaultArgs: TagProps = {
   children: 'Keyword',
 };
 
-const Template: Story<TagProps> = ({ hasCloseIcon, onClick, disabled, children, selected }) => (
+const Template: Story<TagProps> = ({
+  hasCloseIcon,
+  onClick,
+  disabled,
+  children,
+  selected,
+}) => (
   <Box display="flex">
-    <Tag hasCloseIcon={hasCloseIcon} onClick={onClick} disabled={disabled} selected={selected}>
+    <Tag
+      hasCloseIcon={hasCloseIcon}
+      onClick={onClick}
+      disabled={disabled}
+      selected={selected}
+    >
       {children}
     </Tag>
   </Box>
@@ -54,7 +65,7 @@ export const WithCustomIcon: Story<TagProps> = ({
       selected={selected}
       hasCloseIcon={withCloseIcon}
       onClick={onClick}
-      icon={<MoonIcon aria-hidden fill="currentColor" width={16}/>}
+      icon={<MoonIcon aria-hidden fill="currentColor" width={16} />}
       disabled={disabled}
     >
       {children}

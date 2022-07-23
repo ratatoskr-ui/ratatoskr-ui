@@ -11,16 +11,21 @@ export default {
   component: PageHeader,
 };
 
-export const Example = () => {
+export function Example() {
   return <PageHeader title="Title" />;
-};
-export const WithActions = () => {
+}
+export function WithActions() {
   return (
     <PageHeader
       title="Title"
       actions={
         <ButtonGroup size="md">
-          <Button type="button" icon={ArrowLeftIcon} iconPosition="right" onClick={action('click')}>
+          <Button
+            type="button"
+            icon={ArrowLeftIcon}
+            iconPosition="right"
+            onClick={action('click')}
+          >
             Label
           </Button>
           <Button variant="primary">Label</Button>
@@ -28,15 +33,20 @@ export const WithActions = () => {
       }
     />
   );
-};
+}
 
-export const WithBackButton = () => {
+export function WithBackButton() {
   return (
     <PageHeader
       title="Title"
       actions={
         <ButtonGroup size="md">
-          <Button type="button" icon={ChevronDownIcon} iconPosition="right" onClick={action('click')}>
+          <Button
+            type="button"
+            icon={ChevronDownIcon}
+            iconPosition="right"
+            onClick={action('click')}
+          >
             Label
           </Button>
           <Button variant="primary">Label</Button>
@@ -49,15 +59,20 @@ export const WithBackButton = () => {
       }
     />
   );
-};
+}
 
-export const WithChildren = () => {
+export function WithChildren() {
   return (
     <PageHeader
       title="Title"
       actions={
         <ButtonGroup size="md">
-          <Button type="button" icon={ChevronDownIcon} iconPosition="right" onClick={action('click')}>
+          <Button
+            type="button"
+            icon={ChevronDownIcon}
+            iconPosition="right"
+            onClick={action('click')}
+          >
             Label
           </Button>
           <Button variant="primary">Label</Button>
@@ -72,4 +87,4 @@ export const WithChildren = () => {
       Filter Section
     </PageHeader>
   );
-};
+}

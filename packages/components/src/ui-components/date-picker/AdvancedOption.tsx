@@ -2,7 +2,11 @@ import React from 'react';
 import { OptionListItemBox } from '../button';
 import { Box, Stack } from '../../layout';
 import { Text } from '../../typography';
-import { RadioGroupIndicator, RadioGroupItem, RadioGroupRoot } from '../form/components/RadioGroup/RadioGroup';
+import {
+  RadioGroupIndicator,
+  RadioGroupItem,
+  RadioGroupRoot,
+} from '../form/components/RadioGroup/RadioGroup';
 
 export interface OptionAdvancedDatePicker {
   label: string;
@@ -12,16 +16,30 @@ export interface AdvancedOptionProps<T extends string> {
   options: Array<OptionAdvancedDatePicker>;
   optionHandler: (value: T) => void;
 }
-export const AdvancedOption = <T extends string>({ options, optionHandler }: AdvancedOptionProps<T>) => {
+export function AdvancedOption<T extends string>({
+  options,
+  optionHandler,
+}: AdvancedOptionProps<T>) {
   return (
     <Box p="md" borderRight={'1px solid'} borderColor={'#E5EAEF'}>
-      <RadioGroupRoot onValueChange={value => optionHandler(value as T)}>
+      <RadioGroupRoot onValueChange={(value) => optionHandler(value as T)}>
         <Stack direction="vertical" spacing="xxs" width="160px">
-          {options.map(option => {
+          {options.map((option) => {
             return (
               <RadioGroupItem value={option.value} key={option.value}>
-                <OptionListItemBox display="flex" alignItems={'center'} p="xs" id={option.value}>
-                  <Box backgroundColor={'greylight01'} width={16} height={16} borderRadius={16} position={'relative'}>
+                <OptionListItemBox
+                  display="flex"
+                  alignItems={'center'}
+                  p="xs"
+                  id={option.value}
+                >
+                  <Box
+                    backgroundColor={'greylight01'}
+                    width={16}
+                    height={16}
+                    borderRadius={16}
+                    position={'relative'}
+                  >
                     <Box
                       position={'absolute'}
                       width={16}
@@ -59,4 +77,4 @@ export const AdvancedOption = <T extends string>({ options, optionHandler }: Adv
       </RadioGroupRoot>
     </Box>
   );
-};
+}

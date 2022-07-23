@@ -1,9 +1,9 @@
-import { Theme } from '@ratatoskr-ui/components';
 import { transparentize } from 'polished';
 import type { ComponentThemeConfig } from '../../../system';
+import { DefaultTheme } from 'styled-components';
 
 const inputToggleButton: ComponentThemeConfig = {
-  baseStyle: ({ theme }: { theme: Theme }) => ({
+  baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     display: 'inline-flex',
     flexShrink: 0,
     alignItems: 'center',

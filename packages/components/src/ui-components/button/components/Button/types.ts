@@ -1,10 +1,29 @@
-import { LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps, BorderProps } from 'styled-system';
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+import {
+  LayoutProps,
+  PositionProps,
+  FlexboxProps,
+  GridProps,
+  SpaceProps,
+  BorderProps,
+} from 'styled-system';
 
-export type ButtonVariants = 'primary' | 'secondary' | 'outline' | 'destructive' | 'outline-destructive' | 'segment-item';
+export type ButtonVariants =
+  | 'primary'
+  | 'secondary'
+  | 'outline'
+  | 'destructive'
+  | 'outline-destructive'
+  | 'segment-item';
 export type ButtonSizes = 'sm' | 'md' | 'lg';
 export type ButtonIconPositions = 'left' | 'right';
 
-export type AllButtonStyledProps = LayoutProps & PositionProps & FlexboxProps & GridProps & SpaceProps & BorderProps;
+export type AllButtonStyledProps = LayoutProps &
+  PositionProps &
+  FlexboxProps &
+  GridProps &
+  SpaceProps &
+  BorderProps;
 
 export interface ButtonBaseProps extends AllButtonStyledProps {
   /** Is a block button. */

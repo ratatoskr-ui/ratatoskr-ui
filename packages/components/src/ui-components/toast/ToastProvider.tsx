@@ -27,7 +27,7 @@ const ToastProvider: React.FC<ToastInterface> = ({ children }) => {
   const addToast = React.useCallback(
     (settings: ToastSettings) => {
       const toast = createToastInstance(settings);
-      setToasts(toastItems => [toast, ...toastItems]);
+      setToasts((toastItems) => [toast, ...toastItems]);
       return toast;
     },
     [setToasts]
@@ -35,7 +35,7 @@ const ToastProvider: React.FC<ToastInterface> = ({ children }) => {
 
   const removeToast = React.useCallback(
     (id?: string) => {
-      setToasts(toastItems => toastItems.filter(t => t.id !== id));
+      setToasts((toastItems) => toastItems.filter((t) => t.id !== id));
     },
     [setToasts]
   );

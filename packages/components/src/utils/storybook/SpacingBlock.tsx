@@ -12,7 +12,8 @@ const SpacingBlock: React.FC<SpacingBlockProps> = ({ spacing, ...rest }) => {
     <Box display="flex" alignItems="center" {...rest}>
       <Box mr="md" flex="0 1 200px">
         <Text fontFamily="monospace">
-          spacing: {spacing} ({theme.space[spacing as keyof typeof theme['space']]}
+          spacing: {spacing} (
+          {theme.space[spacing as keyof typeof theme['space']]}
           px)
         </Text>
       </Box>

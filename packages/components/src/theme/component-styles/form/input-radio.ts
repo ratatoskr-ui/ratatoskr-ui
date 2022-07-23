@@ -1,8 +1,16 @@
 /* eslint-disable no-underscore-dangle */
-import { Theme } from '@ratatoskr-ui/components';
-import { ComponentThemeConfig, ComponentThemeScaleFn, pseudoSelectors } from '../../../system';
+import { DefaultTheme } from 'styled-components';
+import {
+  ComponentThemeConfig,
+  ComponentThemeScaleFn,
+  pseudoSelectors,
+} from '../../../system';
 
-const inputRadioBaseStyle: ComponentThemeScaleFn<{ theme: Theme }> = ({ theme }: { theme: Theme }) => ({
+const inputRadioBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({
+  theme,
+}: {
+  theme: DefaultTheme;
+}) => ({
   display: 'inline-block',
   position: 'relative',
   verticalAlign: 'top',
@@ -58,7 +66,11 @@ const inputRadioBase: ComponentThemeConfig = {
   baseStyle: inputRadioBaseStyle,
 };
 
-const radioInputBoxStyle: ComponentThemeScaleFn<{ theme: Theme }> = ({ theme }: { theme: Theme }) => ({
+const radioInputBoxStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({
+  theme,
+}: {
+  theme: DefaultTheme;
+}) => ({
   display: 'flex',
   p: 'xs',
   alignItems: 'center',
@@ -105,7 +117,11 @@ const radioInputBoxStyle: ComponentThemeScaleFn<{ theme: Theme }> = ({ theme }: 
   },
 });
 
-const withIndicatorStyle: ComponentThemeScaleFn<{ theme: Theme }> = ({ theme }: { theme: Theme }) => ({
+const withIndicatorStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({
+  theme,
+}: {
+  theme: DefaultTheme;
+}) => ({
   border: `1px solid ${theme.colors.greylight04}`,
   borderRadius: 'lg',
   py: 'xs',

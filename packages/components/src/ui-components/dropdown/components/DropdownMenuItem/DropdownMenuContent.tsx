@@ -17,15 +17,24 @@ const Arrow = styled(RadixDropdownMenu.Arrow)`
   fill: #ffffff;
 `;
 
-const ContentBox = React.forwardRef<HTMLDivElement, React.PropsWithChildren<BoxProps>>(
-  ({ children, ...props }, ref) => {
-    return (
-      <Box ref={ref} textAlign="left" maxWidth="100vw" borderRadius="sm" overflow="hidden" boxShadow={3} {...props}>
-        {children}
-      </Box>
-    );
-  }
-);
+const ContentBox = React.forwardRef<
+  HTMLDivElement,
+  React.PropsWithChildren<BoxProps>
+>(({ children, ...props }, ref) => {
+  return (
+    <Box
+      ref={ref}
+      textAlign="left"
+      maxWidth="100vw"
+      borderRadius="sm"
+      overflow="hidden"
+      boxShadow={3}
+      {...props}
+    >
+      {children}
+    </Box>
+  );
+});
 const BoxFilterDropdShadowSupport = styled(ContentBox)`
   @supports (filter: drop-shadow(0px 2px 4px #000)) {
     filter: drop-shadow(${theme.shadows[2]});
@@ -33,7 +42,10 @@ const BoxFilterDropdShadowSupport = styled(ContentBox)`
   }
 `;
 
-const DropdownMenuContent: React.ForwardRefRenderFunction<HTMLDivElement, DropdownMenuContentProps> = ({
+const DropdownMenuContent: React.ForwardRefRenderFunction<
+  HTMLDivElement,
+  DropdownMenuContentProps
+> = ({
   children,
   side = 'bottom',
   arrowOffset = 14,

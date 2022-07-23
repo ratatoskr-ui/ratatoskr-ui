@@ -12,7 +12,11 @@ import {
   SpaceProps,
 } from 'styled-system';
 
-export type BaseStylesProps = LayoutProps & PositionProps & FlexboxProps & GridProps & SpaceProps;
+export type BaseStylesProps = LayoutProps &
+  PositionProps &
+  FlexboxProps &
+  GridProps &
+  SpaceProps;
 
 export const BaseStyles = css`
   ${layout}

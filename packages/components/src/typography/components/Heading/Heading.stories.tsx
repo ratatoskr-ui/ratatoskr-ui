@@ -21,7 +21,9 @@ export default {
 };
 
 const Template: Story<HeadingProps> = ({ scale, fontFamily, fontWeight }) => (
-  <Heading {...{ scale, fontFamily, fontWeight }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi! </Heading>
+  <Heading {...{ scale, fontFamily, fontWeight }}>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi!{' '}
+  </Heading>
 );
 
 export const Example = Template.bind({});

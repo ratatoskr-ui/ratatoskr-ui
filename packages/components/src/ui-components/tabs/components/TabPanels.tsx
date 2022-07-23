@@ -7,7 +7,12 @@ export interface TabPanelsProps extends BaseBoxProps {
   children: React.ReactElement[];
 }
 
-const TabPanels: React.FC<TabPanelsProps> = ({ children, className, style, ...rest }) => {
+const TabPanels: React.FC<TabPanelsProps> = ({
+  children,
+  className,
+  style,
+  ...rest
+}) => {
   const { currentPage, size } = useTabs();
   const ActivePage = children[currentPage];
 

@@ -7,7 +7,9 @@ import { Box } from '../../../layout';
 describe('components/Avatar', () => {
   describe('<Avatar />', () => {
     test('renders image correctly', () => {
-      const { getByRole } = render(<Avatar name="Kiriyama Rei" src="https://picsum.photos/id/2/400/400" />);
+      const { getByRole } = render(
+        <Avatar name="Kiriyama Rei" src="https://picsum.photos/id/2/400/400" />
+      );
 
       const image = getByRole('img', {
         name: /Kiriyama Rei/i,
@@ -26,7 +28,9 @@ describe('components/Avatar', () => {
       const { getByTestId } = render(
         <Avatar
           name="Kiriyama Rei"
-          presence={<Box width="100%" height="100%" backgroundColor={'red07'} />}
+          presence={
+            <Box width="100%" height="100%" backgroundColor={'red07'} />
+          }
           notificationBadge="99+"
         />
       );
@@ -56,9 +60,15 @@ describe('components/Avatar', () => {
       );
 
       const listContainer = getAllByTestId('avatar-container');
-      expect(!!(listContainer[0].className === listContainer[2].className)).toBe(true);
-      expect(!!(listContainer[0].className === listContainer[1].className)).toBe(false);
-      expect(!!(listContainer[0].className === listContainer[3].className)).toBe(false);
+      expect(
+        !!(listContainer[0].className === listContainer[2].className)
+      ).toBe(true);
+      expect(
+        !!(listContainer[0].className === listContainer[1].className)
+      ).toBe(false);
+      expect(
+        !!(listContainer[0].className === listContainer[3].className)
+      ).toBe(false);
     });
   });
 });

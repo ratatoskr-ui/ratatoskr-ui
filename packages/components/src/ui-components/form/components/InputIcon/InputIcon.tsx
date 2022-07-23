@@ -1,8 +1,11 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import { VisuallyHidden } from '@ratatoskr-ui/helpers';
 import { Box, BoxProps } from '../../../../layout';
 
-export interface InputIconProps extends BoxProps, React.ComponentPropsWithoutRef<'div'> {
+export interface InputIconProps
+  extends BoxProps,
+    React.ComponentPropsWithoutRef<'div'> {
   icon: React.ComponentType<any>;
   iconPosition?: 'left' | 'right';
   iconText?: string;
@@ -24,7 +27,18 @@ function renderIconPosition(iconPosition: 'left' | 'right' = 'left') {
 }
 
 const InputIcon = React.forwardRef<HTMLDivElement, InputIconProps>(
-  ({ className, children, icon, iconPosition = 'left', iconText, disabled, ...rest }, ref) => {
+  (
+    {
+      className,
+      children,
+      icon,
+      iconPosition = 'left',
+      iconText,
+      disabled,
+      ...rest
+    },
+    ref
+  ) => {
     return (
       <Box
         ref={ref}

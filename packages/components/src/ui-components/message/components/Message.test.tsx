@@ -8,14 +8,18 @@ const handleClose = jest.fn();
 describe('components/Message', () => {
   describe('<Message />', () => {
     test('renders correctly', () => {
-      const { getByText } = render(<Message variant="success" message="test message" />);
+      const { getByText } = render(
+        <Message variant="success" message="test message" />
+      );
 
       const messageText = getByText(/test message/i);
       expect(messageText).toBeVisible();
     });
 
     test('renders with title', () => {
-      const { getByRole } = render(<Message variant="success" title="test title" message="test message" />);
+      const { getByRole } = render(
+        <Message variant="success" title="test title" message="test message" />
+      );
 
       const titleText = getByRole('heading', {
         name: /test title/i,
@@ -24,7 +28,13 @@ describe('components/Message', () => {
     });
 
     test('renders close button with onClose and fires onClose event correctly', () => {
-      const { getByRole } = render(<Message variant="success" message="test message" onClose={handleClose} />);
+      const { getByRole } = render(
+        <Message
+          variant="success"
+          message="test message"
+          onClose={handleClose}
+        />
+      );
 
       const closeButton = getByRole('button', {
         name: /close/i,

@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Box } from '../../layout';
 
-const ElevationGrid: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
+const ElevationGrid: React.FC<React.PropsWithChildren<unknown>> = ({
+  children,
+}) => {
   return (
     <Box
       mt="md"

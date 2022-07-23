@@ -1,10 +1,13 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
+import { CheckIcon } from '@heroicons/react/solid';
 import { Stack, Box } from '../../layout';
 import { Heading, Text } from '../../typography';
 import { ActionList, ActionListItem, ActionListItemVariant } from '.';
-import { CheckboxContainer, CheckboxIndicator } from '../form/components/InputCheckbox/components/CheckboxIndicator';
-import { CheckIcon } from '@heroicons/react/solid';
+import {
+  CheckboxContainer,
+  CheckboxIndicator,
+} from '../form/components/InputCheckbox/components/CheckboxIndicator';
 
 export default {
   title: 'Core/Components/ActionList',
@@ -21,7 +24,9 @@ export default {
   },
 };
 
-export const ActionListItemExample: Story<{ variant: ActionListItemVariant }> = ({ variant }) => {
+export const ActionListItemExample: Story<{
+  variant: ActionListItemVariant;
+}> = ({ variant }) => {
   return (
     <Box width="200px">
       <ActionListItem variant={variant}>item sample 1</ActionListItem>
@@ -76,7 +81,9 @@ export const ActionListWithIconExample: Story = () => {
   );
 };
 
-export const ActionListWithCheckboxExample: Story<{ disabled: boolean }> = ({ disabled }) => {
+export const ActionListWithCheckboxExample: Story<{ disabled: boolean }> = ({
+  disabled,
+}) => {
   const [selected, setSeleted] = React.useState<string>('');
   return (
     <ActionList width="200px">
@@ -88,7 +95,9 @@ export const ActionListWithCheckboxExample: Story<{ disabled: boolean }> = ({ di
         disabled={disabled}
       >
         <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
-          <CheckboxContainer>{selected === 'item-1' && <CheckboxIndicator />}</CheckboxContainer>
+          <CheckboxContainer>
+            {selected === 'item-1' && <CheckboxIndicator />}
+          </CheckboxContainer>
           <Text scale={300}>item sample 1</Text>
         </Stack>
       </ActionListItem>
@@ -100,7 +109,9 @@ export const ActionListWithCheckboxExample: Story<{ disabled: boolean }> = ({ di
         disabled={disabled}
       >
         <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
-          <CheckboxContainer>{selected === 'item-2' && <CheckboxIndicator />}</CheckboxContainer>
+          <CheckboxContainer>
+            {selected === 'item-2' && <CheckboxIndicator />}
+          </CheckboxContainer>
           <Text scale={300}>item sample 1</Text>
         </Stack>
       </ActionListItem>
@@ -112,7 +123,9 @@ export const ActionListWithCheckboxExample: Story<{ disabled: boolean }> = ({ di
         disabled={disabled}
       >
         <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
-          <CheckboxContainer>{selected === 'item-3' && <CheckboxIndicator />}</CheckboxContainer>
+          <CheckboxContainer>
+            {selected === 'item-3' && <CheckboxIndicator />}
+          </CheckboxContainer>
           <Text scale={300}>item sample 1</Text>
         </Stack>
       </ActionListItem>
@@ -126,7 +139,9 @@ ActionListWithCheckboxExample.argTypes = {
   },
 };
 
-export const ActionListWithDescExample: Story<{ disabled: boolean }> = ({ disabled }) => {
+export const ActionListWithDescExample: Story<{ disabled: boolean }> = ({
+  disabled,
+}) => {
   const [selected, setSeleted] = React.useState<string>('');
   return (
     <ActionList width="200px">

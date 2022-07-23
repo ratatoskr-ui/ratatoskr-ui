@@ -11,7 +11,9 @@ describe('components/Skeleton', () => {
 
   test('renders correct number of lines if numberOfLines is set', () => {
     const numberOfLines = 2;
-    const { container } = render(<Skeleton className="skeleton" numberOfLines={numberOfLines} />);
+    const { container } = render(
+      <Skeleton className="skeleton" numberOfLines={numberOfLines} />
+    );
 
     const elements = container.querySelectorAll('.skeleton');
     expect(elements.length).toEqual(numberOfLines);

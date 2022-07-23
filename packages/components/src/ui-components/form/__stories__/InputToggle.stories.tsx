@@ -67,7 +67,10 @@ export const WithLabel: Story<InputToggleProps> = ({ label, disabled }) => {
 };
 WithLabel.args = Example.args;
 
-export const WithLabelAndDescription: Story<InputToggleProps> = ({ label, disabled }) => {
+export const WithLabelAndDescription: Story<InputToggleProps> = ({
+  label,
+  disabled,
+}) => {
   const [enabled, setEnabled] = React.useState<boolean>(false);
 
   const handleChange = (value: boolean) => {
@@ -93,7 +96,10 @@ export const WithLabelAndDescription: Story<InputToggleProps> = ({ label, disabl
 };
 WithLabelAndDescription.args = Example.args;
 
-export const WithDescription: Story<InputToggleProps> = ({ label, disabled }) => {
+export const WithDescription: Story<InputToggleProps> = ({
+  label,
+  disabled,
+}) => {
   const [enabled, setEnabled] = React.useState<boolean>(false);
 
   const handleChange = (value: boolean) => {

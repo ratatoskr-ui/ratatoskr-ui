@@ -1,6 +1,8 @@
 import type { ComponentThemeConfig, ComponentThemeScaleFn } from '../../system';
 
-const tagStyle: ComponentThemeScaleFn<{ selected: boolean }> = ({ selected }) => ({
+const tagStyle: ComponentThemeScaleFn<{ selected: boolean }> = ({
+  selected,
+}) => ({
   display: 'inline-flex',
   flexDirection: 'row',
   alignItems: 'center',

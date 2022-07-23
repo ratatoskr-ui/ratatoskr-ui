@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 export type ToastVariants = 'default' | 'error';
 
 export interface ToastSettings {

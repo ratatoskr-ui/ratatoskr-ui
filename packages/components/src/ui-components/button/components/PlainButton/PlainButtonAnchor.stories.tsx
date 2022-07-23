@@ -1,4 +1,3 @@
-
 import { Story } from '@storybook/react';
 import * as React from 'react';
 import PlainButtonAnchor, { PlainButtonAnchorProps } from './PlainButtonAnchor';
@@ -22,7 +21,15 @@ export default {
   },
 };
 
-const Template: Story<PlainButtonAnchorProps> = ({ variant, size, isLoading, icon, iconPosition, href, target }) => (
+const Template: Story<PlainButtonAnchorProps> = ({
+  variant,
+  size,
+  isLoading,
+  icon,
+  iconPosition,
+  href,
+  target,
+}) => (
   <PlainButtonAnchor
     type="button"
     variant={variant}

@@ -13,7 +13,9 @@ export default {
   },
 };
 
-const Template: Story<React.PropsWithChildren<NotificationBadgeProps>> = args => <NotificationBadge {...args} />;
+const Template: Story<React.PropsWithChildren<NotificationBadgeProps>> = (
+  args
+) => <NotificationBadge {...args} />;
 
 export const BasicExample = Template.bind({});
 BasicExample.args = {

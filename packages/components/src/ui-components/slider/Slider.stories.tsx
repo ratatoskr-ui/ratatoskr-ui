@@ -21,7 +21,15 @@ export default {
 export const Example: Story<SliderProps> = ({ values, min, max, stepSize }) => {
   const [sliderValues, setSliderValues] = React.useState(values);
 
-  return <Slider values={sliderValues} onChange={setSliderValues} min={min} max={max} stepSize={stepSize} />;
+  return (
+    <Slider
+      values={sliderValues}
+      onChange={setSliderValues}
+      min={min}
+      max={max}
+      stepSize={stepSize}
+    />
+  );
 };
 Example.args = {
   values: [10],

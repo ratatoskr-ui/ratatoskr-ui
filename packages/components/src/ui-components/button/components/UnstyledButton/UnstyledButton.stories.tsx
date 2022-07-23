@@ -14,8 +14,12 @@ export default {
   },
 };
 
-export const Example = () => (
-  <Box padding="sm">
-    <UnstyledButton type="button">I&apos;m an unstyled button!</UnstyledButton>
-  </Box>
-);
+export function Example() {
+  return (
+    <Box padding="sm">
+      <UnstyledButton type="button">
+        I&apos;m an unstyled button!
+      </UnstyledButton>
+    </Box>
+  );
+}

@@ -60,7 +60,12 @@ describe('components/Modal', () => {
     test("doesn't close the drawer on when disableOverlayClick is set", () => {
       const handleClose = jest.fn();
       render(
-        <Modal labelledById="test-title" isOpen disableOverlayClick onClose={handleClose}>
+        <Modal
+          labelledById="test-title"
+          isOpen
+          disableOverlayClick
+          onClose={handleClose}
+        >
           <p id="test-title">Basic Example</p>
         </Modal>
       );

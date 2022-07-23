@@ -9,34 +9,35 @@ export interface TableBodyCellProps
   textContent?: string;
 }
 
-const TableBodyCell = React.forwardRef<HTMLTableCellElement, TableBodyCellProps>(
-  ({ className, style, children, textContent, ...rest }, ref) => {
-    const renderContent = () => {
-      if (textContent) {
-        return <Paragraph scale={300}>{children}</Paragraph>;
-      }
+const TableBodyCell = React.forwardRef<
+  HTMLTableCellElement,
+  TableBodyCellProps
+>(({ className, style, children, textContent, ...rest }, ref) => {
+  const renderContent = () => {
+    if (textContent) {
+      return <Paragraph scale={300}>{children}</Paragraph>;
+    }
 
-      return children;
-    };
+    return children;
+  };
 
-    return (
-      <Box
-        ref={ref}
-        as="td"
-        className={className}
-        style={style}
-        px="md"
-        height="48px"
-        fontSize="14px"
-        lineHeight="20px"
-        sx={{ boxShadow: `inset 0px -1px 0px #EFF2F5` }}
-        {...rest}
-      >
-        {renderContent()}
-      </Box>
-    );
-  }
-);
+  return (
+    <Box
+      ref={ref}
+      as="td"
+      className={className}
+      style={style}
+      px="md"
+      height="48px"
+      fontSize="14px"
+      lineHeight="20px"
+      sx={{ boxShadow: `inset 0px -1px 0px #EFF2F5` }}
+      {...rest}
+    >
+      {renderContent()}
+    </Box>
+  );
+});
 
 TableBodyCell.displayName = 'TableBodyCell';
 

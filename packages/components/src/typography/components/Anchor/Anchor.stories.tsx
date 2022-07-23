@@ -8,10 +8,18 @@ export default {
   component: Anchor,
 };
 
-export const Example = () => (
-  <Text>
-    <Anchor target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=P_mQpbCSQOo" scale={400}>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi!
-    </Anchor>
-  </Text>
-);
+export function Example() {
+  return (
+    <Text>
+      <Anchor
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.youtube.com/watch?v=P_mQpbCSQOo"
+        scale={400}
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
+        excepturi!
+      </Anchor>
+    </Text>
+  );
+}

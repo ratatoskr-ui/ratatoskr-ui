@@ -27,7 +27,12 @@ const Root = styled('div')`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, ${theme.colors.grey03}, ${theme.colors.grey02}, ${theme.colors.grey03});
+    background: linear-gradient(
+      90deg,
+      ${theme.colors.grey03},
+      ${theme.colors.grey02},
+      ${theme.colors.grey03}
+    );
     animation: ${progress} 1s ease-in-out infinite;
   }
 `;

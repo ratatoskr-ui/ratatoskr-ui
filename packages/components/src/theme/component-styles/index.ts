@@ -45,7 +45,7 @@ const componentStyles = {
   ...toast,
   ...message,
   ...pagination,
-  ...slider
+  ...slider,
 };
 
 export default componentStyles;

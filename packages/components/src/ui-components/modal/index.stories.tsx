@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { TrashIcon } from '@heroicons/react/solid';
 import { Stack, Box } from '../../layout';
 import { Heading, Paragraph } from '../../typography';
 
@@ -10,14 +11,13 @@ import ModalContent from './components/ModalContent';
 import BoxFooter from '../box-header-footer/components/BoxFooter';
 import { Button } from '../button';
 import { CloseButton } from '../box-header-footer';
-import { TrashIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Modal',
   component: Modal,
 };
 
-export const BasicExample = () => {
+export function BasicExample() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
@@ -25,7 +25,11 @@ export const BasicExample = () => {
       <Button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Modal
       </Button>
-      <Modal labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal
+        labelledById="stories-title"
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
         <BoxHeader
           centerTitle
           size="lg"
@@ -37,7 +41,9 @@ export const BasicExample = () => {
         />
         <ModalContent>
           <Stack textAlign="center">
-            <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
+            <Paragraph scale={300}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </Paragraph>
           </Stack>
         </ModalContent>
         <BoxFooter
@@ -56,9 +62,9 @@ export const BasicExample = () => {
       </Modal>
     </Box>
   );
-};
+}
 
-export const WithCloseButton = () => {
+export function WithCloseButton() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
@@ -66,7 +72,11 @@ export const WithCloseButton = () => {
       <Button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Modal
       </Button>
-      <Modal labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal
+        labelledById="stories-title"
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
         <BoxHeader
           closeButton={<CloseButton onClick={() => setIsOpen(false)} />}
           centerTitle
@@ -79,7 +89,9 @@ export const WithCloseButton = () => {
         />
         <ModalContent>
           <Stack textAlign="center">
-            <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
+            <Paragraph scale={300}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </Paragraph>
           </Stack>
         </ModalContent>
         <BoxFooter
@@ -98,9 +110,9 @@ export const WithCloseButton = () => {
       </Modal>
     </Box>
   );
-};
+}
 
-export const WithFocusTrap = () => {
+export function WithFocusTrap() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
@@ -108,7 +120,12 @@ export const WithFocusTrap = () => {
       <Button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Modal
       </Button>
-      <Modal labelledById="stories-title" enableFocusTrap isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal
+        labelledById="stories-title"
+        enableFocusTrap
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
         <BoxHeader
           centerTitle
           size="lg"
@@ -120,7 +137,9 @@ export const WithFocusTrap = () => {
         />
         <ModalContent>
           <Stack textAlign="center">
-            <Paragraph scale={300}>If you repeatedly press tab, the focus will not leave this modal.</Paragraph>
+            <Paragraph scale={300}>
+              If you repeatedly press tab, the focus will not leave this modal.
+            </Paragraph>
           </Stack>
         </ModalContent>
         <BoxFooter
@@ -139,9 +158,9 @@ export const WithFocusTrap = () => {
       </Modal>
     </Box>
   );
-};
+}
 
-export const WithIcon = () => {
+export function WithIcon() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
@@ -149,7 +168,11 @@ export const WithIcon = () => {
       <Button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Modal
       </Button>
-      <Modal labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal
+        labelledById="stories-title"
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
         <ModalHeaderIcon
           id="stories-title"
           title="Delete item?"
@@ -180,4 +203,4 @@ export const WithIcon = () => {
       </Modal>
     </Box>
   );
-};
+}

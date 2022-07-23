@@ -5,7 +5,9 @@ import { UnstyledAnchor } from '../../../../typography';
 import { useComponentStyles } from '../../../../system';
 import { IconButtonBaseProps, IconButtonSizes } from './types';
 
-export interface IconButtonAnchorProps extends IconButtonBaseProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface IconButtonAnchorProps
+  extends IconButtonBaseProps,
+    React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -16,9 +18,28 @@ export interface IconButtonAnchorProps extends IconButtonBaseProps, React.Anchor
   isLoading?: boolean;
 }
 
-const IconButtonAnchor = React.forwardRef<HTMLAnchorElement, IconButtonAnchorProps>(
-  ({ children, className, style, isLoading, size = 'md', variant = 'primary', width, selected, ...rest }, ref) => {
-    const iconButtonStyles = useComponentStyles('iconButton', { size, variant });
+const IconButtonAnchor = React.forwardRef<
+  HTMLAnchorElement,
+  IconButtonAnchorProps
+>(
+  (
+    {
+      children,
+      className,
+      style,
+      isLoading,
+      size = 'md',
+      variant = 'primary',
+      width,
+      selected,
+      ...rest
+    },
+    ref
+  ) => {
+    const iconButtonStyles = useComponentStyles('iconButton', {
+      size,
+      variant,
+    });
 
     return (
       <UnstyledAnchor

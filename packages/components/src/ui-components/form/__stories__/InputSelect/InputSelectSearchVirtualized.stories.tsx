@@ -1,6 +1,9 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
-import { InputSelectSearchVirtualized, InputSelectSearchVirtualizedProps } from '../../components/InputSelect';
+import {
+  InputSelectSearchVirtualized,
+  InputSelectSearchVirtualizedProps,
+} from '../../components/InputSelect';
 
 const timezone = [
   {
@@ -2410,16 +2413,12 @@ interface ValueVirtualizedSchema {
   timezoneDisplay: string;
 }
 
-export const InputSelectVirtualizedExample: Story<InputSelectSearchVirtualizedProps<ValueVirtualizedSchema>> = ({
-  placeholder,
-  disabled,
-  size,
-  label,
-  errors,
-  width,
-  maxHeight,
-}) => {
-  const [selected, setSelected] = React.useState<ValueVirtualizedSchema | null>(null);
+export const InputSelectVirtualizedExample: Story<
+  InputSelectSearchVirtualizedProps<ValueVirtualizedSchema>
+> = ({ placeholder, disabled, size, label, errors, width, maxHeight }) => {
+  const [selected, setSelected] = React.useState<ValueVirtualizedSchema | null>(
+    null
+  );
   const [items] = React.useState(timezone);
   return (
     <InputSelectSearchVirtualized
@@ -2429,8 +2428,8 @@ export const InputSelectVirtualizedExample: Story<InputSelectSearchVirtualizedPr
       placeholder={placeholder}
       disabled={disabled}
       errors={errors}
-      itemToString={item => (item ? `${item.timezoneDisplay}` : '')}
-      itemValue={item => item?.timezoneId ?? ''}
+      itemToString={(item) => (item ? `${item.timezoneDisplay}` : '')}
+      itemValue={(item) => item?.timezoneId ?? ''}
       handleSelectedItemChange={({ selectedItem }) => {
         if (selectedItem) {
           setSelected(selectedItem);

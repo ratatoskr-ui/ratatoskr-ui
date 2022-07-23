@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { QrcodeIcon } from '@heroicons/react/solid';
 import Tabs, { TabsProps } from './Tabs';
 import TabList from './TabList';
 import Tab from './Tab';
 import TabPanels from './TabPanels';
 import TabPanel from './TabPanel';
-import { QrcodeIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Tabs',
   component: Tabs,
 } as Meta;
 
-const Template: Story<TabsProps> = args => (
+const Template: Story<TabsProps> = (args) => (
   <Tabs {...args}>
     <TabList>
       <Tab>Tab Item 1</Tab>

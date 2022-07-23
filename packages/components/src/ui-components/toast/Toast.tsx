@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
-import {XIcon} from '@heroicons/react/outline';
+import { XIcon } from '@heroicons/react/outline';
 import { Box, BoxProps } from '../../layout';
 import { Text } from '../../typography';
 import { useComponentStyles } from '../../system';
@@ -124,7 +124,7 @@ const Toast: React.FC<ToastProps> = ({
       unmountOnExit
       onExited={onRemove}
     >
-      {state => (
+      {(state) => (
         <Root id={id} data-toaster-state={state} {...rest}>
           <Box sx={toastInnerStyles}>
             {allowHTML && message ? (
@@ -136,7 +136,12 @@ const Toast: React.FC<ToastProps> = ({
                 dangerouslySetInnerHTML={{ __html: message }}
               />
             ) : (
-              <Box display="flex" alignItems="center" flex="1 1 auto" minHeight={18}>
+              <Box
+                display="flex"
+                alignItems="center"
+                flex="1 1 auto"
+                minHeight={18}
+              >
                 <Text display="block" scale={200}>
                   {message}
                 </Text>
@@ -174,7 +179,7 @@ const Toast: React.FC<ToastProps> = ({
                   sx={toastCloseButtonStyles}
                   onClick={() => close()}
                 >
-                  <XIcon aria-hidden fill="currentColor" width={16}/>
+                  <XIcon aria-hidden fill="currentColor" width={16} />
                 </UnstyledButton>
               </Box>
             )}

@@ -53,7 +53,10 @@ class Pagination extends React.Component<PaginationProps> {
     let endPage: number;
 
     if (maxButtons && maxButtons < total) {
-      startPage = Math.max(Math.min(current - Math.floor(maxButtons / 2), total - maxButtons + 1), 1);
+      startPage = Math.max(
+        Math.min(current - Math.floor(maxButtons / 2), total - maxButtons + 1),
+        1
+      );
       endPage = startPage + maxButtons - 1;
     } else {
       startPage = 1;
@@ -99,14 +102,21 @@ class Pagination extends React.Component<PaginationProps> {
           },
         }}
       >
-        <PaginationButton color="white" disabled={current === 1} onClick={() => this.handleSelectPage(current - 1)}>
+        <PaginationButton
+          color="white"
+          disabled={current === 1}
+          onClick={() => this.handleSelectPage(current - 1)}
+        >
           <VisuallyHidden>Previous Page</VisuallyHidden>
           <IconChevronLeft aria-hidden size={16} fill={theme.colors.grey08} />
         </PaginationButton>
         {pages.map((page, index) => {
           if (typeof page !== 'number') {
             return (
-              <PaginationJumpTo total={total} onSelectPage={this.handleSelectPage}>
+              <PaginationJumpTo
+                total={total}
+                onSelectPage={this.handleSelectPage}
+              >
                 {page}
               </PaginationJumpTo>
             );
@@ -116,7 +126,9 @@ class Pagination extends React.Component<PaginationProps> {
             <PaginationButton
               key={index.toString()}
               isActive={page === current}
-              onClick={() => (typeof page === 'number' ? this.handleSelectPage(page) : null)}
+              onClick={() =>
+                typeof page === 'number' ? this.handleSelectPage(page) : null
+              }
             >
               <Text scale={300} fontWeight={500}>
                 {page}
@@ -124,7 +136,10 @@ class Pagination extends React.Component<PaginationProps> {
             </PaginationButton>
           );
         })}
-        <PaginationButton disabled={current === total} onClick={() => this.handleSelectPage(current + 1)}>
+        <PaginationButton
+          disabled={current === total}
+          onClick={() => this.handleSelectPage(current + 1)}
+        >
           <VisuallyHidden>Next Page</VisuallyHidden>
           <IconChevronRight aria-hidden size={16} fill={theme.colors.grey08} />
         </PaginationButton>

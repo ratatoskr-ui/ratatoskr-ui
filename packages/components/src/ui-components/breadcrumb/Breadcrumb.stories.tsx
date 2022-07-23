@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
+import { ChevronRightIcon } from '@heroicons/react/solid';
 import Breadcrumb from './Breadcrumb';
 import BreadcrumbItem from './BreadcrumbItem';
-import { ChevronRightIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Breadcrumb',
   component: Breadcrumb,
 } as Meta;
 
-export const Example = () => {
+export function Example() {
   return (
     <Breadcrumb
       items={[
@@ -22,9 +22,9 @@ export const Example = () => {
       separator={ChevronRightIcon}
     />
   );
-};
+}
 
-export const Overflow = () => {
+export function Overflow() {
   return (
     <Breadcrumb
       items={[
@@ -39,4 +39,4 @@ export const Overflow = () => {
       separator={ChevronRightIcon}
     />
   );
-};
+}

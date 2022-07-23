@@ -12,7 +12,10 @@ interface TabsProviderProps extends Pick<TabsContextProps, 'size'> {
   children?: React.ReactNode;
 }
 
-const useProviderTabs = ({ defaultIndex = 0, size = 48 }: TabsProviderProps) => {
+const useProviderTabs = ({
+  defaultIndex = 0,
+  size = 48,
+}: TabsProviderProps) => {
   const [currentPage, setCurrentPage] = React.useState<number>(defaultIndex);
 
   function setPage(value: number) {
@@ -32,9 +35,14 @@ const TabsContext = React.createContext<TabsContextProps>({
   setPage: () => null,
 });
 
-export const TabsProvider: React.FC<TabsProviderProps> = ({ children, ...rest }) => {
+export const TabsProvider: React.FC<TabsProviderProps> = ({
+  children,
+  ...rest
+}) => {
   const provider = useProviderTabs({ ...rest });
-  return <TabsContext.Provider value={provider}>{children}</TabsContext.Provider>;
+  return (
+    <TabsContext.Provider value={provider}>{children}</TabsContext.Provider>
+  );
 };
 
 export function useTabs(): TabsContextProps {

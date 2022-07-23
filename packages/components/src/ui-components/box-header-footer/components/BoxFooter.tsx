@@ -24,7 +24,12 @@ const BoxFooter: React.FC<BoxFooterProps> = ({
 }) => {
   const boxFooterStyle = useComponentStyles('boxFooter', { size });
   return (
-    <Box sx={{ ...boxFooterStyle, ...sx }} className={className} style={style} {...rest}>
+    <Box
+      sx={{ ...boxFooterStyle, ...sx }}
+      className={className}
+      style={style}
+      {...rest}
+    >
       {caption && (
         <Box marginRight={'md'}>
           <Text as="p" scale={200} color="greymed04">

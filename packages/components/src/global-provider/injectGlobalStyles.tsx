@@ -1,9 +1,10 @@
-import { Theme } from 'packages/components/src/theme';
-import { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle, css, DefaultTheme } from 'styled-components';
 import normalize from './styles/normalize';
 
-const injectGlobalStyles = (additionalStyles?: string | ReturnType<typeof css>) => {
-  const GlobalStyles = createGlobalStyle<{theme: Theme}>`
+const injectGlobalStyles = (
+  additionalStyles?: string | ReturnType<typeof css>
+) => {
+  const GlobalStyles = createGlobalStyle<{ theme: DefaultTheme }>`
     ${normalize}
 
     html,
@@ -24,9 +25,9 @@ const injectGlobalStyles = (additionalStyles?: string | ReturnType<typeof css>) 
     }
 
     body {
-      font-family: ${p => p.theme.fonts.system};
-      background-color: ${p => p.theme.colors['bg-secondary']};
-      color: ${p => p.theme.colors.greydark02};
+      font-family: ${(p) => p.theme.fonts.system};
+      background-color: ${(p) => p.theme.colors['bg-secondary']};
+      color: ${(p) => p.theme.colors.greydark02};
     }
 
     a {

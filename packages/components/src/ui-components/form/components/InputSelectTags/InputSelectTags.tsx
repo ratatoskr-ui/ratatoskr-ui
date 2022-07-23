@@ -1,15 +1,19 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-shadow */
 import * as React from 'react';
-import { useCombobox, useMultipleSelection, UseMultipleSelectionStateChange } from 'downshift';
+import {
+  useCombobox,
+  useMultipleSelection,
+  UseMultipleSelectionStateChange,
+} from 'downshift';
 
+import { ChevronRightIcon } from '@heroicons/react/solid';
 import { Tag } from '../../../tag';
 import { Card } from '../../../card';
 import { FormLabel } from '../FormLabel';
 import { useComponentStyles } from '../../../../system';
 import { Box, Wrap, WrapItem, Stack } from '../../../../layout';
 import { ActionList, ActionListItem } from '../../../action-list';
-import { ChevronRightIcon } from '@heroicons/react/solid';
 
 export interface InputSelectTagsProps {
   onChange?: (value: string[]) => void;
@@ -64,7 +68,9 @@ function InputSelectTags({
   const [, setFocused] = React.useState(false);
 
   const tagInputRef = React.useRef<HTMLInputElement>(null);
-  const inputTagsStyles = useComponentStyles('inputTags', { variant: inputTagsVariant({ errors, disabled }) });
+  const inputTagsStyles = useComponentStyles('inputTags', {
+    variant: inputTagsVariant({ errors, disabled }),
+  });
 
   const {
     getSelectedItemProps,
@@ -79,7 +85,9 @@ function InputSelectTags({
   });
   const getFilteredItems = () =>
     optionTags.filter(
-      item => selectedItems.indexOf(item) < 0 && item.toLowerCase().startsWith(inputValue.toLowerCase())
+      (item) =>
+        selectedItems.indexOf(item) < 0 &&
+        item.toLowerCase().startsWith(inputValue.toLowerCase())
     );
   const filteredItems = getFilteredItems();
   const {
@@ -95,7 +103,7 @@ function InputSelectTags({
     inputValue,
     items: filteredItems,
     selectedItem: null,
-    onStateChange: state => {
+    onStateChange: (state) => {
       const { inputValue, type, selectedItem } = state;
       switch (type) {
         case useCombobox.stateChangeTypes.InputChange:
@@ -129,7 +137,11 @@ function InputSelectTags({
     const val = e.currentTarget.value || '';
     if ((val && e.key === 'Enter') || e.key === ',') {
       e.preventDefault(); // prevent accidently submiting form
-      if (optionTags.find(itemValue => val.toLowerCase() === itemValue.toLowerCase())) {
+      if (
+        optionTags.find(
+          (itemValue) => val.toLowerCase() === itemValue.toLowerCase()
+        )
+      ) {
         return;
       }
       const newTags = [...optionTags, val];
@@ -148,7 +160,7 @@ function InputSelectTags({
     if (!val) {
       return;
     }
-    const listTagRaw = val.split(/[\n,]+/).map(item => item.trim());
+    const listTagRaw = val.split(/[\n,]+/).map((item) => item.trim());
     const selectedListTag = new Set([...selectedItems, ...listTagRaw]);
     const newOptions = new Set([...optionTags, ...listTagRaw]);
     setOptionTags(Array.from(newOptions));
@@ -176,7 +188,10 @@ function InputSelectTags({
         >
           <Wrap spacing="xxs" display="inline-flex">
             {selectedItems.map((selectedItem, index) => (
-              <WrapItem key={`selected-item-${index}`} {...getSelectedItemProps({ selectedItem, index })}>
+              <WrapItem
+                key={`selected-item-${index}`}
+                {...getSelectedItemProps({ selectedItem, index })}
+              >
                 <Tag
                   hasCloseIcon
                   disabled={disabled}
@@ -188,7 +203,12 @@ function InputSelectTags({
                 </Tag>
               </WrapItem>
             ))}
-            <WrapItem display="flex" flexGrow={1} alignItems="center" {...getComboboxProps()}>
+            <WrapItem
+              display="flex"
+              flexGrow={1}
+              alignItems="center"
+              {...getComboboxProps()}
+            >
               <Box
                 as="input"
                 type="text"
@@ -237,13 +257,20 @@ function InputSelectTags({
           elevation={3}
           overflowY="hidden"
         >
-          <ActionList px="sm" overflowY="auto" maxHeight={maxHeight} {...getMenuProps()}>
+          <ActionList
+            px="sm"
+            overflowY="auto"
+            maxHeight={maxHeight}
+            {...getMenuProps()}
+          >
             {isOpen && filteredItems.length !== 0 ? (
               filteredItems.map((item: string, index: number) => {
                 return (
                   <ActionListItem
                     containerStyle={
-                      highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'sm' } : {}
+                      highlightedIndex === index
+                        ? { backgroundColor: 'greylight03', borderRadius: 'sm' }
+                        : {}
                     }
                     key={`${item}_${index}`}
                     {...getItemProps({ item, index })}

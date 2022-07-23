@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import { VisuallyHidden } from '@ratatoskr-ui/helpers';
 import { useComponentStyles } from '../../../system';
@@ -15,21 +16,45 @@ export interface TabProps extends BaseButtonProps {
   children?: string;
 }
 
-const Tab: React.FC<TabProps> = ({ children, index = 0, badgeText, icon, ...rest }) => {
+const Tab: React.FC<TabProps> = ({
+  children,
+  index = 0,
+  badgeText,
+  icon,
+  ...rest
+}) => {
   const { currentPage, setPage } = useTabs();
-  const isActive = React.useMemo(() => currentPage === index, [currentPage, index]);
+  const isActive = React.useMemo(
+    () => currentPage === index,
+    [currentPage, index]
+  );
 
   const tabButtonStyles = useComponentStyles('tabButton', { isActive });
   const tabButtonInnerStyles = useComponentStyles('tabButtonInner');
 
   return (
-    <UnstyledButton type="button" onClick={() => setPage(index)} sx={tabButtonStyles} {...rest}>
+    <UnstyledButton
+      type="button"
+      onClick={() => setPage(index)}
+      sx={tabButtonStyles}
+      {...rest}
+    >
       {icon ? (
         <Box
-          sx={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', size: 32, borderRadius: 'sm' }}
+          sx={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            size: 32,
+            borderRadius: 'sm',
+          }}
         >
           <VisuallyHidden>{children}</VisuallyHidden>
-          {React.createElement(icon, { width: 24, fill: 'currentColor', 'aria-hidden': true })}
+          {React.createElement(icon, {
+            width: 24,
+            fill: 'currentColor',
+            'aria-hidden': true,
+          })}
         </Box>
       ) : (
         <Box sx={tabButtonInnerStyles}>

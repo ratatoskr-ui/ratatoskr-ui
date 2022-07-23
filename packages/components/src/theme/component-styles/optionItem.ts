@@ -1,13 +1,17 @@
 /* eslint-disable no-underscore-dangle */
-import { Theme } from '@ratatoskr-ui/components';
-import { ComponentThemeConfig, ComponentThemeScaleFn, pseudoSelectors } from '../../system';
+import { DefaultTheme } from 'styled-components';
+import {
+  ComponentThemeConfig,
+  ComponentThemeScaleFn,
+  pseudoSelectors,
+} from '../../system';
 
 // TODO: move to `componentStyles/button/optionItem.ts`
-const baseStyle: ComponentThemeScaleFn<{ theme: Theme; isActive: boolean; disabled: boolean }> = ({
-  theme,
-  isActive,
-  disabled,
-}) => ({
+const baseStyle: ComponentThemeScaleFn<{
+  theme: DefaultTheme;
+  isActive: boolean;
+  disabled: boolean;
+}> = ({ theme, isActive, disabled }) => ({
   display: 'flex',
   alignItems: 'center',
   cursor: 'pointer',
@@ -39,7 +43,11 @@ const baseStyle: ComponentThemeScaleFn<{ theme: Theme; isActive: boolean; disabl
   }),
 });
 
-const borderedStyle: ComponentThemeScaleFn<{ theme: Theme }> = ({ theme }: { theme: Theme }) => ({
+const borderedStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({
+  theme,
+}: {
+  theme: DefaultTheme;
+}) => ({
   border: `1px solid ${theme.colors.greylight04}`,
   borderRadius: 'lg',
   [pseudoSelectors._checked]: {

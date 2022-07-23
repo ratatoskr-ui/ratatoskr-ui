@@ -1,10 +1,16 @@
 import { Meta, Story } from '@storybook/react';
 import * as React from 'react';
 
-import { Stack } from '../../../layout';
-import { InputGroup, InputIcon, FormLabel, InputPrefix, InputSuffix } from '../components';
-import { InputText, InputTextProps } from '../components/InputText';
 import { ExclamationIcon, LockClosedIcon } from '@heroicons/react/solid';
+import { Stack } from '../../../layout';
+import {
+  InputGroup,
+  InputIcon,
+  FormLabel,
+  InputPrefix,
+  InputSuffix,
+} from '../components';
+import { InputText, InputTextProps } from '../components/InputText';
 
 export default {
   title: 'Core/Components/Form/InputText',
@@ -22,7 +28,11 @@ export default {
   },
 } as Meta<InputTextProps>;
 
-export const Example: Story<InputTextProps> = ({ errors, inputSize, disabled }) => {
+export const Example: Story<InputTextProps> = ({
+  errors,
+  inputSize,
+  disabled,
+}) => {
   return (
     <Stack spacing="xs">
       <FormLabel htmlFor="textDummy">Text input</FormLabel>
@@ -43,12 +53,21 @@ Example.args = {
   inputSize: 'md',
 };
 
-export const WithIcons: Story<InputTextProps> = ({ errors, inputSize, disabled }) => {
+export const WithIcons: Story<InputTextProps> = ({
+  errors,
+  inputSize,
+  disabled,
+}) => {
   return (
     <Stack spacing="xs">
       <FormLabel htmlFor="textDummy">Text input</FormLabel>
       <InputGroup width="100%" maxWidth={360}>
-        <InputIcon icon={LockClosedIcon} iconPosition="left" iconText="Username" disabled={disabled} />
+        <InputIcon
+          icon={LockClosedIcon}
+          iconPosition="left"
+          iconText="Username"
+          disabled={disabled}
+        />
         <InputText
           id="textDummy"
           name="textDummy"
@@ -60,7 +79,12 @@ export const WithIcons: Story<InputTextProps> = ({ errors, inputSize, disabled }
           pl={36}
           pr={36}
         />
-        <InputIcon icon={ExclamationIcon} iconPosition="right" iconText="Username" disabled={disabled} />
+        <InputIcon
+          icon={ExclamationIcon}
+          iconPosition="right"
+          iconText="Username"
+          disabled={disabled}
+        />
       </InputGroup>
     </Stack>
   );
@@ -71,7 +95,11 @@ WithIcons.args = {
   inputSize: 'md',
 };
 
-export const WithPrefixSuffix: Story<InputTextProps> = ({ errors, inputSize, disabled }) => {
+export const WithPrefixSuffix: Story<InputTextProps> = ({
+  errors,
+  inputSize,
+  disabled,
+}) => {
   return (
     <Stack spacing="xs">
       <FormLabel htmlFor="textDummy">Text input</FormLabel>

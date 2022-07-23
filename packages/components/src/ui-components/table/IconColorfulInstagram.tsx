@@ -4,8 +4,16 @@ interface IconColorfulInstagramProps {
   size?: number;
 }
 
-const IconColorfulInstagram: React.FC<IconColorfulInstagramProps> = ({ size = 24 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+const IconColorfulInstagram: React.FC<IconColorfulInstagramProps> = ({
+  size = 24,
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <circle cx="12" cy="12" r="10" fill="url(#paint0_radial_103:309)" />
     <circle cx="12" cy="12" r="10" fill="url(#paint1_radial_103:309)" />
     <path

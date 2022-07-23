@@ -11,11 +11,32 @@ export interface CardHeaderProps extends BoxProps {
   avatar?: React.ReactNode;
 }
 
-const CardHeader: React.FC<CardHeaderProps> = ({ className, style, avatar, title, actions, ...rest }) => {
+const CardHeader: React.FC<CardHeaderProps> = ({
+  className,
+  style,
+  avatar,
+  title,
+  actions,
+  ...rest
+}) => {
   return (
-    <Box className={className} style={style} display="flex" flexDirection="row" alignItems="center" {...rest}>
+    <Box
+      className={className}
+      style={style}
+      display="flex"
+      flexDirection="row"
+      alignItems="center"
+      {...rest}
+    >
       {avatar && <Box mr="md">{avatar}</Box>}
-      <Heading scale={400} flex="1 1 auto" m={0} overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap">
+      <Heading
+        scale={400}
+        flex="1 1 auto"
+        m={0}
+        overflow="hidden"
+        textOverflow="ellipsis"
+        whiteSpace="nowrap"
+      >
         {title}
       </Heading>
       {actions && (

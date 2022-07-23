@@ -5,14 +5,29 @@ import { InputGroup } from '../InputGroup';
 import { InputIcon, InputIconButton } from '../InputIcon';
 import { InputText, InputTextProps } from '../InputText';
 
-export interface InputSearchboxProps extends InputTextProps, Omit<React.ComponentPropsWithoutRef<'input'>, 'value'> {
+export interface InputSearchboxProps
+  extends InputTextProps,
+    Omit<React.ComponentPropsWithoutRef<'input'>, 'value'> {
   groupId?: string;
   groupClassName?: string;
   groupStyle?: React.CSSProperties;
 }
 
 const InputSearchbox = React.forwardRef<HTMLInputElement, InputSearchboxProps>(
-  ({ id, className, groupId, groupClassName, groupStyle, errors, disabled, onChange, ...rest }, ref) => {
+  (
+    {
+      id,
+      className,
+      groupId,
+      groupClassName,
+      groupStyle,
+      errors,
+      disabled,
+      onChange,
+      ...rest
+    },
+    ref
+  ) => {
     const [value, setValue] = React.useState<string>('');
 
     const handleChange = React.useCallback(
@@ -32,8 +47,19 @@ const InputSearchbox = React.forwardRef<HTMLInputElement, InputSearchboxProps>(
     };
 
     return (
-      <InputGroup id={groupId} className={groupClassName} style={groupStyle} width="100%" maxWidth={360}>
-        <InputIcon icon={SearchIcon} iconPosition="left" iconText="Username" disabled={disabled} />
+      <InputGroup
+        id={groupId}
+        className={groupClassName}
+        style={groupStyle}
+        width="100%"
+        maxWidth={360}
+      >
+        <InputIcon
+          icon={SearchIcon}
+          iconPosition="left"
+          iconText="Username"
+          disabled={disabled}
+        />
         <InputText
           ref={ref}
           id={id}

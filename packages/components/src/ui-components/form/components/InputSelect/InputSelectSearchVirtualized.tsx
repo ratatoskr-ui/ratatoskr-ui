@@ -6,6 +6,7 @@ import * as React from 'react';
 import { useCombobox, UseComboboxStateChange } from 'downshift';
 
 import { useVirtual } from 'react-virtual';
+import { ChevronRightIcon } from '@heroicons/react/solid';
 import { Box, Stack } from '../../../../layout';
 import { InputText } from '../InputText';
 import { FormLabel } from '../FormLabel';
@@ -13,7 +14,6 @@ import { Card } from '../../../card';
 import { ActionList, ActionListItem } from '../../../action-list';
 import { Text } from '../../../../typography';
 import { useComponentStyles } from '../../../../system';
-import { ChevronRightIcon } from '@heroicons/react/solid';
 
 export interface InputSelectSearchVirtualizedProps<T> {
   /** The input select label */
@@ -65,8 +65,8 @@ function InputSelect<T>({
   items,
   itemHeight = 36,
   selectedItem,
-  itemToString = item => (item ? String(item) : ''),
-  itemValue = item => (item ? String(item) : ''),
+  itemToString = (item) => (item ? String(item) : ''),
+  itemValue = (item) => (item ? String(item) : ''),
   handleSelectedItemChange,
   itemRenderer,
   inputValueRenderer,
@@ -133,7 +133,7 @@ function InputSelect<T>({
           return changes;
       }
     },
-    onSelectedItemChange: changes => {
+    onSelectedItemChange: (changes) => {
       if (handleSelectedItemChange) {
         handleSelectedItemChange(changes);
       }
@@ -154,7 +154,13 @@ function InputSelect<T>({
     },
     onInputValueChange: ({ inputValue: _inputValue }) => {
       setInputItems(
-        _inputValue ? items.filter(item => itemToString(item).toLowerCase().includes(_inputValue.toLowerCase())) : items
+        _inputValue
+          ? items.filter((item) =>
+              itemToString(item)
+                .toLowerCase()
+                .includes(_inputValue.toLowerCase())
+            )
+          : items
       );
     },
   });
@@ -180,7 +186,10 @@ function InputSelect<T>({
       </Box>
     );
   };
-  const styles = useComponentStyles('inputText', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
+  const styles = useComponentStyles('inputText', {
+    size,
+    variant: errors ? 'error' : isOpen ? 'active' : 'default',
+  });
   return (
     <Box width={width}>
       <Stack spacing="xxs" display="block" position="relative">
@@ -189,7 +198,12 @@ function InputSelect<T>({
             {label}
           </FormLabel>
         )}
-        <Box display="flex" position="relative" alignItems="center" {...getComboboxProps()}>
+        <Box
+          display="flex"
+          position="relative"
+          alignItems="center"
+          {...getComboboxProps()}
+        >
           {renderValueLabel()}
           <InputText
             disabled={disabled}
@@ -237,10 +251,14 @@ function InputSelect<T>({
               ref: parentRef,
             })}
           >
-            <li style={{ height: rowVirtualizer.totalSize, listStyle: 'none' }} />
+            <li
+              style={{ height: rowVirtualizer.totalSize, listStyle: 'none' }}
+            />
             {inputItems.length !== 0 ? (
               rowVirtualizer.virtualItems.map((item, index) => {
-                const selected = selectedItem && itemValue(selectedItem) === itemValue(items[item.index]);
+                const selected =
+                  selectedItem &&
+                  itemValue(selectedItem) === itemValue(items[item.index]);
                 return (
                   <Box
                     sx={{
@@ -255,8 +273,12 @@ function InputSelect<T>({
                   >
                     <ActionListItem
                       containerStyle={
-                        highlightedIndex === item.index && (!selectedItem || !selected)
-                          ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
+                        highlightedIndex === item.index &&
+                        (!selectedItem || !selected)
+                          ? {
+                              backgroundColor: 'greylight03',
+                              borderRadius: 'lg',
+                            }
                           : {}
                       }
                       isActive={selected}

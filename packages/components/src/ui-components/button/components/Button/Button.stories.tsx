@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import Button, { ButtonProps } from './Button';
-
 import { SearchIcon } from '@heroicons/react/solid';
+import Button, { ButtonProps } from './Button';
 
 export default {
   title: 'Core/Components/Button/Button',
@@ -79,7 +78,13 @@ WithIcon.args = {
   iconPosition: 'left',
 };
 
-export const DisclosureButton: Story<ButtonProps> = ({ size, block, disabled, isLoading, onClick }) => (
+export const DisclosureButton: Story<ButtonProps> = ({
+  size,
+  block,
+  disabled,
+  isLoading,
+  onClick,
+}) => (
   <Button
     type="button"
     size={size}

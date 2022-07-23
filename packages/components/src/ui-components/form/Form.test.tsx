@@ -15,7 +15,7 @@ import { Stack } from '../../layout/stack';
 
 describe('components/Form', () => {
   test('renders standard text input correctly', () => {
-    const { getByTestId } = render( 
+    const { getByTestId } = render(
       <Stack spacing="xs">
         <FormLabel htmlFor="textDummy">Text input</FormLabel>
         <InputText data-testid="text-input" placeholder="Type here..." />
@@ -30,7 +30,11 @@ describe('components/Form', () => {
     const { getByTestId } = render(
       <Stack spacing="xs">
         <FormLabel htmlFor="textarea">Text area</FormLabel>
-        <InputTextarea data-testid="text-input" rows={4} placeholder="Type here..." />
+        <InputTextarea
+          data-testid="text-input"
+          rows={4}
+          placeholder="Type here..."
+        />
       </Stack>
     );
 
@@ -43,7 +47,9 @@ describe('components/Form', () => {
       <Stack spacing="xs">
         <FormLabel>Email Address</FormLabel>
         <InputText errors placeholder="Type here..." />
-        <InputMessage data-testid="input-error">Please enter an email address.</InputMessage>
+        <InputMessage data-testid="input-error">
+          Please enter an email address.
+        </InputMessage>
       </Stack>
     );
 
@@ -56,7 +62,11 @@ describe('components/Form', () => {
     const { getByTestId } = render(
       <Stack spacing="xs">
         <FormLabel htmlFor="disabled">Disabled input</FormLabel>
-        <InputText data-testid="disabled-input" disabled placeholder="Can't touch this" />
+        <InputText
+          data-testid="disabled-input"
+          disabled
+          placeholder="Can't touch this"
+        />
       </Stack>
     );
 
@@ -67,7 +77,11 @@ describe('components/Form', () => {
   test('renders checkbox input correctly', () => {
     const { getByTestId } = render(
       <Box display="inline-flex" flexDirection="row" alignItems="center">
-        <InputCheckbox id="checkbox" data-testid="checkbox-input" name="checkbox" />
+        <InputCheckbox
+          id="checkbox"
+          data-testid="checkbox-input"
+          name="checkbox"
+        />
         <Text as="label" scale={200} color={'greydark02'} ml="xs" htmlFor="c1">
           Checkbox
         </Text>

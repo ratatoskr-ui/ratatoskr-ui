@@ -1,12 +1,22 @@
 import * as React from 'react';
+import {
+  CheckCircleIcon,
+  ExclamationCircleIcon,
+  ExclamationIcon,
+  InformationCircleIcon,
+} from '@heroicons/react/solid';
+import { XIcon } from '@heroicons/react/outline';
 import { Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Heading, Paragraph } from '../../../typography';
 import { IconButton } from '../../button';
-import { CheckCircleIcon, ExclamationCircleIcon, ExclamationIcon, InformationCircleIcon } from "@heroicons/react/solid";
-import { XIcon } from "@heroicons/react/outline";
 
-export type MessageStates = 'default' | 'info' | 'warning' | 'critical' | 'success';
+export type MessageStates =
+  | 'default'
+  | 'info'
+  | 'warning'
+  | 'critical'
+  | 'success';
 
 export interface MessageProps {
   /** Message box content. Could be a string or a `ReactNode`. */
@@ -53,13 +63,17 @@ const Message: React.FC<MessageProps> = ({
         return <CheckCircleIcon width={24} aria-hidden fill="currentColor" />;
       }
       case 'info': {
-        return <InformationCircleIcon width={24} aria-hidden fill="currentColor" />;
+        return (
+          <InformationCircleIcon width={24} aria-hidden fill="currentColor" />
+        );
       }
       case 'warning': {
         return <ExclamationIcon width={24} aria-hidden fill="currentColor" />;
       }
       case 'critical': {
-        return <ExclamationCircleIcon width={24} aria-hidden fill="currentColor" />;
+        return (
+          <ExclamationCircleIcon width={24} aria-hidden fill="currentColor" />
+        );
       }
       default: {
         return null;
@@ -81,7 +95,14 @@ const Message: React.FC<MessageProps> = ({
 
   return (
     <Box className={className} style={style} sx={messageBaseStyles} {...rest}>
-      <Box display="flex" alignItems="flex-start" justifyContent="center" py="md" pl="md" sx={messageIconStyles}>
+      <Box
+        display="flex"
+        alignItems="flex-start"
+        justifyContent="center"
+        py="md"
+        pl="md"
+        sx={messageIconStyles}
+      >
         {renderIconStates()}
       </Box>
       <Box flex="1 1 auto" p="md">
@@ -93,12 +114,19 @@ const Message: React.FC<MessageProps> = ({
         {renderMessage()}
       </Box>
       {onClose && (
-        <Box display="flex" alignItems="flex-start" justifyContent="center" p="md" color="greymed04">
+        <Box
+          display="flex"
+          alignItems="flex-start"
+          justifyContent="center"
+          p="md"
+          color="greymed04"
+        >
           <IconButton
-          aria-label="Close"
-          data-testid="Banner-closeButton"
-          variant="secondary"
-          onClick={handleClose}>
+            aria-label="Close"
+            data-testid="Banner-closeButton"
+            variant="secondary"
+            onClick={handleClose}
+          >
             <XIcon width={24} aria-hidden fill="currentColor" />
           </IconButton>
         </Box>

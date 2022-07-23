@@ -22,9 +22,11 @@ export default {
 
 const Template: Story<ParagraphProps> = ({ scale, fontFamily, fontWeight }) => (
   <Paragraph {...{ scale, fontFamily, fontWeight }}>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae esse reprehenderit fugit, quas doloremque,
-     itaque minus maxime iste tempora molestiae veniam incidunt deleniti ut distinctio quod eius, 
-     reiciendis voluptates repellat maiores recusandae animi cumque dolor deserunt assumenda. Molestiae, cum asperiores?
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae esse
+    reprehenderit fugit, quas doloremque, itaque minus maxime iste tempora
+    molestiae veniam incidunt deleniti ut distinctio quod eius, reiciendis
+    voluptates repellat maiores recusandae animi cumque dolor deserunt
+    assumenda. Molestiae, cum asperiores?
   </Paragraph>
 );
 

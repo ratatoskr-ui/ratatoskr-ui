@@ -13,7 +13,11 @@ export interface SignBadgeProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const SignBadge: React.FC<SignBadgeProps> = ({ children, size = 'md', ...rest }) => {
+const SignBadge: React.FC<SignBadgeProps> = ({
+  children,
+  size = 'md',
+  ...rest
+}) => {
   const signBadgeStyle = useComponentStyles('signBadge', { size });
   return (
     <Box data-testid="sign-badge" sx={signBadgeStyle} {...rest}>

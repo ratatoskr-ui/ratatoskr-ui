@@ -2,7 +2,9 @@ import * as React from 'react';
 import { Box, BoxProps } from '../../../../layout';
 import { Text } from '../../../../typography';
 
-export interface InputPrefixProps extends BoxProps, React.ComponentPropsWithoutRef<'div'> {
+export interface InputPrefixProps
+  extends BoxProps,
+    React.ComponentPropsWithoutRef<'div'> {
   disabled?: boolean;
 }
 

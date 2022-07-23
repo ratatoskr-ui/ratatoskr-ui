@@ -25,7 +25,11 @@ export interface BoxProps extends SxProps, AllSystemProps, PseudoSystemProps {
  * Box is a base component with all styled-system hooks added to it. You can use it as a
  * base component for all display elements.
  */
-const Box = styled('div').withConfig<BoxProps>({ shouldForwardProp })(sxMixin, allSystemProps, pseudoSystemProps);
+const Box = styled('div').withConfig<BoxProps>({ shouldForwardProp })(
+  sxMixin,
+  allSystemProps,
+  pseudoSystemProps
+);
 
 Box.displayName = 'Box';
 

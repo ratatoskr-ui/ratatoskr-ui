@@ -6,7 +6,11 @@ import { Box, Stack } from '../../../layout';
 import { theme } from '../../../theme';
 import { Text } from '../../../typography';
 import { OptionListItemBox, OptionListItemBoxProps } from '../../button';
-import { RadioGroupIndicator, RadioGroupItem, RadioGroupRoot } from '../components/RadioGroup/RadioGroup';
+import {
+  RadioGroupIndicator,
+  RadioGroupItem,
+  RadioGroupRoot,
+} from '../components/RadioGroup/RadioGroup';
 
 export default {
   title: 'Core/Components/Form/Radio/RadioGroup',
@@ -18,10 +22,13 @@ export default {
   },
 };
 
-export const RadioInputBoxSample: Story<OptionListItemBoxProps> = ({ disabled, variant }) => {
+export const RadioInputBoxSample: Story<OptionListItemBoxProps> = ({
+  disabled,
+  variant,
+}) => {
   return (
     <OptionListItemBox variant={variant} disabled={disabled} p="xs">
-      Label 
+      Label
     </OptionListItemBox>
   );
 };
@@ -32,7 +39,13 @@ export const RadioWithBox: Story<{ disabled: boolean }> = ({ disabled }) => {
       <RadioGroupRoot>
         <Stack direction="vertical" spacing="xs" width="300px">
           <RadioGroupItem value="value1">
-            <OptionListItemBox disabled={disabled} display="flex" alignItems={'center'} p="xs" id="r1">
+            <OptionListItemBox
+              disabled={disabled}
+              display="flex"
+              alignItems={'center'}
+              p="xs"
+              id="r1"
+            >
               <Box
                 backgroundColor={!disabled ? 'greylight01' : 'greylight02'}
                 width={16}
@@ -45,7 +58,11 @@ export const RadioWithBox: Story<{ disabled: boolean }> = ({ disabled }) => {
                   width={16}
                   height={16}
                   border={'1px solid'}
-                  borderColor={!disabled ? 'greylight05' : transparentize(0.5, theme.colors.greylight05)}
+                  borderColor={
+                    !disabled
+                      ? 'greylight05'
+                      : transparentize(0.5, theme.colors.greylight05)
+                  }
                   borderRadius={16}
                 />
                 <RadioGroupIndicator>
@@ -73,7 +90,13 @@ export const RadioWithBox: Story<{ disabled: boolean }> = ({ disabled }) => {
           </RadioGroupItem>
 
           <RadioGroupItem value="value2" disabled={disabled}>
-            <OptionListItemBox disabled={disabled} display="flex" alignItems={'center'} p="xs" id="r2">
+            <OptionListItemBox
+              disabled={disabled}
+              display="flex"
+              alignItems={'center'}
+              p="xs"
+              id="r2"
+            >
               <Box
                 backgroundColor={!disabled ? 'greylight01' : 'greylight02'}
                 width={16}
@@ -86,7 +109,11 @@ export const RadioWithBox: Story<{ disabled: boolean }> = ({ disabled }) => {
                   width={16}
                   height={16}
                   border={'1px solid'}
-                  borderColor={!disabled ? 'greylight05' : transparentize(0.5, theme.colors.greylight05)}
+                  borderColor={
+                    !disabled
+                      ? 'greylight05'
+                      : transparentize(0.5, theme.colors.greylight05)
+                  }
                   borderRadius={16}
                 />
                 <RadioGroupIndicator>

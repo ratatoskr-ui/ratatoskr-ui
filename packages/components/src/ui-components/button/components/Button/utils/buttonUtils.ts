@@ -21,7 +21,8 @@ export const ButtonDefault = css`
       background-color: ${theme.colors.grey03};
       color: ${theme.colors.blue08};
       border-color: ${theme.colors.blue06};
-      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4), 0 0 0 1px ${theme.colors.blue06};
+      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4),
+        0 0 0 1px ${theme.colors.blue06};
     }
   }
 
@@ -52,7 +53,8 @@ export const ButtonPrimary = css`
     &.active {
       background-color: ${theme.colors.blue08};
       border-color: ${theme.colors.blue06};
-      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4), 0 0 0 1px ${theme.colors.blue06};
+      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4),
+        0 0 0 1px ${theme.colors.blue06};
     }
   }
 
@@ -86,7 +88,8 @@ export const ButtonSupport = css`
       background-color: ${theme.colors.grey03};
       color: ${theme.colors.blue08};
       border-color: ${theme.colors.blue06};
-      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4), 0 0 0 1px ${theme.colors.blue06};
+      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4),
+        0 0 0 1px ${theme.colors.blue06};
     }
 
     &.selected {
@@ -124,7 +127,8 @@ export const ButtonDestructive = css`
       background-color: ${theme.colors.red09};
       border-color: ${theme.colors.red07};
       color: ${theme.colors.grey01};
-      box-shadow: 0 0 2px 1px rgba(186, 19, 9, 0.4), 0 0 0 1px ${theme.colors.red07};
+      box-shadow: 0 0 2px 1px rgba(186, 19, 9, 0.4),
+        0 0 0 1px ${theme.colors.red07};
     }
   }
 
@@ -155,7 +159,8 @@ export const ButtonGhost = css`
       background-color: ${theme.colors.grey03};
       color: ${theme.colors.blue08};
       border-color: ${theme.colors.blue06};
-      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4), 0 0 0 1px ${theme.colors.blue06};
+      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4),
+        0 0 0 1px ${theme.colors.blue06};
     }
   }
 

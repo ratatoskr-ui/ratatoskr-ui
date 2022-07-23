@@ -9,7 +9,13 @@ export default {
   component: IconButton,
   argTypes: {
     variant: {
-      options: ['primary', 'secondary', 'outline-destructive', 'plain', 'plain-destructive'],
+      options: [
+        'primary',
+        'secondary',
+        'outline-destructive',
+        'plain',
+        'plain-destructive',
+      ],
     },
     size: {
       options: ['sm', 'md', 'lg'],
@@ -23,7 +29,13 @@ export default {
   },
 };
 
-export const Example: Story<IconButtonProps> = ({ variant, size, disabled, onClick, selected }) => (
+export const Example: Story<IconButtonProps> = ({
+  variant,
+  size,
+  disabled,
+  onClick,
+  selected,
+}) => (
   <IconButton
     type="button"
     aria-label="Hit Me"

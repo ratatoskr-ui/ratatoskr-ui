@@ -8,7 +8,10 @@ import { UnstyledButton } from '../button';
 export interface SliderProps extends RangerOptions, BoxProps {}
 
 const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
-  ({ values, onChange, min = 0, max = 100, stepSize = 5, sx, ...rest }, ref) => {
+  (
+    { values, onChange, min = 0, max = 100, stepSize = 5, sx, ...rest },
+    ref
+  ) => {
     const sliderTrackStyles = useComponentStyles('sliderTrack');
     const sliderHandleStyles = useComponentStyles('sliderHandle');
     const { getTrackProps, segments, handles } = useRanger({
@@ -26,7 +29,9 @@ const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
           return (
             <Box
               height="100%"
-              backgroundColor={i === segments.length - 1 ? 'transparent' : 'blue06'}
+              backgroundColor={
+                i === segments.length - 1 ? 'transparent' : 'blue06'
+              }
               borderRadius={8}
               {...getSegmentProps()}
               index={i}

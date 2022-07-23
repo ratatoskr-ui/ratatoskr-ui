@@ -8,11 +8,11 @@ export default function useSteps({ initialStep }: UseSteps) {
   const [activeStep, setActiveStep] = React.useState(initialStep);
 
   const nextStep = () => {
-    setActiveStep(prev => prev + 1);
+    setActiveStep((prev) => prev + 1);
   };
 
   const prevStep = () => {
-    setActiveStep(prev => prev - 1);
+    setActiveStep((prev) => prev - 1);
   };
 
   const reset = () => {

@@ -1,18 +1,19 @@
 import * as React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { AccordionMultipleProps, AccordionSingleProps } from '@radix-ui/react-accordion';
+import {
+  AccordionMultipleProps,
+  AccordionSingleProps,
+} from '@radix-ui/react-accordion';
 import styled, { keyframes } from 'styled-components';
+import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Heading } from '../../../typography';
 import { UnstyledButton } from '../../button';
 import { Box } from '../../../layout';
 import { CSSObject } from '../../../system';
-import { ChevronDownIcon } from '@heroicons/react/solid';
 
-export const Accordion: React.FC<(AccordionSingleProps | AccordionMultipleProps) & { style?: CSSObject }> = ({
-  children,
-  style,
-  ...rest
-}) => {
+export const Accordion: React.FC<
+  (AccordionSingleProps | AccordionMultipleProps) & { style?: CSSObject }
+> = ({ children, style, ...rest }) => {
   return (
     <AccordionPrimitive.Root asChild {...rest}>
       <Box sx={{ ...style }}>{children}</Box>
@@ -20,12 +21,9 @@ export const Accordion: React.FC<(AccordionSingleProps | AccordionMultipleProps)
   );
 };
 
-export const AccordionItem: React.FC<AccordionPrimitive.AccordionItemProps & { style?: CSSObject }> = ({
-  children,
-  disabled,
-  value,
-  style,
-}) => {
+export const AccordionItem: React.FC<
+  AccordionPrimitive.AccordionItemProps & { style?: CSSObject }
+> = ({ children, disabled, value, style }) => {
   return (
     <AccordionPrimitive.Item asChild disabled={disabled} value={value}>
       <Box sx={{ ...style }}>{children}</Box>
@@ -34,7 +32,9 @@ export const AccordionItem: React.FC<AccordionPrimitive.AccordionItemProps & { s
 };
 
 /** AccordionTrigger child is Button */
-export const AccordionTrigger: React.FC<AccordionPrimitive.AccordionTriggerProps> = ({ children, ...rest }) => {
+export const AccordionTrigger: React.FC<
+  AccordionPrimitive.AccordionTriggerProps
+> = ({ children, ...rest }) => {
   return (
     <AccordionPrimitive.Trigger asChild {...rest}>
       {children}
@@ -49,12 +49,17 @@ const AccordionChevron = styled(ChevronDownIcon)`
   }
 `;
 
-export interface AccordionHeaderProps extends AccordionPrimitive.AccordionHeaderProps {
+export interface AccordionHeaderProps
+  extends AccordionPrimitive.AccordionHeaderProps {
   size?: 'md' | 'lg';
 }
 
 /** AccordionHeader child is h3 */
-export const AccordionHeader: React.FC<AccordionHeaderProps> = ({ children, size = 'md', ...rest }) => {
+export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
+  children,
+  size = 'md',
+  ...rest
+}) => {
   return (
     <AccordionPrimitive.Header asChild {...rest}>
       <Heading as="h3" display={'flex'} scale={size === 'md' ? 200 : 300}>
@@ -108,7 +113,9 @@ const BoxContent = styled(Box)`
     animation-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
   }
 `;
-export const AccordionContent: React.FC<AccordionPrimitive.AccordionContentProps> = ({ children, ...rest }) => {
+export const AccordionContent: React.FC<
+  AccordionPrimitive.AccordionContentProps
+> = ({ children, ...rest }) => {
   return (
     <AccordionPrimitive.Content asChild {...rest}>
       <BoxContent>{children}</BoxContent>

@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import css from '@styled-system/css';
 import deepmerge from 'deepmerge';
 import * as React from 'react';
@@ -16,9 +17,11 @@ function getStyles(config?: ComponentThemeConfig, props: any = {}) {
 
     const scaleStyles = propToScaleMap
       .map(([prop, scale]) =>
-        config.scales && props[prop] ? runIfFn(config.scales[scale]?.[props[prop]], props) : undefined
+        config.scales && props[prop]
+          ? runIfFn(config.scales[scale]?.[props[prop]], props)
+          : undefined
       )
-      .filter(style => !!style) as Record<string, unknown>[];
+      .filter((style) => !!style) as Record<string, any>[];
 
     return deepmerge.all([baseStyles, ...scaleStyles, props.sx ?? {}]);
   }
@@ -33,7 +36,6 @@ function getStyles(config?: ComponentThemeConfig, props: any = {}) {
 export function useComponentStyles(componentKey: string, props: any = {}) {
   const theme = useTheme();
   const config = get(theme, `componentStyles.${componentKey}`);
-
 
   const allProps = React.useMemo(() => {
     const { children, ...rest } = props;
@@ -79,7 +81,9 @@ export function getBaseStyles(componentKey: string) {
     const config = get(theme, `componentStyles.${componentKey}`);
 
     if (config) {
-      const baseStyles = config.baseStyle ? runIfFn(config.baseStyle, props) : {};
+      const baseStyles = config.baseStyle
+        ? runIfFn(config.baseStyle, props)
+        : {};
 
       return css(baseStyles);
     }

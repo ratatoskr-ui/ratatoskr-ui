@@ -5,6 +5,8 @@ import { RatatoskrProvider } from '../../global-provider';
 
 import 'typeface-inter';
 
-const SystemWrapper: DecoratorFn = storyFn => <RatatoskrProvider>{storyFn()}</RatatoskrProvider>;
+const SystemWrapper: DecoratorFn = (storyFn) => (
+  <RatatoskrProvider>{storyFn()}</RatatoskrProvider>
+);
 
 export default SystemWrapper;

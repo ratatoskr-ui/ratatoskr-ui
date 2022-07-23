@@ -12,9 +12,15 @@ export interface PaginationJumpToProps {
   children?: React.ReactNode;
 }
 
-const PaginationJumpTo: React.FC<PaginationJumpToProps> = ({ children, total, onSelectPage }) => {
+const PaginationJumpTo: React.FC<PaginationJumpToProps> = ({
+  children,
+  total,
+  onSelectPage,
+}) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [formValue, setFormValue] = React.useState<number | undefined>(undefined);
+  const [formValue, setFormValue] = React.useState<number | undefined>(
+    undefined
+  );
 
   const handleValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormValue(parseInt(event.target.value, 10));
@@ -32,7 +38,14 @@ const PaginationJumpTo: React.FC<PaginationJumpToProps> = ({ children, total, on
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger>
         <PaginationButton
-          sx={isOpen ? { border: `1px solid ${theme.colors.blue07}`, backgroundColor: theme.colors.blue01 } : {}}
+          sx={
+            isOpen
+              ? {
+                  border: `1px solid ${theme.colors.blue07}`,
+                  backgroundColor: theme.colors.blue01,
+                }
+              : {}
+          }
         >
           {children}
         </PaginationButton>
@@ -40,7 +53,14 @@ const PaginationJumpTo: React.FC<PaginationJumpToProps> = ({ children, total, on
       <PopoverContent placement="top" align="center">
         <Box width={190}>
           <Box p="lg">
-            <InputText type="number" min={1} max={total} width="100%" value={formValue} onChange={handleValueChange} />
+            <InputText
+              type="number"
+              min={1}
+              max={total}
+              width="100%"
+              value={formValue}
+              onChange={handleValueChange}
+            />
           </Box>
           <Box
             display="flex"

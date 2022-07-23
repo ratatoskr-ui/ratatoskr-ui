@@ -1,6 +1,9 @@
 import { Meta, Story } from '@storybook/react';
 import * as React from 'react';
-import { InputSelectTags, InputSelectTagsProps } from '../components/InputSelectTags';
+import {
+  InputSelectTags,
+  InputSelectTagsProps,
+} from '../components/InputSelectTags';
 
 export default {
   title: 'Core/Components/Form/InputSelectTag',
@@ -27,7 +30,13 @@ export default {
   },
 } as Meta<InputSelectTagsProps>;
 
-export const Example: Story<InputSelectTagsProps> = ({ placeholder, disabled, label, errors, width }) => {
+export const Example: Story<InputSelectTagsProps> = ({
+  placeholder,
+  disabled,
+  label,
+  errors,
+  width,
+}) => {
   const [value, setValue] = React.useState<string[]>(['Test']);
   return (
     <InputSelectTags

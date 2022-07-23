@@ -28,7 +28,16 @@ export default {
   },
 };
 
-const Template: Story<ButtonAnchorProps> = ({ variant, size, block, href, target, isLoading, icon, iconPosition }) => (
+const Template: Story<ButtonAnchorProps> = ({
+  variant,
+  size,
+  block,
+  href,
+  target,
+  isLoading,
+  icon,
+  iconPosition,
+}) => (
   <ButtonAnchor
     type="button"
     variant={variant}

@@ -18,13 +18,20 @@ export interface DatePickerImplRangeProps extends DatePickerProps {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export interface DatePickerProps extends Omit<Props, 'onDateSelected' | 'monthsToDisplay' | 'selected'> {
+export interface DatePickerProps
+  extends Omit<Props, 'onDateSelected' | 'monthsToDisplay' | 'selected'> {
   advanceView?: React.ReactNode;
   onClose?: () => void;
   multiDatePicker?: boolean;
 }
 
-const CalendarPicker = ({ multiDatePicker, onChange, advanceView, selected, ...props }: DatePickerImplPickerProps) => {
+function CalendarPicker({
+  multiDatePicker,
+  onChange,
+  advanceView,
+  selected,
+  ...props
+}: DatePickerImplPickerProps) {
   const [dateValue, setDateValue] = React.useState<Date>();
   const onDateSelected = (selectedDate: DateObj) => {
     setDateValue(selectedDate.date);
@@ -58,14 +65,14 @@ const CalendarPicker = ({ multiDatePicker, onChange, advanceView, selected, ...p
       {...dayzedData}
     />
   );
-};
-const CalendarRangePicker = ({
+}
+function CalendarRangePicker({
   multiDatePicker,
   onChange,
   advanceView,
   selected,
   ...props
-}: DatePickerImplRangeProps) => {
+}: DatePickerImplRangeProps) {
   const [dateValue, setDateValue] = React.useState<Date[]>([]);
   React.useEffect(() => {
     if (selected) {
@@ -111,16 +118,17 @@ const CalendarRangePicker = ({
       {...dayzedData}
     />
   );
+}
+
+export const DatePicker: (
+  props: DatePickerTypePickerProps | DatePickerTypeRangeProps
+) => React.ReactElement = (props) => {
+  const { type, ...accordionProps } = props;
+  const pickerProps = accordionProps as DatePickerImplPickerProps;
+  const rangeProps = accordionProps as DatePickerTypeRangeProps;
+
+  if (type === 'range') {
+    return <CalendarRangePicker {...rangeProps} />;
+  }
+  return <CalendarPicker {...pickerProps} />;
 };
-
-export const DatePicker: (props: DatePickerTypePickerProps | DatePickerTypeRangeProps) => React.ReactElement =
-  props => {
-    const { type, ...accordionProps } = props;
-    const pickerProps = accordionProps as DatePickerImplPickerProps;
-    const rangeProps = accordionProps as DatePickerTypeRangeProps;
-
-    if (type === 'range') {
-      return <CalendarRangePicker {...rangeProps} />;
-    }
-    return <CalendarPicker {...pickerProps} />;
-  };

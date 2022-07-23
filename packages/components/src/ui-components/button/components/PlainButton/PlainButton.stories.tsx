@@ -26,7 +26,15 @@ export default {
   },
 };
 
-const Template: Story<PlainButtonProps> = ({ variant, size, isLoading, icon, iconPosition, onClick, selected }) => (
+const Template: Story<PlainButtonProps> = ({
+  variant,
+  size,
+  isLoading,
+  icon,
+  iconPosition,
+  onClick,
+  selected,
+}) => (
   <PlainButton
     type="button"
     variant={variant}
@@ -62,7 +70,7 @@ export const DisclosureButton: Story<PlainButtonProps> = ({
   isLoading,
   onClick,
   selected,
-  icon
+  icon,
 }) => (
   <PlainButton
     type="button"

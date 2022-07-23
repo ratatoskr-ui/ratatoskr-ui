@@ -23,7 +23,12 @@ export default {
   },
 };
 
-export const Example: Story<IconButtonAnchorProps> = ({ variant, size, href, target }) => (
+export const Example: Story<IconButtonAnchorProps> = ({
+  variant,
+  size,
+  href,
+  target,
+}) => (
   <IconButtonAnchor
     aria-label="Hit Me"
     rel="noopener noreferrer"

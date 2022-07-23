@@ -15,7 +15,10 @@ import { textProps } from '../../utils';
 
 export type TextScale = 500 | 400 | 300 | 200;
 
-export interface TextProps<ThemeType extends Theme = RequiredTheme> extends SxProps, AllSystemProps, PseudoSystemProps {
+export interface TextProps<ThemeType extends Theme = RequiredTheme>
+  extends SxProps,
+    AllSystemProps,
+    PseudoSystemProps {
   color?: string;
   children?: React.ReactNode;
   /** Size value of the text. */

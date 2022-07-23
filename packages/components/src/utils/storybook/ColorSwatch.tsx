@@ -9,15 +9,36 @@ interface ColorSwatchProps {
   hasBorder?: boolean;
 }
 
-const ColorSwatch: React.FC<ColorSwatchProps> = ({ title, colorKey, hex, hasBorder }) => (
+const ColorSwatch: React.FC<ColorSwatchProps> = ({
+  title,
+  colorKey,
+  hex,
+  hasBorder,
+}) => (
   <Box>
-    <Box bg={hex} height={64} border="1px solid" borderColor={hasBorder ? 'greylight03' : 'transparent'} />
-    <Box display="flex" flexDirection="row" justifyContent="space-between" mt="xxs">
+    <Box
+      bg={hex}
+      height={64}
+      border="1px solid"
+      borderColor={hasBorder ? 'greylight03' : 'transparent'}
+    />
+    <Box
+      display="flex"
+      flexDirection="row"
+      justifyContent="space-between"
+      mt="xxs"
+    >
       <Box>
         <Heading as="h5" scale={300} color="greydark05" fontWeight={700} m={0}>
           {title}
         </Heading>
-        <Text as="p" fontFamily="monospace" scale={200} color="greydark05" m={0}>
+        <Text
+          as="p"
+          fontFamily="monospace"
+          scale={200}
+          color="greydark05"
+          m={0}
+        >
           {colorKey}
         </Text>
       </Box>

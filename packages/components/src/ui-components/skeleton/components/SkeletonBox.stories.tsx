@@ -7,10 +7,12 @@ export default {
   component: SkeletonBox,
 };
 
-export const Example = () => (
-  <SkeletonBox
-    style={{
-      height: 200,
-    }}
-  />
-);
+export function Example() {
+  return (
+    <SkeletonBox
+      style={{
+        height: 200,
+      }}
+    />
+  );
+}

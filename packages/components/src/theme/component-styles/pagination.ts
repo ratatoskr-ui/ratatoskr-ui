@@ -1,10 +1,10 @@
-import { Theme } from '@ratatoskr-ui/components';
+import { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig, ComponentThemeScaleFn } from '../../system';
 
-const paginationButtonBaseStyle: ComponentThemeScaleFn<{ theme: Theme; isActive: boolean }> = ({
-  theme,
-  isActive,
-}) => ({
+const paginationButtonBaseStyle: ComponentThemeScaleFn<{
+  theme: DefaultTheme;
+  isActive: boolean;
+}> = ({ theme, isActive }) => ({
   display: 'inline-flex',
   outline: 'none',
   alignItems: 'center',

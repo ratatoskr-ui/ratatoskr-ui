@@ -1,6 +1,12 @@
 import { Meta, Story } from '@storybook/react';
 import * as React from 'react';
-import { InputGroup, InputSelect, InputSelectProps, FormLabel, InputPrefix } from '../../components';
+import {
+  InputGroup,
+  InputSelect,
+  InputSelectProps,
+  FormLabel,
+  InputPrefix,
+} from '../../components';
 import { Stack } from '../../../../layout';
 import { Avatar } from '../../../avatar';
 
@@ -68,8 +74,8 @@ export const InputSelectExample: Story<InputSelectProps<ValueSchema>> = ({
       placeholder={placeholder}
       disabled={disabled}
       errors={errors}
-      itemToString={item => (item ? `${item.label}` : '')}
-      itemValue={item => (item ? `${item.label}` : '')}
+      itemToString={(item) => (item ? `${item.label}` : '')}
+      itemValue={(item) => (item ? `${item.label}` : '')}
       handleSelectedItemChange={({ selectedItem }) => {
         if (selectedItem) {
           setSelected(selectedItem);
@@ -126,8 +132,8 @@ export const InputSelectWithPrefix: Story<InputSelectProps<ValueSchema>> = ({
           placeholder={placeholder}
           disabled={disabled}
           errors={errors}
-          itemToString={item => (item ? `${item.label}` : '')}
-          itemValue={item => (item ? `${item.label}` : '')}
+          itemToString={(item) => (item ? `${item.label}` : '')}
+          itemValue={(item) => (item ? `${item.label}` : '')}
           handleSelectedItemChange={({ selectedItem }) => {
             if (selectedItem) {
               setSelected(selectedItem);
@@ -153,14 +159,9 @@ InputSelectWithPrefix.args = {
   maxHeight: 250,
 };
 
-export const InputSelectWithPrefixAvatar: Story<InputSelectProps<ValueSchema>> = ({
-  placeholder,
-  disabled,
-  size,
-  errors,
-  width,
-  maxHeight,
-}) => {
+export const InputSelectWithPrefixAvatar: Story<
+  InputSelectProps<ValueSchema>
+> = ({ placeholder, disabled, size, errors, width, maxHeight }) => {
   const [selected, setSelected] = React.useState<ValueSchema | null>(null);
   const [items] = React.useState([
     { label: 'Ai Nakamura', value: 'a' },
@@ -184,8 +185,8 @@ export const InputSelectWithPrefixAvatar: Story<InputSelectProps<ValueSchema>> =
           placeholder={placeholder}
           disabled={disabled}
           errors={errors}
-          itemToString={item => (item ? `${item.label}` : '')}
-          itemValue={item => (item ? `${item.label}` : '')}
+          itemToString={(item) => (item ? `${item.label}` : '')}
+          itemValue={(item) => (item ? `${item.label}` : '')}
           handleSelectedItemChange={({ selectedItem }) => {
             if (selectedItem) {
               setSelected(selectedItem);

@@ -5,7 +5,9 @@ import { renderButtonChildren, renderButtonIcon } from '../Button/utils';
 import { PlainButtonBaseProps, PlainButtonSizes } from './types';
 import { UnstyledButton } from '../UnstyledButton';
 
-export interface PlainButtonProps extends PlainButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface PlainButtonProps
+  extends PlainButtonBaseProps,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -19,8 +21,25 @@ export interface PlainButtonProps extends PlainButtonBaseProps, React.ButtonHTML
 }
 
 const PlainButton = React.forwardRef<HTMLButtonElement, PlainButtonProps>(
-  ({ children, size = 'sm', icon, iconPosition, disabled, isLoading, variant = 'primary', selected, ...rest }, ref) => {
-    const plainButtonStyles = useComponentStyles('plainButton', { size, variant, selected });
+  (
+    {
+      children,
+      size = 'sm',
+      icon,
+      iconPosition,
+      disabled,
+      isLoading,
+      variant = 'primary',
+      selected,
+      ...rest
+    },
+    ref
+  ) => {
+    const plainButtonStyles = useComponentStyles('plainButton', {
+      size,
+      variant,
+      selected,
+    });
 
     return (
       <UnstyledButton

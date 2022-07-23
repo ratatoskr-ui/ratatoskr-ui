@@ -5,7 +5,9 @@ import { useComponentStyles } from '../../../../system';
 import { UnstyledButton } from '../UnstyledButton';
 import { IconButtonBaseProps, IconButtonSizes } from './types';
 
-export interface IconButtonProps extends IconButtonBaseProps, React.ComponentPropsWithoutRef<'button'> {
+export interface IconButtonProps
+  extends IconButtonBaseProps,
+    React.ComponentPropsWithoutRef<'button'> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -34,7 +36,11 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     },
     ref
   ) => {
-    const iconButtonStyles = useComponentStyles('iconButton', { size, variant, selected });
+    const iconButtonStyles = useComponentStyles('iconButton', {
+      size,
+      variant,
+      selected,
+    });
 
     return (
       <UnstyledButton

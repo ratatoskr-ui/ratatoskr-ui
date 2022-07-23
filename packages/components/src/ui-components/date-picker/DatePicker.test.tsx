@@ -27,12 +27,12 @@ describe('components/DatePicker', () => {
   describe('DatePicker type single', () => {
     test('successfuly select today ', () => {
       const today = new Date();
-      const handleSelect = jest.fn(x => x);
+      const handleSelect = jest.fn((x) => x);
       const { getByText } = render(
         <DatePicker
           type="picker"
           date={today}
-          onChange={date => {
+          onChange={(date) => {
             handleSelect(date);
           }}
         />
@@ -49,20 +49,22 @@ describe('components/DatePicker', () => {
   describe('multiple DatePicker type range', () => {
     test('successfuly select today ', () => {
       const today = new Date();
-      const handleSelect = jest.fn(x => x);
+      const handleSelect = jest.fn((x) => x);
       const { getAllByText, getByRole } = render(
         <DatePicker
           type="range"
           multiDatePicker
           date={today}
-          onChange={date => {
+          onChange={(date) => {
             handleSelect(date);
           }}
         />
       );
       const ThisDay = getAllByText(today.getDate().toString());
       const Tommorow = getAllByText(
-        new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1).getDate().toString()
+        new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1)
+          .getDate()
+          .toString()
       );
       const UpdateButton = getByRole('button', { name: /update/i });
       act(() => {
@@ -81,7 +83,7 @@ describe('components/DatePicker', () => {
     test('value index 0 must be < value index 1 ', () => {
       const today = new Date();
       let returnValue: Date[] = [];
-      const handleSelect = jest.fn(x => {
+      const handleSelect = jest.fn((x) => {
         returnValue = x;
       });
       const { getAllByText, getByRole } = render(
@@ -89,14 +91,16 @@ describe('components/DatePicker', () => {
           type="range"
           multiDatePicker
           date={today}
-          onChange={date => {
+          onChange={(date) => {
             handleSelect(date);
           }}
         />
       );
       const ThisDay = getAllByText(today.getDate().toString());
       const Tommorow = getAllByText(
-        new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1).getDate().toString()
+        new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1)
+          .getDate()
+          .toString()
       );
       const UpdateButton = getByRole('button', { name: /update/i });
       act(() => {
@@ -124,7 +128,7 @@ describe('components/DatePicker', () => {
     test('select startDate and endDate at same date', () => {
       const today = new Date();
       let returnValue: Date[] = [];
-      const handleSelect = jest.fn(x => {
+      const handleSelect = jest.fn((x) => {
         returnValue = x;
       });
       const { getAllByText, getByRole } = render(
@@ -132,7 +136,7 @@ describe('components/DatePicker', () => {
           type="range"
           multiDatePicker
           date={today}
-          onChange={date => {
+          onChange={(date) => {
             handleSelect(date);
           }}
         />
@@ -155,22 +159,26 @@ describe('components/DatePicker', () => {
   describe('AdvancedDatePicker type range', () => {
     test('successfuly select today ', () => {
       const today = new Date();
-      const handleSelect = jest.fn(x => x);
-      const handleOption = jest.fn(x => x);
+      const handleSelect = jest.fn((x) => x);
+      const handleOption = jest.fn((x) => x);
       const { getAllByText, getByRole } = render(
         <DatePicker
-          advanceView={<AdvancedOption options={options} optionHandler={handleOption} />}
+          advanceView={
+            <AdvancedOption options={options} optionHandler={handleOption} />
+          }
           type="range"
           multiDatePicker
           date={today}
-          onChange={date => {
+          onChange={(date) => {
             handleSelect(date);
           }}
         />
       );
       const ThisDay = getAllByText(today.getDate().toString());
       const Tommorow = getAllByText(
-        new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1).getDate().toString()
+        new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1)
+          .getDate()
+          .toString()
       );
       const UpdateButton = getByRole('button', { name: /update/i });
       act(() => {
@@ -188,15 +196,17 @@ describe('components/DatePicker', () => {
     });
     test('select option works correctly', () => {
       const today = new Date();
-      const handleSelect = jest.fn(x => x);
-      const handleOption = jest.fn(x => x);
+      const handleSelect = jest.fn((x) => x);
+      const handleOption = jest.fn((x) => x);
       const { getByText } = render(
         <DatePicker
-          advanceView={<AdvancedOption options={options} optionHandler={handleOption} />}
+          advanceView={
+            <AdvancedOption options={options} optionHandler={handleOption} />
+          }
           type="range"
           multiDatePicker
           date={today}
-          onChange={date => {
+          onChange={(date) => {
             handleSelect(date);
           }}
         />

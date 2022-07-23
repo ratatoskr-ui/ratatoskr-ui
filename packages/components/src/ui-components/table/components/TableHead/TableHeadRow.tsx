@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Box, BoxProps } from '../../../../layout';
 
-export type TableHeadRowProps = React.TableHTMLAttributes<HTMLTableRowElement> & Omit<BoxProps, 'width' | 'height'>;
+export type TableHeadRowProps = React.TableHTMLAttributes<HTMLTableRowElement> &
+  Omit<BoxProps, 'width' | 'height'>;
 
 const TableHeadRow = React.forwardRef<HTMLTableRowElement, TableHeadRowProps>(
   ({ children, _hover, _notLast, ...rest }, ref) => {

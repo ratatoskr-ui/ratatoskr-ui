@@ -1,6 +1,10 @@
 /* eslint-disable no-underscore-dangle */
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import css, { CssFunctionReturnType } from '@styled-system/css';
-import { createShouldForwardProp, props } from '@styled-system/should-forward-prop';
+import {
+  createShouldForwardProp,
+  props,
+} from '@styled-system/should-forward-prop';
 import {
   layout,
   LayoutProps,
@@ -23,7 +27,14 @@ import {
   compose,
 } from 'styled-system';
 
-import { other, otherProps, OtherProps, typography, typographyProps, TypographyProps } from './parsers';
+import {
+  other,
+  otherProps,
+  OtherProps,
+  typography,
+  typographyProps,
+  TypographyProps,
+} from './parsers';
 
 const allProps = [...props, ...typographyProps, ...otherProps];
 
@@ -89,7 +100,8 @@ export const pseudoSelectors = {
   _notLast: '&:not(:last-of-type)',
   _visited: '&:visited',
   _activeLink: '&[aria-current=page]',
-  _indeterminate: '&:indeterminate, &[aria-checked=mixed], &[data-indeterminate]',
+  _indeterminate:
+    '&:indeterminate, &[aria-checked=mixed], &[data-indeterminate]',
   _groupHover: '&[role=group]:hover &, &[role=group][data-hover] &',
   _groupFocus: '&[role=group]:focus &, &[role=group][data-focus] &',
   _groupActive: '&[role=group]:active &, &[role=group][data-active] &',
@@ -101,7 +113,9 @@ export const pseudoSelectors = {
   _selection: '&::selection',
 };
 
-export type PseudoSystemProps = Partial<Record<keyof typeof pseudoSelectors, AllSystemProps>>;
+export type PseudoSystemProps = Partial<
+  Record<keyof typeof pseudoSelectors, AllSystemProps>
+>;
 
 export function pseudoSystemProps({
   _hover,
@@ -191,6 +205,8 @@ export interface SxProps {
   sx?: Partial<Record<keyof AllSystemProps & PseudoSystemProps, any>>;
 }
 
-export function sxMixin(p: SxProps): CssFunctionReturnType | Record<string, never> {
+export function sxMixin(
+  p: SxProps
+): CssFunctionReturnType | Record<string, never> {
   return p.sx ? css(p.sx) : {};
 }

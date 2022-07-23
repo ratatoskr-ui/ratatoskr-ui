@@ -1,9 +1,14 @@
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import { ChevronDownIcon } from '@heroicons/react/solid';
 import * as React from 'react';
 import Box from '../../../layout/box/components/Box';
 import { Text } from '../../../typography';
 import { Button } from '../../button';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../../dropdown';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '../../dropdown';
 
 export interface PaginationFilterProps<T> {
   /** Total limit of pages. */
@@ -18,14 +23,14 @@ export interface PaginationFilterProps<T> {
   onChange: (changes: T) => void;
 }
 
-const PaginationFilter = ({
+function PaginationFilter({
   limit,
   label = 'Show rows',
   items,
   selectedItem = limit,
   onChange,
   ...rest
-}: PaginationFilterProps<number>) => {
+}: PaginationFilterProps<number>) {
   return (
     <Box display="flex" flexDirection="row" alignItems="center">
       <Text scale={300} mr={10} {...rest}>
@@ -33,12 +38,17 @@ const PaginationFilter = ({
       </Text>
       <DropdownMenu maxWidth={300}>
         <DropdownMenuTrigger>
-          <Button type="button" size="md" icon={ChevronDownIcon} iconPosition="right">
+          <Button
+            type="button"
+            size="md"
+            icon={ChevronDownIcon}
+            iconPosition="right"
+          >
             {selectedItem}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent side={'bottom'}>
-          {items.map(item => {
+          {items.map((item) => {
             return (
               <Box key={item} px={'sm'}>
                 <DropdownMenuItem
@@ -59,6 +69,6 @@ const PaginationFilter = ({
       </DropdownMenu>
     </Box>
   );
-};
+}
 
 export default PaginationFilter;

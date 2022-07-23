@@ -6,8 +6,8 @@ import { Box } from '../../layout';
 import { Heading } from '../../typography';
 import { theme } from '../../theme';
 
-interface SystemSubheadingProps extends SpaceProps{
-  children? : React.ReactNode
+interface SystemSubheadingProps extends SpaceProps {
+  children?: React.ReactNode;
 }
 
 const HorizontalRule = styled('hr')<SystemSubheadingProps>`
@@ -16,7 +16,10 @@ const HorizontalRule = styled('hr')<SystemSubheadingProps>`
   border-top: 1px solid ${themeGet('colors.grey04', theme.colors.grey04)};
 `;
 
-const SystemSubheading: React.FC<SystemSubheadingProps> = ({ children, ...rest }) => (
+const SystemSubheading: React.FC<SystemSubheadingProps> = ({
+  children,
+  ...rest
+}) => (
   <Box {...rest}>
     <Heading scale={600}>{children}</Heading>
     <HorizontalRule mt="sm" mb={0} />

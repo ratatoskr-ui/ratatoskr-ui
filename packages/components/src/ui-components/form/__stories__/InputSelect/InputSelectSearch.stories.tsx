@@ -1,7 +1,10 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
 import { Box } from '../../../../layout';
-import { InputSelectSearch, InputSelectSearchProps } from '../../components/InputSelect';
+import {
+  InputSelectSearch,
+  InputSelectSearchProps,
+} from '../../components/InputSelect';
 import { Text } from '../../../../typography';
 
 export default {
@@ -61,14 +64,14 @@ export const Example: Story<InputSelectSearchProps<ValueSchema>> = ({
       placeholder={placeholder}
       disabled={disabled}
       errors={errors}
-      itemToString={item => (item ? `${item.label}` : '')}
-      itemValue={item => item?.value ?? ''}
+      itemToString={(item) => (item ? `${item.label}` : '')}
+      itemValue={(item) => item?.value ?? ''}
       handleSelectedItemChange={({ selectedItem }) => {
         if (selectedItem) {
           setSelected(selectedItem);
         }
       }}
-      inputValueRenderer={item => (
+      inputValueRenderer={(item) => (
         <Box>
           <Text scale={200}>{item.label}</Text>
         </Box>
@@ -89,15 +92,9 @@ Example.args = {
   maxHeight: '250px',
 };
 
-export const ListOfStringExample: Story<InputSelectSearchProps<ValueSchema>> = ({
-  placeholder,
-  disabled,
-  size,
-  label,
-  errors,
-  width,
-  maxHeight,
-}) => {
+export const ListOfStringExample: Story<
+  InputSelectSearchProps<ValueSchema>
+> = ({ placeholder, disabled, size, label, errors, width, maxHeight }) => {
   const [selected, setSelected] = React.useState<string | null>(null);
   const [items] = React.useState([
     'apple',

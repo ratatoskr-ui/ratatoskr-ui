@@ -20,8 +20,20 @@ export interface LoadingCircleProps extends BoxProps {
   label?: string;
 }
 
-const Circle: React.FC<LoadingCircleProps> = React.forwardRef<HTMLDivElement, LoadingCircleProps>(
-  ({ className, size = 40, spinnerColor = theme.colors.blue07, label = 'Loading...', ...rest }, ref) => {
+const Circle: React.FC<LoadingCircleProps> = React.forwardRef<
+  HTMLDivElement,
+  LoadingCircleProps
+>(
+  (
+    {
+      className,
+      size = 40,
+      spinnerColor = theme.colors.blue07,
+      label = 'Loading...',
+      ...rest
+    },
+    ref
+  ) => {
     return (
       <Box
         ref={ref}

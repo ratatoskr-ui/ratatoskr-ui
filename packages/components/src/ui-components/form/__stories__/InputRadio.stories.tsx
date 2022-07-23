@@ -4,7 +4,9 @@ import { Story } from '@storybook/react';
 import { Box } from '../../../layout';
 import { Text } from '../../../typography';
 import InputRadioLabel from '../components/InputRadio/InputRadioLabel';
-import InputRadio, { InputRadioProps } from '../components/InputRadio/InputRadio';
+import InputRadio, {
+  InputRadioProps,
+} from '../components/InputRadio/InputRadio';
 
 export default {
   title: 'Core/Components/Form/Radio/InputRadio',
@@ -25,11 +27,22 @@ export default {
   },
 };
 
-export const Example: Story<InputRadioProps> = ({ id, value, checked, disabled }) => {
+export const Example: Story<InputRadioProps> = ({
+  id,
+  value,
+  checked,
+  disabled,
+}) => {
   return (
     <Box>
       <InputRadioLabel htmlFor={id}>
-        <InputRadio id={id} name={id} value={value} checked={checked} disabled={disabled} />
+        <InputRadio
+          id={id}
+          name={id}
+          value={value}
+          checked={checked}
+          disabled={disabled}
+        />
         <Text scale={300} ml="xs">
           Radio 1
         </Text>

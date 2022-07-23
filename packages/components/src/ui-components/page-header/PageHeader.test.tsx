@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
+import { ArrowLeftIcon, ChevronDownIcon } from '@heroicons/react/solid';
 import { Button, IconButton } from '../button';
 import PageHeader from './PageHeader';
 import { ButtonGroup } from '../button-group';
-import { ArrowLeftIcon, ChevronDownIcon } from '@heroicons/react/solid';
 
 describe('Components/PageHeader', () => {
   describe('PageHeader', () => {
@@ -17,7 +17,9 @@ describe('Components/PageHeader', () => {
     });
 
     test('renders action buttons correctly', () => {
-      const { getByRole } = render(<PageHeader title="Title" actions={<Button>Label</Button>} />);
+      const { getByRole } = render(
+        <PageHeader title="Title" actions={<Button>Label</Button>} />
+      );
 
       const button = getByRole('button', {
         name: /label/i,

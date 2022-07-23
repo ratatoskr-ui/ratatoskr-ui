@@ -7,4 +7,6 @@ export default {
   component: Circle,
 };
 
-export const Example = () => <Circle />;
+export function Example() {
+  return <Circle />;
+}

@@ -2,7 +2,12 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import { DropdownMenu } from '.';
 import { Box } from '../../../../layout';
-import { DropdownMenuItem, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuDivider } from '../DropdownMenuItem';
+import {
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuDivider,
+} from '../DropdownMenuItem';
 
 describe('components/Dropdown', () => {
   describe('<DropdownMenu />', () => {

@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { XIcon } from '@heroicons/react/solid';
 import { UnstyledButton } from '../../button/components/UnstyledButton';
-import { XIcon } from "@heroicons/react/solid";
 
 export interface CloseButtonProps {
   onClick?: () => void;

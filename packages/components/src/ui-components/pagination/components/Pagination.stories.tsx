@@ -11,42 +11,42 @@ export default {
   title: 'Core/Components/Pagination',
 };
 
-export const Example = () => {
+export function Example() {
   const [currentPage, setCurrentPage] = React.useState(1);
 
   return (
     <Pagination
       current={currentPage}
       total={5}
-      onSelect={select => {
+      onSelect={(select) => {
         setCurrentPage(select);
         action('select-page')(select);
       }}
     />
   );
-};
+}
 
-export const LargePageNumbers = () => {
+export function LargePageNumbers() {
   const [currentPage, setCurrentPage] = React.useState(10);
 
   return (
     <Pagination
       current={currentPage}
       total={50}
-      onSelect={select => {
+      onSelect={(select) => {
         setCurrentPage(select);
         action('select-page')(select);
       }}
     />
   );
-};
-export const PaginationFilterSample = () => {
+}
+export function PaginationFilterSample() {
   const [limit, setLimit] = React.useState(10);
   return (
     <Box mt={64}>
       <PaginationFilter
         selectedItem={limit}
-        onChange={selectedItem => {
+        onChange={(selectedItem) => {
           if (selectedItem) {
             setLimit(selectedItem);
           }
@@ -55,9 +55,13 @@ export const PaginationFilterSample = () => {
       />
     </Box>
   );
-};
+}
 
-export const PaginationDetailSample: Story<PaginationDetailProps> = ({ page, limit, length }) => {
+export const PaginationDetailSample: Story<PaginationDetailProps> = ({
+  page,
+  limit,
+  length,
+}) => {
   return <PaginationDetail page={page} limit={limit} length={length} />;
 };
 PaginationDetailSample.args = {
@@ -66,27 +70,32 @@ PaginationDetailSample.args = {
   length: 98,
 };
 
-export const WithPaginationDetail = () => {
+export function WithPaginationDetail() {
   const [currentPage, setCurrentPage] = React.useState(10);
   const [limit, setLimit] = React.useState(10);
   const length = 475;
   const totalPages = Math.ceil(length / limit);
 
   return (
-    <Box display="flex" flexDirection="column" height="80vh" justifyContent="space-between">
+    <Box
+      display="flex"
+      flexDirection="column"
+      height="80vh"
+      justifyContent="space-between"
+    >
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <PaginationDetail page={currentPage} limit={limit} length={length} />
         <Pagination
           current={currentPage}
           total={totalPages}
-          onSelect={select => {
+          onSelect={(select) => {
             setCurrentPage(select);
             action('select-page')(select);
           }}
         />
         <PaginationFilter
           selectedItem={limit}
-          onChange={selectedItem => {
+          onChange={(selectedItem) => {
             if (selectedItem) {
               setLimit(selectedItem);
             }
@@ -99,14 +108,14 @@ export const WithPaginationDetail = () => {
         <Pagination
           current={currentPage}
           total={totalPages}
-          onSelect={select => {
+          onSelect={(select) => {
             setCurrentPage(select);
             action('select-page')(select);
           }}
         />
         <PaginationFilter
           selectedItem={limit}
-          onChange={selectedItem => {
+          onChange={(selectedItem) => {
             if (selectedItem) {
               setLimit(selectedItem);
             }
@@ -116,4 +125,4 @@ export const WithPaginationDetail = () => {
       </Box>
     </Box>
   );
-};
+}

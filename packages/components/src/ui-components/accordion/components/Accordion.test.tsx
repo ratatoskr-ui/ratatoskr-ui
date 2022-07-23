@@ -5,7 +5,13 @@ import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Box } from '../../../layout';
 import { Heading } from '../../../typography';
 import { UnstyledButton } from '../../button';
-import { Accordion, AccordionItem, AccordionHeader, AccordionTrigger, AccordionContent } from '.';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionTrigger,
+  AccordionContent,
+} from '.';
 
 const slideDown = keyframes`
   from  { height: 0 }

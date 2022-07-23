@@ -49,10 +49,14 @@ export const SingleAccordion: Story<{ size: 'md' | 'lg' }> = ({ size }) => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionHeader size={size}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, atque?</AccordionHeader>
+        <AccordionHeader size={size}>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
+          atque?
+        </AccordionHeader>
         <AccordionContent>
           <Box py="sm" px="xs">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, eos.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+            eos.
           </Box>
         </AccordionContent>
       </AccordionItem>
@@ -78,10 +82,15 @@ export const SingleAccordion: Story<{ size: 'md' | 'lg' }> = ({ size }) => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionHeader size={size}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, maiores.</AccordionHeader>
+              <AccordionHeader size={size}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
+                maiores.
+              </AccordionHeader>
               <AccordionContent>
                 <Box py="sm" px="xs">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nam cupiditate ab, illo ipsam impedit reiciendis nulla debitis. Quisquam, iusto!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                  nam cupiditate ab, illo ipsam impedit reiciendis nulla
+                  debitis. Quisquam, iusto!
                 </Box>
               </AccordionContent>
             </AccordionItem>
@@ -115,10 +124,17 @@ export const MultipleAccordion: Story<{ size: 'md' | 'lg' }> = ({ size }) => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionHeader size={size}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</AccordionHeader>
+        <AccordionHeader size={size}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </AccordionHeader>
         <AccordionContent>
           <Box py="sm" px="xs">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis possimus eligendi nulla minus laudantium culpa sequi minima quis facere et dolor ducimus architecto saepe in facilis, impedit velit corrupti consectetur nobis? Cumque doloribus possimus sapiente unde eligendi, sed repellendus inventore placeat consequatur facilis, quaerat dicta. Cumque laborum neque facilis ab.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
+            possimus eligendi nulla minus laudantium culpa sequi minima quis
+            facere et dolor ducimus architecto saepe in facilis, impedit velit
+            corrupti consectetur nobis? Cumque doloribus possimus sapiente unde
+            eligendi, sed repellendus inventore placeat consequatur facilis,
+            quaerat dicta. Cumque laborum neque facilis ab.
           </Box>
         </AccordionContent>
       </AccordionItem>
@@ -144,7 +160,9 @@ export const MultipleAccordion: Story<{ size: 'md' | 'lg' }> = ({ size }) => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionHeader size={size}>Lorem ipsum dolor sit amet.</AccordionHeader>
+              <AccordionHeader size={size}>
+                Lorem ipsum dolor sit amet.
+              </AccordionHeader>
               <AccordionContent>
                 <Box py="sm" px="xs">
                   Lorem ipsum dolor sit amet consectetur adipisicing.

@@ -1,8 +1,8 @@
-import { Theme } from '@ratatoskr-ui/components';
 import { transparentize } from 'polished';
+import { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig } from '../../../system';
 
-const inputSelectBase = (theme: Theme) => ({
+const inputSelectBase = (theme: DefaultTheme) => ({
   display: 'flex',
   alignItems: 'center',
   position: 'relative',
@@ -17,7 +17,7 @@ const inputSelectBase = (theme: Theme) => ({
 });
 
 const inputSelect: ComponentThemeConfig = {
-  baseStyle: ({ theme }: { theme: Theme }) => ({
+  baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     ...inputSelectBase(theme),
     '&[disabled]': {
       backgroundColor: theme.colors.greylight02,
@@ -41,7 +41,7 @@ const inputSelect: ComponentThemeConfig = {
       },
     },
     variants: {
-      default: ({ theme }: { theme: Theme }) => ({
+      default: ({ theme }: { theme: DefaultTheme }) => ({
         '&:not([disabled])': {
           '&:focus, &:active': {
             outline: 'none',
@@ -50,7 +50,10 @@ const inputSelect: ComponentThemeConfig = {
             '&:hover': {
               backgroundColor: theme.colors.greylight01,
               borderColor: theme.colors.blue06,
-              boxShadow: `0 0 0 2px ${transparentize(0.7, theme.colors.blue03)}`,
+              boxShadow: `0 0 0 2px ${transparentize(
+                0.7,
+                theme.colors.blue03
+              )}`,
             },
           },
           '&:hover': {
@@ -59,14 +62,14 @@ const inputSelect: ComponentThemeConfig = {
           },
         },
       }),
-      active: ({ theme }: { theme: Theme }) => ({
+      active: ({ theme }: { theme: DefaultTheme }) => ({
         '&:not([disabled])': {
           outline: 'none',
           borderColor: theme.colors.blue06,
           boxShadow: `0 0 0 2px ${transparentize(0.7, theme.colors.blue03)}`,
         },
       }),
-      error: ({ theme }: { theme: Theme }) => ({
+      error: ({ theme }: { theme: DefaultTheme }) => ({
         '&:not([disabled])': {
           backgroundColor: theme.colors.red01,
           borderColor: theme.colors.red07,

@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import { VisuallyHidden } from '@ratatoskr-ui/helpers';
 import { CSSObject } from '../../../system';
@@ -50,7 +51,11 @@ const ModalHeaderIcon: React.FC<ModalHeaderIconProps> = ({
         borderRadius={72}
         sx={{ ...iconContainerStyle }}
       >
-        {React.createElement(icon, { 'aria-hidden': true, width: 40, fill: 'currentColor' })}
+        {React.createElement(icon, {
+          'aria-hidden': true,
+          width: 40,
+          fill: 'currentColor',
+        })}
       </Box>
     </Box>
   );

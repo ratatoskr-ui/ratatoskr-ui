@@ -7,17 +7,32 @@ import { Spinner } from '../../../../loading';
 interface ButtonChildrenProps {
   isLoading?: boolean;
   children?: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline' | 'destructive' | 'disclosure' | 'outline-destructive' | 'segment-item';
+  variant?:
+    | 'primary'
+    | 'secondary'
+    | 'outline'
+    | 'destructive'
+    | 'disclosure'
+    | 'outline-destructive'
+    | 'segment-item';
 }
 
-const renderButtonChildren = ({ isLoading, variant, children }: ButtonChildrenProps) => {
+const renderButtonChildren = ({
+  isLoading,
+  variant,
+  children,
+}: ButtonChildrenProps) => {
   if (isLoading) {
     return (
       <>
         <Box position="absolute" width={16} height={16}>
           <Spinner
             size={16}
-            spinnerColor={variant === 'secondary' ? theme.colors.greydark02 : theme.colors.greylight01}
+            spinnerColor={
+              variant === 'secondary'
+                ? theme.colors.greydark02
+                : theme.colors.greylight01
+            }
           />
         </Box>
         <Text visibility="hidden">{children}</Text>

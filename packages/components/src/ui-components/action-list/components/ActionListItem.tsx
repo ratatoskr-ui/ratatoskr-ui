@@ -5,7 +5,9 @@ import { theme } from '../../../theme';
 import { Text } from '../../../typography';
 
 export type ActionListItemVariant = 'default' | 'destructive';
-export interface ActionListItemProps extends Omit<BoxProps, 'sx'>, React.ComponentPropsWithoutRef<'div'> {
+export interface ActionListItemProps
+  extends Omit<BoxProps, 'sx'>,
+    React.ComponentPropsWithoutRef<'div'> {
   className?: string;
   style?: React.CSSProperties;
   containerStyle?: CSSObject;
@@ -39,12 +41,27 @@ const ActionListItem = React.forwardRef<HTMLDivElement, ActionListItemProps>(
       }
       return children;
     };
-    const disabledProps = disabled ? { 'aria-disabled': true, 'data-disabled': true } : {};
+    const disabledProps = disabled
+      ? { 'aria-disabled': true, 'data-disabled': true }
+      : {};
     return (
-      <Box {...disabledProps} ref={ref} sx={{ ...styles, ...containerStyle }} style={style} {...rest}>
+      <Box
+        {...disabledProps}
+        ref={ref}
+        sx={{ ...styles, ...containerStyle }}
+        style={style}
+        {...rest}
+      >
         {isActive && indicator && (
           // Indicator
-          <Box width={4} position="absolute" left="0" top="0" height="100%" backgroundColor={theme.colors.blue07} />
+          <Box
+            width={4}
+            position="absolute"
+            left="0"
+            top="0"
+            height="100%"
+            backgroundColor={theme.colors.blue07}
+          />
         )}
         <Box py="xs" px="sm" sx={{ ...contentStyle }}>
           {renderLabel()}

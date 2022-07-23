@@ -30,9 +30,18 @@ const BoxHeader: React.FC<BoxHeaderProps> = ({
   const boxHeaderStyle = useComponentStyles('boxHeader', { size });
 
   return (
-    <Box sx={{ ...boxHeaderStyle, ...sx }} className={className} style={style} {...rest}>
+    <Box
+      sx={{ ...boxHeaderStyle, ...sx }}
+      className={className}
+      style={style}
+      {...rest}
+    >
       {backButton && <Box marginRight={'md'}>{backButton}</Box>}
-      <Box display={'flex'} flex={1} justifyContent={centerTitle ? 'center' : 'flex-start'}>
+      <Box
+        display={'flex'}
+        flex={1}
+        justifyContent={centerTitle ? 'center' : 'flex-start'}
+      >
         {title}
       </Box>
       {actions && <Box>{actions}</Box>}

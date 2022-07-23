@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 
 import { Box, BoxProps } from '../../../../layout';
@@ -20,14 +21,30 @@ export interface BadgeProps extends Omit<BoxProps, 'size'> {
 
 /** Badge text for entity, status, etc. */
 const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ className, style, variant = 'default', size = 'md', icon, children, sx, ...rest }, ref) => {
+  (
+    {
+      className,
+      style,
+      variant = 'default',
+      size = 'md',
+      icon,
+      children,
+      sx,
+      ...rest
+    },
+    ref
+  ) => {
     const styles = useComponentStyles('badge', { variant, size });
 
     const renderInner = () => {
       if (icon) {
         return (
           <>
-            {React.createElement(icon, { fill: 'currentColor', size: 14, 'aria-hidden': true })}
+            {React.createElement(icon, {
+              fill: 'currentColor',
+              size: 14,
+              'aria-hidden': true,
+            })}
             <Text scale={200} ml="xxs">
               {children}
             </Text>
@@ -39,7 +56,14 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
     };
 
     return (
-      <Box as={icon ? 'div' : 'span'} ref={ref} className={className} style={style} sx={{ ...styles, ...sx }} {...rest}>
+      <Box
+        as={icon ? 'div' : 'span'}
+        ref={ref}
+        className={className}
+        style={style}
+        sx={{ ...styles, ...sx }}
+        {...rest}
+      >
         {renderInner()}
       </Box>
     );

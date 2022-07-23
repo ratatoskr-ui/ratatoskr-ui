@@ -17,8 +17,9 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "test": "tsdx test",
-    "lint": "tsdx lint",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why"
@@ -27,12 +28,6 @@
     "hooks": {
       "pre-commit": "tsdx lint"
     }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
   },
   "author": "firstaroyand",
   "module": "dist/design-token.esm.js",
@@ -46,6 +41,9 @@
       "limit": "10 KB"
     }
   ],
+  "dependencies": {
+    "polished": "^4.2.2"
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.8",
     "husky": "^7.0.4",

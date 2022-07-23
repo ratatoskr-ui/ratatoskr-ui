@@ -2,7 +2,10 @@ import * as React from 'react';
 import { Box } from '../../layout';
 import { Text } from '../../typography';
 
-const ElevationDetail: React.FC<{ title: string; description: string }> = ({ title, description }) => {
+const ElevationDetail: React.FC<{ title: string; description: string }> = ({
+  title,
+  description,
+}) => {
   return (
     <Box
       display="flex"

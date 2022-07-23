@@ -2,6 +2,11 @@ import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 
 import { Story } from '@storybook/react';
+import {
+  ClockIcon,
+  DotsVerticalIcon,
+  UserCircleIcon,
+} from '@heroicons/react/solid';
 import Card, { CardElevation } from './Card';
 import { Box, Stack, Wrap, WrapItem } from '../../../layout';
 import { Heading, Paragraph } from '../../../typography';
@@ -9,7 +14,6 @@ import { Button, IconButton } from '../../button';
 import { Avatar } from '../../avatar';
 import { CardHeader } from '../CardHeader';
 import { Badge } from '../../badge';
-import { ClockIcon, DotsVerticalIcon, UserCircleIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Card',
@@ -21,7 +25,9 @@ export default {
   },
 };
 
-export const BodyCard: Story<{ elevation: CardElevation }> = ({ elevation }) => {
+export const BodyCard: Story<{ elevation: CardElevation }> = ({
+  elevation,
+}) => {
   return (
     <Box display="inline-flex">
       <Card p="lg" elevation={elevation}>
@@ -42,14 +48,21 @@ export const BodyCard: Story<{ elevation: CardElevation }> = ({ elevation }) => 
   );
 };
 
-export const Tags = () => {
+export function Tags() {
   return (
     <Box display="inline-flex">
       <Card p="md" width={300}>
         <Stack spacing="md">
           <CardHeader
             title="Deno"
-            avatar={<Avatar size="md" icon={UserCircleIcon} bg="yellow01" color="yellow07" />}
+            avatar={
+              <Avatar
+                size="md"
+                icon={UserCircleIcon}
+                bg="yellow01"
+                color="yellow07"
+              />
+            }
             actions={
               <IconButton variant="plain" size="sm" onClick={action('click')}>
                 <DotsVerticalIcon fill="currentColor" aria-hidden />
@@ -73,14 +86,23 @@ export const Tags = () => {
       </Card>
     </Box>
   );
-};
+}
 
-export const HorizontalCard = () => {
+export function HorizontalCard() {
   return (
     <Card p="xl">
-      <Box display="flex" flexDirection="row" alignItems="center" justifyContent="space-between">
+      <Box
+        display="flex"
+        flexDirection="row"
+        alignItems="center"
+        justifyContent="space-between"
+      >
         <Stack spacing="md" direction="horizontal" alignItems="center">
-          <Avatar size={'xl'} name="Title" src="https://64.media.tumblr.com/98da5de8e9832eb1c73d6180ce4648c0/36ac9104848b7e00-b5/s400x600/cca94e0d1cb3b61c62fc0a88151fbc92336693ad.jpg" />
+          <Avatar
+            size={'xl'}
+            name="Title"
+            src="https://64.media.tumblr.com/98da5de8e9832eb1c73d6180ce4648c0/36ac9104848b7e00-b5/s400x600/cca94e0d1cb3b61c62fc0a88151fbc92336693ad.jpg"
+          />
           <Box>
             <Stack spacing="xs">
               <Heading scale={400}>プロ棋士</Heading>
@@ -88,14 +110,29 @@ export const HorizontalCard = () => {
             </Stack>
           </Box>
         </Stack>
-        <Stack spacing="20px" direction="horizontal" alignItems="center" ml="md">
-          <Stack spacing="xs" direction="horizontal" alignItems="center" color="greymed04">
+        <Stack
+          spacing="20px"
+          direction="horizontal"
+          alignItems="center"
+          ml="md"
+        >
+          <Stack
+            spacing="xs"
+            direction="horizontal"
+            alignItems="center"
+            color="greymed04"
+          >
             <UserCircleIcon width={16} fill="currentColor" aria-hidden />
             <Paragraph as="span" scale={300}>
               kiriyama.rei@koinworks.com
             </Paragraph>
           </Stack>
-          <Stack spacing="xs" direction="horizontal" alignItems="center" color="greymed04">
+          <Stack
+            spacing="xs"
+            direction="horizontal"
+            alignItems="center"
+            color="greymed04"
+          >
             <ClockIcon width={16} fill="currentColor" aria-hidden />
             <Paragraph as="span" scale={300}>
               Tokyo (Asia)
@@ -105,4 +142,4 @@ export const HorizontalCard = () => {
       </Box>
     </Card>
   );
-};
+}

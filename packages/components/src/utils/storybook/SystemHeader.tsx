@@ -11,7 +11,15 @@ export interface SystemHeaderProps {
 const SystemHeader: React.FC<SystemHeaderProps> = ({ title, subtitle }) => (
   <Box bg="blue09" px="lg" py="xl" color="white">
     <StoryContainer>
-      <Heading as="h1" scale={900} color="white" fontFamily="brand" fontWeight={500} maxWidth={500} mb={0}>
+      <Heading
+        as="h1"
+        scale={900}
+        color="white"
+        fontFamily="brand"
+        fontWeight={500}
+        maxWidth={500}
+        mb={0}
+      >
         {title}
       </Heading>
       {typeof subtitle === 'string' ? (

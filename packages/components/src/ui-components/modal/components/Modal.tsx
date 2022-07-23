@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
@@ -227,7 +228,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
             }}
             unmountOnExit
           >
-            {state => (
+            {(state) => (
               <FocusTrap active={isOpen} onKeyDown={this.handleKeyDown}>
                 {this.renderInnerContent(state)}
               </FocusTrap>

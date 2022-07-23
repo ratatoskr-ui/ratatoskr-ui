@@ -16,10 +16,22 @@ export interface TabsProps extends Omit<BaseTabsProps, 'tabsSize'> {
   children?: React.ReactNode;
 }
 
-const Tabs: React.FC<TabsProps> = ({ className, style, children, defaultIndex = 0, size = 48, ...rest }) => {
+const Tabs: React.FC<TabsProps> = ({
+  className,
+  style,
+  children,
+  defaultIndex = 0,
+  size = 48,
+  ...rest
+}) => {
   return (
     <TabsProvider defaultIndex={defaultIndex} size={size}>
-      <Box display="block" className={clsx('tabs', className)} style={style} {...rest}>
+      <Box
+        display="block"
+        className={clsx('tabs', className)}
+        style={style}
+        {...rest}
+      >
         {children}
       </Box>
     </TabsProvider>

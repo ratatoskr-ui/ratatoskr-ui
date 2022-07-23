@@ -1,7 +1,10 @@
 import { Meta, Story } from '@storybook/react';
 import * as React from 'react';
 
-import { InputSearchbox, InputSearchboxProps } from '../components/InputSearchbox';
+import {
+  InputSearchbox,
+  InputSearchboxProps,
+} from '../components/InputSearchbox';
 
 export default {
   title: 'Core/Components/Form/InputSearchbox',
@@ -19,7 +22,11 @@ export default {
   },
 } as Meta<InputSearchboxProps>;
 
-export const Example: Story<InputSearchboxProps> = ({ errors, disabled, inputSize }) => {
+export const Example: Story<InputSearchboxProps> = ({
+  errors,
+  disabled,
+  inputSize,
+}) => {
   return (
     <InputSearchbox
       id="textDummy"

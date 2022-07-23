@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import { VisuallyHidden } from '@ratatoskr-ui/helpers';
 import { avatarSizeOptions } from '../../../theme/component-styles/avatar';
@@ -69,7 +70,9 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
     },
     ref
   ) => {
-    const styles = useComponentStyles('avatar', { size: typeof size === 'string' ? size : undefined });
+    const styles = useComponentStyles('avatar', {
+      size: typeof size === 'string' ? size : undefined,
+    });
 
     const renderInitials = () => {
       return (
@@ -84,7 +87,12 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
         return (
           <Box
             as="img"
-            sx={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover' }}
+            sx={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
             src={src}
             alt={name || alt}
           />
@@ -92,7 +100,11 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
       }
 
       if (icon) {
-        return React.createElement(icon, { fill: 'currentColor', width: iconSizes(size), 'aria-hidden': true });
+        return React.createElement(icon, {
+          fill: 'currentColor',
+          width: iconSizes(size),
+          'aria-hidden': true,
+        });
       }
 
       return renderInitials();
@@ -104,8 +116,10 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
       }
       const names = name.split(' ');
       let totalValue = 0;
-      names.forEach(item => {
-        const utfValue = new TextEncoder().encode(`${item[0]}${item[item.length - 1]}`);
+      names.forEach((item) => {
+        const utfValue = new TextEncoder().encode(
+          `${item[0]}${item[item.length - 1]}`
+        );
         totalValue += utfValue[0] + utfValue[1];
       });
       const indexColor = totalValue % bgColors.length;
@@ -139,7 +153,9 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
           {renderAvatar()}
           {presence && (
             <Box position={'absolute'} bottom={0} left={offsetBadge[size]}>
-              <SignBadge size={size === 'xl' ? 'lg' : size}>{presence}</SignBadge>
+              <SignBadge size={size === 'xl' ? 'lg' : size}>
+                {presence}
+              </SignBadge>
             </Box>
           )}
           {notificationBadge && (

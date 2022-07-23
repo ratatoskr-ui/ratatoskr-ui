@@ -8,7 +8,12 @@ export interface DropdownMenuProps extends RadixDropdownMenu.DropdownMenuProps {
   maxWidth?: number;
 }
 
-const DropdownMenu: React.FC<DropdownMenuProps> = ({ children, width, maxWidth, ...rest }) => {
+const DropdownMenu: React.FC<DropdownMenuProps> = ({
+  children,
+  width,
+  maxWidth,
+  ...rest
+}) => {
   return (
     <RadixDropdownMenu.Root {...rest}>
       <Box width={width} maxWidth={maxWidth}>

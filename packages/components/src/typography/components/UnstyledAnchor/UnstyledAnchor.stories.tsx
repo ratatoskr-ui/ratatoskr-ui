@@ -15,13 +15,23 @@ export default {
   },
 };
 
-export const Example = () => (
-  <Box padding="sm">
-    <Anchor href="https://www.youtube.com/watch?v=ORyw6TGLBvk" target="_blank" rel="noopener noreferrer">
-      I&apos;m an anchor!
-    </Anchor>{' '}
-    <UnstyledAnchor href="https://www.youtube.com/watch?v=ORyw6TGLBvk" target="_blank" rel="noopener noreferrer">
-      I&apos;m an unstyled anchor!
-    </UnstyledAnchor>
-  </Box>
-);
+export function Example() {
+  return (
+    <Box padding="sm">
+      <Anchor
+        href="https://www.youtube.com/watch?v=ORyw6TGLBvk"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        I&apos;m an anchor!
+      </Anchor>{' '}
+      <UnstyledAnchor
+        href="https://www.youtube.com/watch?v=ORyw6TGLBvk"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        I&apos;m an unstyled anchor!
+      </UnstyledAnchor>
+    </Box>
+  );
+}

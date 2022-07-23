@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import { Box } from '../../layout';
 import { useComponentStyles } from '../../system';
@@ -33,7 +34,11 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, separator }) => {
           <Box as="li" sx={breadcrumbListItemStyles}>
             <Box aria-hidden color="greymed01">
               {separator ? (
-                React.createElement(separator, { fill: 'currentColor', width: 8, height: 8 })
+                React.createElement(separator, {
+                  fill: 'currentColor',
+                  width: 8,
+                  height: 8,
+                })
               ) : (
                 <span>/</span>
               )}
@@ -51,7 +56,9 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, separator }) => {
                           return (
                             // eslint-disable-next-line react/no-array-index-key
                             <Box key={`breadcrumb_overflow_${i}`}>
-                              {React.cloneElement(item, { isOverflowItem: true })}
+                              {React.cloneElement(item, {
+                                isOverflowItem: true,
+                              })}
                             </Box>
                           );
                         }
@@ -70,7 +77,11 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, separator }) => {
           <Box as="li" sx={breadcrumbListItemStyles} key={`breadcrumb_${i}`}>
             <Box aria-hidden color="greymed01">
               {separator ? (
-                React.createElement(separator, { fill: 'currentColor', width: 8, height: 8 })
+                React.createElement(separator, {
+                  fill: 'currentColor',
+                  width: 8,
+                  height: 8,
+                })
               ) : (
                 <span>/</span>
               )}

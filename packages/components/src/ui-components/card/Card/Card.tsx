@@ -4,7 +4,9 @@ import { useComponentStyles } from '../../../system';
 
 export type CardElevation = 1 | 2 | 3 | 4 | 5;
 
-export interface CardProps extends BoxProps, React.ComponentPropsWithoutRef<'div'> {
+export interface CardProps
+  extends BoxProps,
+    React.ComponentPropsWithoutRef<'div'> {
   /** Additional CSS classes to add to the component. */
   className?: string;
   /** Additional CSS properties to add to the component. */
@@ -19,14 +21,16 @@ export interface CardProps extends BoxProps, React.ComponentPropsWithoutRef<'div
 /**
  * Renders a card based on the elevation level.
  */
-const Card = React.forwardRef<HTMLDivElement, CardProps>(({ children, elevation = 1, ...rest }, ref) => {
-  const cardStyles = useComponentStyles('card', { elevation });
-  return (
-    <Box ref={ref} sx={cardStyles} {...rest}>
-      {children}
-    </Box>
-  );
-});
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ children, elevation = 1, ...rest }, ref) => {
+    const cardStyles = useComponentStyles('card', { elevation });
+    return (
+      <Box ref={ref} sx={cardStyles} {...rest}>
+        {children}
+      </Box>
+    );
+  }
+);
 
 Card.displayName = 'Card';
 

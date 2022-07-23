@@ -34,6 +34,11 @@ Example.args = {
   fontWeight: 400,
 };
 
-export const MediaQueries = () => {
-  return <Text scale={[400, 500]}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi!</Text>;
-};
+export function MediaQueries() {
+  return (
+    <Text scale={[400, 500]}>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
+      excepturi!
+    </Text>
+  );
+}

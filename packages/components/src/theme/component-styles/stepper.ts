@@ -1,8 +1,8 @@
-import { Theme } from '../../theme';
+import { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig } from '../../system';
 
 const stepHeaderContainer: ComponentThemeConfig = {
-  baseStyle: ({ theme }: { theme: Theme }) => ({
+  baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     display: 'flex',
     columnGap: theme.space.xxs,
   }),
@@ -24,7 +24,7 @@ const stepHeaderBorder: ComponentThemeConfig = {
     isCurrentStep,
     theme,
   }: {
-    theme: Theme;
+    theme: DefaultTheme;
     isCompletedStep: boolean;
     isCurrentStep: boolean;
   }) => {
@@ -50,7 +50,7 @@ const circleIcon: ComponentThemeConfig = {
     isCurrentStep,
     theme,
   }: {
-    theme: Theme;
+    theme: DefaultTheme;
     isCompletedStep: boolean;
     isCurrentStep: boolean;
   }) => {
@@ -78,7 +78,7 @@ const stepHeaderLabel: ComponentThemeConfig = {
     isCurrentStep,
     theme,
   }: {
-    theme: Theme;
+    theme: DefaultTheme;
     isCompletedStep: boolean;
     isCurrentStep: boolean;
   }) => {

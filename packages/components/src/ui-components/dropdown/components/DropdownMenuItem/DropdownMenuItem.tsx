@@ -6,7 +6,14 @@ export interface DropdownMenuItemProps
   extends RadixDropdownMenu.MenuItemProps,
     Pick<
       ActionListItemProps,
-      'className' | 'style' | 'isActive' | 'children' | 'disabled' | 'variant' | 'containerStyle' | 'contentStyle'
+      | 'className'
+      | 'style'
+      | 'isActive'
+      | 'children'
+      | 'disabled'
+      | 'variant'
+      | 'containerStyle'
+      | 'contentStyle'
     > {}
 
 const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
@@ -21,7 +28,12 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
   ...rest
 }) => {
   return (
-    <RadixDropdownMenu.Item asChild disabled={disabled} onSelect={onSelect} {...rest}>
+    <RadixDropdownMenu.Item
+      asChild
+      disabled={disabled}
+      onSelect={onSelect}
+      {...rest}
+    >
       <ActionListItem
         className={className}
         style={style}

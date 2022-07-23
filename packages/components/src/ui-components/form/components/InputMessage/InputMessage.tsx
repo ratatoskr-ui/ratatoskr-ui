@@ -1,12 +1,19 @@
 import * as React from 'react';
-import { CheckCircleIcon, ExclamationCircleIcon, ExclamationIcon, InformationCircleIcon } from "@heroicons/react/solid";
+import {
+  CheckCircleIcon,
+  ExclamationCircleIcon,
+  ExclamationIcon,
+  InformationCircleIcon,
+} from '@heroicons/react/solid';
 
 import { Box, BoxProps } from '../../../../layout';
 import { Text } from '../../../../typography';
 
 export type InputMessageVariants = 'success' | 'warning' | 'info' | 'critical';
 
-export interface InputMessageProps extends BoxProps, React.ComponentPropsWithoutRef<'div'> {
+export interface InputMessageProps
+  extends BoxProps,
+    React.ComponentPropsWithoutRef<'div'> {
   /** Additional CSS classes to give to the component. */
   className?: string;
   /** Additional CSS styles to give to the component. */
@@ -71,7 +78,12 @@ const InputMessage = React.forwardRef<HTMLDivElement, InputMessageProps>(
           {messageIcon(variant)}
         </Box>
         <Box display="flex" flex="1 1 auto" alignItems="center">
-          <Text display="block" fontSize="12px" lineHeight="16px" fontWeight={500}>
+          <Text
+            display="block"
+            fontSize="12px"
+            lineHeight="16px"
+            fontWeight={500}
+          >
             {children}
           </Text>
         </Box>

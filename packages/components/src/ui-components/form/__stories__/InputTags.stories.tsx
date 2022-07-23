@@ -21,8 +21,20 @@ export default {
   },
 } as Meta<InputTagsProps>;
 
-export const Example: Story<InputTagsProps> = ({ value, errors, disabled, placeholder }) => {
-  return <InputTags value={value} errors={errors} disabled={disabled} placeholder={placeholder} />;
+export const Example: Story<InputTagsProps> = ({
+  value,
+  errors,
+  disabled,
+  placeholder,
+}) => {
+  return (
+    <InputTags
+      value={value}
+      errors={errors}
+      disabled={disabled}
+      placeholder={placeholder}
+    />
+  );
 };
 Example.args = {
   value: ['Keyword 1', 'Keyword 2'],

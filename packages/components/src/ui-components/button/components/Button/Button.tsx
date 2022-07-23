@@ -5,7 +5,9 @@ import { ButtonBaseProps, ButtonSizes } from './types';
 import { UnstyledButton } from '../UnstyledButton';
 import { renderButtonChildren, renderButtonIcon } from './utils';
 
-export interface ButtonProps extends ButtonBaseProps, React.ComponentPropsWithoutRef<'button'> {
+export interface ButtonProps
+  extends ButtonBaseProps,
+    React.ComponentPropsWithoutRef<'button'> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -43,7 +45,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const buttonBaseStyles = useComponentStyles('buttonBase', { size, variant, selected });
+    const buttonBaseStyles = useComponentStyles('buttonBase', {
+      size,
+      variant,
+      selected,
+    });
 
     return (
       <UnstyledButton

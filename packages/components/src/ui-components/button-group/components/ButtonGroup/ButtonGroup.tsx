@@ -32,7 +32,9 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
   disabled,
   ...rest
 }) => {
-  const validChildren = React.Children.toArray(children).filter(React.isValidElement);
+  const validChildren = React.Children.toArray(children).filter(
+    React.isValidElement
+  );
 
   return (
     <Box

@@ -37,13 +37,20 @@ export const dummyColumns: Column[] = [
     accessor: 'contactMeta',
     canSortHeader: true,
     sortType: (rowA, rowB) => {
-      return rowA.values.contactMeta.name > rowB.values.contactMeta.name ? 1 : -1;
+      return rowA.values.contactMeta.name > rowB.values.contactMeta.name
+        ? 1
+        : -1;
     },
   }, // custom function
   { Header: 'Channel', accessor: 'channelMeta', canSortHeader: false },
   { Header: 'Received at', accessor: 'receivedAt', canSortHeader: true },
   { Header: 'Last updated at', accessor: 'lastUpdatedAt', canSortHeader: true },
-  { Header: 'Status', accessor: 'statusMeta', canSortHeader: false, style: { width: '150px' } },
+  {
+    Header: 'Status',
+    accessor: 'statusMeta',
+    canSortHeader: false,
+    style: { width: '150px' },
+  },
   { Header: 'Agent', accessor: 'agentMeta', canSortHeader: false },
 ];
 

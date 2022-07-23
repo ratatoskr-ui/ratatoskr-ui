@@ -11,8 +11,8 @@ export const buttonGroupNonSegmented = css`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: -${props => props.theme.space.sm}px;
-  margin-left: -${props => props.theme.space.sm}px;
+  margin-top: -${(props) => props.theme.space.sm}px;
+  margin-left: -${(props) => props.theme.space.sm}px;
 `;
 
 export const buttonGroupInnerSegmented = css`
@@ -22,6 +22,6 @@ export const buttonGroupInnerSegmented = css`
 `;
 
 export const buttonGroupInnerNonSegmented = css`
-  margin-top: ${props => props.theme.space.sm}px;
-  margin-left: ${props => props.theme.space.sm}px;
+  margin-top: ${(props) => props.theme.space.sm}px;
+  margin-left: ${(props) => props.theme.space.sm}px;
 `;

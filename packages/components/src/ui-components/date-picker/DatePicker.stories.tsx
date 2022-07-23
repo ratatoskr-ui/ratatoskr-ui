@@ -1,28 +1,28 @@
 import * as React from 'react';
+import { CalendarIcon } from '@heroicons/react/solid';
 import { Stack } from '../../layout';
 import { FormLabel, InputGroup, InputIcon, InputText } from '../form';
 import { Popover, PopoverContent, PopoverTrigger } from '../popover';
 import { DatePicker } from './DatePicker';
 import { AdvancedOption, OptionAdvancedDatePicker } from './AdvancedOption';
-import { CalendarIcon } from "@heroicons/react/solid";
 
 export default {
   title: 'Core/Components/Date Picker',
 };
 
-export const SingleDatePicker = () => {
+export function SingleDatePicker() {
   const [selectedDate, setSelectedDate] = React.useState<Date | undefined>();
   return (
     <DatePicker
       type="picker"
       selected={selectedDate}
-      onChange={date => {
+      onChange={(date) => {
         setSelectedDate(date);
       }}
     />
   );
-};
-export const InputSingleDatePicker = () => {
+}
+export function InputSingleDatePicker() {
   const [selectedDate, setSelectedDate] = React.useState<Date | undefined>();
   return (
     <Stack spacing="xs">
@@ -36,24 +36,31 @@ export const InputSingleDatePicker = () => {
               placeholder="Select Date"
               readOnly
               inputSize={'md'}
-              value={selectedDate && Intl.DateTimeFormat('en-US').format(selectedDate)}
+              value={
+                selectedDate &&
+                Intl.DateTimeFormat('en-US').format(selectedDate)
+              }
               width="100%"
               pr={36}
             />
-            <InputIcon icon={CalendarIcon} iconPosition="right" iconText="calendar" />
+            <InputIcon
+              icon={CalendarIcon}
+              iconPosition="right"
+              iconText="calendar"
+            />
           </InputGroup>
         </PopoverTrigger>
         <PopoverContent
           sideOffset={4}
           placement={'bottom'}
           align={'end'}
-          onOpenAutoFocus={e => e.preventDefault()}
+          onOpenAutoFocus={(e) => e.preventDefault()}
           disableArrow
         >
           <DatePicker
             type="picker"
             selected={selectedDate}
-            onChange={date => {
+            onChange={(date) => {
               setSelectedDate(date);
             }}
           />
@@ -61,22 +68,22 @@ export const InputSingleDatePicker = () => {
       </Popover>
     </Stack>
   );
-};
+}
 
-export const MultipleDateRangePicker = () => {
+export function MultipleDateRangePicker() {
   const [selectedDate, setSelectedDate] = React.useState<Date[] | undefined>();
   return (
     <DatePicker
       type="range"
       multiDatePicker
       selected={selectedDate}
-      onChange={date => {
+      onChange={(date) => {
         setSelectedDate(date);
       }}
     />
   );
-};
-export const InputMultipleDateRangePicker = () => {
+}
+export function InputMultipleDateRangePicker() {
   const [selectedDate, setSelectedDate] = React.useState<Date[] | undefined>();
   return (
     <Stack spacing="xs">
@@ -92,28 +99,32 @@ export const InputMultipleDateRangePicker = () => {
               inputSize={'md'}
               value={
                 selectedDate &&
-                `${Intl.DateTimeFormat('en-US').format(selectedDate[0])} - ${Intl.DateTimeFormat('en-US').format(
-                  selectedDate[1]
-                )}`
+                `${Intl.DateTimeFormat('en-US').format(
+                  selectedDate[0]
+                )} - ${Intl.DateTimeFormat('en-US').format(selectedDate[1])}`
               }
               width="100%"
               pr={36}
             />
-            <InputIcon icon={CalendarIcon} iconPosition="right" iconText="calendar" />
+            <InputIcon
+              icon={CalendarIcon}
+              iconPosition="right"
+              iconText="calendar"
+            />
           </InputGroup>
         </PopoverTrigger>
         <PopoverContent
           sideOffset={4}
           placement={'bottom'}
           align={'end'}
-          onOpenAutoFocus={e => e.preventDefault()}
+          onOpenAutoFocus={(e) => e.preventDefault()}
           disableArrow
         >
           <DatePicker
             type="range"
             multiDatePicker
             selected={selectedDate}
-            onChange={date => {
+            onChange={(date) => {
               setSelectedDate(date);
             }}
           />
@@ -121,7 +132,7 @@ export const InputMultipleDateRangePicker = () => {
       </Popover>
     </Stack>
   );
-};
+}
 
 interface DatePickerState {
   selectedDate?: Date[];
@@ -173,12 +184,27 @@ function dateReducer(state: DatePickerState, action: DatePickerAction) {
       return { ...state, selectedDate: [last28Days, today] };
     }
     case DatePickerKind.THIS_MONTH: {
-      const startThisMonth = new Date(today.getFullYear(), today.getMonth(), 1, 0);
-      const endThisMonth = new Date(startThisMonth.getFullYear(), startThisMonth.getMonth() + 1, 0, 0);
+      const startThisMonth = new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        1,
+        0
+      );
+      const endThisMonth = new Date(
+        startThisMonth.getFullYear(),
+        startThisMonth.getMonth() + 1,
+        0,
+        0
+      );
       return { ...state, selectedDate: [startThisMonth, endThisMonth] };
     }
     case DatePickerKind.THIS_QUARTER: {
-      const startThisQuater = new Date(today.getFullYear(), Math.floor(today.getMonth() / 3) * 3, 1, 0);
+      const startThisQuater = new Date(
+        today.getFullYear(),
+        Math.floor(today.getMonth() / 3) * 3,
+        1,
+        0
+      );
       const endThisQuater = new Date(
         startThisQuater.getFullYear(),
         (Math.floor(startThisQuater.getMonth() / 3) + 1) * 3,
@@ -202,28 +228,34 @@ const options: OptionAdvancedDatePicker[] = [
   { label: 'This Quarter', value: DatePickerKind.THIS_QUARTER },
 ];
 
-export const AdvancedDatePickerRange = () => {
-  const [{ selectedDate }, dispatch] = React.useReducer(dateReducer, { selectedDate: undefined });
+export function AdvancedDatePickerRange() {
+  const [{ selectedDate }, dispatch] = React.useReducer(dateReducer, {
+    selectedDate: undefined,
+  });
 
   const optionHandler = (value: DatePickerKindValue) => {
     dispatch({ type: value });
   };
   return (
     <DatePicker
-      advanceView={<AdvancedOption options={options} optionHandler={optionHandler} />}
+      advanceView={
+        <AdvancedOption options={options} optionHandler={optionHandler} />
+      }
       type="range"
       date={selectedDate?.[1]}
       selected={selectedDate}
       multiDatePicker
-      onChange={date => {
+      onChange={(date) => {
         dispatch({ type: DatePickerKind.UPDATE, payload: date });
       }}
     />
   );
-};
+}
 
-export const InputAdvancedDatePickerRange = () => {
-  const [{ selectedDate }, dispatch] = React.useReducer(dateReducer, { selectedDate: undefined });
+export function InputAdvancedDatePickerRange() {
+  const [{ selectedDate }, dispatch] = React.useReducer(dateReducer, {
+    selectedDate: undefined,
+  });
   const optionHandler = (value: DatePickerKindValue) => {
     dispatch({ type: value });
   };
@@ -241,24 +273,35 @@ export const InputAdvancedDatePickerRange = () => {
               inputSize={'md'}
               value={
                 selectedDate &&
-                `${Intl.DateTimeFormat('en-US').format(selectedDate[0])} - ${Intl.DateTimeFormat('en-US').format(
-                  selectedDate[1]
-                )}`
+                `${Intl.DateTimeFormat('en-US').format(
+                  selectedDate[0]
+                )} - ${Intl.DateTimeFormat('en-US').format(selectedDate[1])}`
               }
               width="100%"
               pr={36}
             />
-            <InputIcon icon={CalendarIcon} iconPosition="right" iconText="calendar" />
+            <InputIcon
+              icon={CalendarIcon}
+              iconPosition="right"
+              iconText="calendar"
+            />
           </InputGroup>
         </PopoverTrigger>
-        <PopoverContent sideOffset={4} placement={'bottom'} align={'end'} disableArrow>
+        <PopoverContent
+          sideOffset={4}
+          placement={'bottom'}
+          align={'end'}
+          disableArrow
+        >
           <DatePicker
-            advanceView={<AdvancedOption options={options} optionHandler={optionHandler} />}
+            advanceView={
+              <AdvancedOption options={options} optionHandler={optionHandler} />
+            }
             type="range"
             date={selectedDate?.[1]}
             selected={selectedDate}
             multiDatePicker
-            onChange={date => {
+            onChange={(date) => {
               dispatch({ type: DatePickerKind.UPDATE, payload: date });
             }}
           />
@@ -266,4 +309,4 @@ export const InputAdvancedDatePickerRange = () => {
       </Popover>
     </Stack>
   );
-};
+}

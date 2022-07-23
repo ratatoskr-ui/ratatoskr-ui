@@ -11,12 +11,19 @@ import {
   DropdownMenuTrigger,
 } from './components/DropdownMenuItem';
 import { Box } from '../../layout';
-import DropdownMenuContent, { DropdownMenuContentProps } from './components/DropdownMenuItem/DropdownMenuContent';
+import DropdownMenuContent, {
+  DropdownMenuContentProps,
+} from './components/DropdownMenuItem/DropdownMenuContent';
 import { ActionListItemVariant } from '../action-list';
 
 export default {
   title: 'Core/Components/Dropdown/DropdownMenu',
-  component: [DropdownMenu, DropdownMenuItem, DropdownMenuDivider, DropdownMenuHeader],
+  component: [
+    DropdownMenu,
+    DropdownMenuItem,
+    DropdownMenuDivider,
+    DropdownMenuHeader,
+  ],
   argTypes: {
     side: {
       control: { type: 'select', options: ['top', 'bottom', 'left', 'right'] },
@@ -45,7 +52,10 @@ const dropdownList: Obj[] = [
   { label: 'Item one-two', value: 'itemOneTwo' },
 ];
 
-export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ side, align }) => {
+export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({
+  side,
+  align,
+}) => {
   const [selected, setSelected] = React.useState<Obj>(dropdownList[1]);
 
   return (
@@ -63,7 +73,7 @@ export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ s
         </DropdownMenuTrigger>
         <DropdownMenuContent width={200} side={side} align={align}>
           {dropdownList.map((val, idx) => (
-            <Box key={val.header || val.value} px='xs'>
+            <Box key={val.header || val.value} px="xs">
               {val.header ? (
                 <>
                   {idx !== 0 && <DropdownMenuDivider />}

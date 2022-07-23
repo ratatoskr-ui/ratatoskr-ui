@@ -10,7 +10,8 @@ import {
   TypographyProps as _TypographyProps,
 } from 'styled-system';
 
-export interface TypographyProps<ThemeType extends Theme = RequiredTheme> extends _TypographyProps<ThemeType> {
+export interface TypographyProps<ThemeType extends Theme = RequiredTheme>
+  extends _TypographyProps<ThemeType> {
   /**
    * The `text-decoration` shorthand CSS property sets the appearance of decorative lines on text.
    *
@@ -39,4 +40,8 @@ const config: Config = {
 
 export const typography = compose(_typography, system(config));
 
-export const typographyProps = ['textDecoration', 'textTransform', 'textOverflow'];
+export const typographyProps = [
+  'textDecoration',
+  'textTransform',
+  'textOverflow',
+];

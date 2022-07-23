@@ -1,12 +1,12 @@
 import * as React from 'react';
 
+import { ArrowLeftIcon } from '@heroicons/react/outline';
 import { Stack, Box } from '../../layout';
 import { Heading } from '../../typography';
 
 import { Button, IconButton } from '../button';
 import { Avatar } from '../avatar';
 import { BoxFooter, BoxHeader, CloseButton } from '.';
-import { ArrowLeftIcon } from '@heroicons/react/outline';
 
 export default {
   title: 'Core/Components/Box Header Footer/Header',
@@ -31,21 +31,31 @@ const argTypes = {
   },
 };
 
-export const BasicExample = ({ size, centerTitle }: { size: 'sm' | 'lg'; centerTitle: boolean }) => {
+export function BasicExample({
+  size,
+  centerTitle,
+}: {
+  size: 'sm' | 'lg';
+  centerTitle: boolean;
+}) {
   return (
     <Box p="md" width={400}>
       <BoxHeader
         size={size}
         centerTitle={centerTitle}
         title={
-          <Heading scale={size === 'sm' ? 300 : 500} id="stories-title" textAlign="center">
+          <Heading
+            scale={size === 'sm' ? 300 : 500}
+            id="stories-title"
+            textAlign="center"
+          >
             Title
           </Heading>
         }
       />
     </Box>
   );
-};
+}
 BasicExample.argTypes = argTypes;
 BasicExample.args = {
   size: 'sm',
@@ -53,7 +63,7 @@ BasicExample.args = {
   hideCloseButton: false,
 };
 
-export const BackAndCloseIcon = ({ size }: { size: 'sm' | 'lg' }) => {
+export function BackAndCloseIcon({ size }: { size: 'sm' | 'lg' }) {
   return (
     <Box p="md" width={400}>
       <BoxHeader
@@ -65,21 +75,25 @@ export const BackAndCloseIcon = ({ size }: { size: 'sm' | 'lg' }) => {
           </IconButton>
         }
         title={
-          <Heading scale={size === 'sm' ? 300 : 500} id="stories-title" textAlign="center">
+          <Heading
+            scale={size === 'sm' ? 300 : 500}
+            id="stories-title"
+            textAlign="center"
+          >
             Title
           </Heading>
         }
       />
     </Box>
   );
-};
+}
 
 BackAndCloseIcon.argTypes = argTypes;
 BackAndCloseIcon.args = {
   size: 'sm',
 };
 
-export const AvatarHeader = ({ size }: { size: 'sm' | 'lg' }) => {
+export function AvatarHeader({ size }: { size: 'sm' | 'lg' }) {
   return (
     <Box p="md" width={400}>
       <BoxHeader
@@ -88,7 +102,11 @@ export const AvatarHeader = ({ size }: { size: 'sm' | 'lg' }) => {
         title={
           <Stack alignItems="center" direction="horizontal" spacing="sm">
             <Avatar name="A M" bg="blue07" size={size} />
-            <Heading scale={size === 'sm' ? 300 : 500} id="stories-title" textAlign="center">
+            <Heading
+              scale={size === 'sm' ? 300 : 500}
+              id="stories-title"
+              textAlign="center"
+            >
               Jessica
             </Heading>
           </Stack>
@@ -96,21 +114,25 @@ export const AvatarHeader = ({ size }: { size: 'sm' | 'lg' }) => {
       />
     </Box>
   );
-};
+}
 
 AvatarHeader.argTypes = argTypes;
 AvatarHeader.args = {
   size: 'sm',
 };
 
-export const TitleAndButton = ({ size }: { size: 'sm' | 'lg' }) => {
+export function TitleAndButton({ size }: { size: 'sm' | 'lg' }) {
   return (
     <Box p="md">
       <BoxHeader
         backButton
         size={size}
         title={
-          <Heading scale={size === 'sm' ? 300 : 500} id="stories-title" textAlign="center">
+          <Heading
+            scale={size === 'sm' ? 300 : 500}
+            id="stories-title"
+            textAlign="center"
+          >
             Title
           </Heading>
         }
@@ -122,7 +144,7 @@ export const TitleAndButton = ({ size }: { size: 'sm' | 'lg' }) => {
       />
     </Box>
   );
-};
+}
 
 TitleAndButton.argTypes = argTypes;
 TitleAndButton.args = {

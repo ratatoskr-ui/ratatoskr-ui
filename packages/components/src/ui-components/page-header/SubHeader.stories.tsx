@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { ChevronDownIcon, PencilIcon } from '@heroicons/react/solid';
 import { Stack } from '../../layout';
 import { Box } from '../../layout/box';
 import { Heading, Text } from '../../typography';
@@ -7,21 +8,25 @@ import { Button, IconButton } from '../button';
 import { ButtonGroup } from '../button-group';
 import { InputSelect } from '../form/components/InputSelect';
 import SubHeader from './SubHeader';
-import { ChevronDownIcon, PencilIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Page Header/Sub Header',
   component: SubHeader,
 };
 
-export const StickSubHeader = () => {
+export function StickSubHeader() {
   return (
     <SubHeader
       label={<Heading scale={400}>Title</Heading>}
       variant="stick"
       actions={
         <ButtonGroup size="md">
-          <Button type="button" icon={ChevronDownIcon} iconPosition="right" onClick={action('click')}>
+          <Button
+            type="button"
+            icon={ChevronDownIcon}
+            iconPosition="right"
+            onClick={action('click')}
+          >
             Label
           </Button>
           <Button variant="primary">Label</Button>
@@ -29,9 +34,9 @@ export const StickSubHeader = () => {
       }
     />
   );
-};
+}
 
-export const StandSubHeader = () => {
+export function StandSubHeader() {
   return (
     <SubHeader
       label={
@@ -52,8 +57,8 @@ export const StandSubHeader = () => {
           <InputSelect
             width="200px"
             placeholder="Options"
-            itemToString={item => (item ? `${item.label}` : '')}
-            itemRenderer={item => (
+            itemToString={(item) => (item ? `${item.label}` : '')}
+            itemRenderer={(item) => (
               <>
                 <Box width={15} mr="sm" />
                 {`${item.label}`}
@@ -69,12 +74,22 @@ export const StandSubHeader = () => {
       }
       variant="stand"
       actions={
-        <Stack direction="horizontal" alignItems="center" justifyContent="flex-end" spacing="md">
+        <Stack
+          direction="horizontal"
+          alignItems="center"
+          justifyContent="flex-end"
+          spacing="md"
+        >
           <Text fontSize="12px" lineHeight="18px" color="greymed04">
             Caption
           </Text>
           <ButtonGroup size="md" spacing="xs">
-            <Button type="button" icon={ChevronDownIcon} iconPosition="right" onClick={action('click')}>
+            <Button
+              type="button"
+              icon={ChevronDownIcon}
+              iconPosition="right"
+              onClick={action('click')}
+            >
               Label
             </Button>
             <Button variant="primary">Label</Button>
@@ -83,4 +98,4 @@ export const StandSubHeader = () => {
       }
     />
   );
-};
+}

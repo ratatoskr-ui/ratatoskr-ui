@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
+import { ChevronDownIcon, PlusIcon } from '@heroicons/react/solid';
 import ButtonGroup, { ButtonGroupProps } from './ButtonGroup';
 import { Button } from '../../../button';
-import { ChevronDownIcon, PlusIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Core/Components/Button Group',
@@ -27,7 +27,7 @@ export default {
   },
 };
 
-export const BasicExample: Story<ButtonGroupProps> = args => {
+export const BasicExample: Story<ButtonGroupProps> = (args) => {
   return (
     <ButtonGroup {...args}>
       <Button variant="secondary">Cancel</Button>
@@ -42,15 +42,21 @@ BasicExample.args = {
   disabled: false,
 };
 
-export const Segmented: Story<ButtonGroupProps> = args => {
+export const Segmented: Story<ButtonGroupProps> = (args) => {
   const [selected, setSelected] = React.useState('');
 
   return (
     <ButtonGroup {...args}>
-      <Button selected={selected === 'page1'} onClick={() => setSelected('page1')}>
+      <Button
+        selected={selected === 'page1'}
+        onClick={() => setSelected('page1')}
+      >
         Label
       </Button>
-      <Button selected={selected === 'page2'} onClick={() => setSelected('page2')}>
+      <Button
+        selected={selected === 'page2'}
+        onClick={() => setSelected('page2')}
+      >
         Label
       </Button>
     </ButtonGroup>
@@ -63,15 +69,23 @@ Segmented.args = {
   disabled: false,
 };
 
-export const SegmentedWithIcon: Story<ButtonGroupProps> = args => {
+export const SegmentedWithIcon: Story<ButtonGroupProps> = (args) => {
   const [selected, setSelected] = React.useState('');
 
   return (
     <ButtonGroup {...args}>
-      <Button icon={PlusIcon} selected={selected === 'page1'} onClick={() => setSelected('page1')}>
+      <Button
+        icon={PlusIcon}
+        selected={selected === 'page1'}
+        onClick={() => setSelected('page1')}
+      >
         Label
       </Button>
-      <Button icon={PlusIcon} selected={selected === 'page2'} onClick={() => setSelected('page2')}>
+      <Button
+        icon={PlusIcon}
+        selected={selected === 'page2'}
+        onClick={() => setSelected('page2')}
+      >
         Label
       </Button>
     </ButtonGroup>
@@ -79,7 +93,7 @@ export const SegmentedWithIcon: Story<ButtonGroupProps> = args => {
 };
 SegmentedWithIcon.args = Segmented.args;
 
-export const SegmentedDisclosure: Story<ButtonGroupProps> = args => {
+export const SegmentedDisclosure: Story<ButtonGroupProps> = (args) => {
   const [selected, setSelected] = React.useState('');
 
   return (

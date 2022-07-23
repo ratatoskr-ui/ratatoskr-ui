@@ -7,8 +7,16 @@ interface SystemContainerProps {
   children?: React.ReactNode;
 }
 
-const SystemContainer: React.FC<SystemContainerProps> = ({ children, noBackground = false }) => (
-  <Box flex="1 1 auto" px="lg" py="xxl" backgroundColor={!noBackground ? 'white' : undefined}>
+const SystemContainer: React.FC<SystemContainerProps> = ({
+  children,
+  noBackground = false,
+}) => (
+  <Box
+    flex="1 1 auto"
+    px="lg"
+    py="xxl"
+    backgroundColor={!noBackground ? 'white' : undefined}
+  >
     <StoryContainer>{children}</StoryContainer>
   </Box>
 );

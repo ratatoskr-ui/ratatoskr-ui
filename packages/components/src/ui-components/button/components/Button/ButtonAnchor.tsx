@@ -6,7 +6,9 @@ import { UnstyledAnchor } from '../../../../typography';
 import { ButtonBaseProps, ButtonSizes } from './types';
 import { renderButtonChildren, renderButtonIcon } from './utils';
 
-export interface ButtonAnchorProps extends ButtonBaseProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface ButtonAnchorProps
+  extends ButtonBaseProps,
+    React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -40,7 +42,10 @@ const ButtonAnchor = React.forwardRef<HTMLAnchorElement, ButtonAnchorProps>(
     },
     ref
   ) => {
-    const buttonBaseStyles = useComponentStyles('buttonBase', { size, variant });
+    const buttonBaseStyles = useComponentStyles('buttonBase', {
+      size,
+      variant,
+    });
 
     return (
       <UnstyledAnchor

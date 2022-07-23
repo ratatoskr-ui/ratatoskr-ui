@@ -19,7 +19,9 @@ export interface StackProps extends Omit<BoxProps, 'color'> {
 
 const Stack = React.forwardRef<HTMLDivElement, StackProps>(
   ({ children, spacing, direction = 'vertical', ...rest }, ref) => {
-    const validChildrenArray = React.Children.toArray(children).filter(React.isValidElement);
+    const validChildrenArray = React.Children.toArray(children).filter(
+      React.isValidElement
+    );
 
     return (
       <Box

@@ -1,12 +1,12 @@
 // TODO: rename to `componentStyles/form/index.ts`
-import { Theme } from '@ratatoskr-ui/components';
 import { transparentize } from 'polished';
+import { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig } from '../../../system';
 import formSelect from './select';
 import formToggle from './toggle';
 
 // TODO: move to `componentStyles/form/utils.ts`
-const inputBase = (theme: Theme, rounded = false) => ({
+const inputBase = (theme: DefaultTheme, rounded = false) => ({
   appearance: 'none',
   backgroundColor: `var(--form-bg-color, ${theme.colors.greylight01})`,
   borderColor: `var(--form-border-color, ${theme.colors.greylight05})`,
@@ -22,7 +22,7 @@ const inputBase = (theme: Theme, rounded = false) => ({
 });
 
 // TODO: move to `componentStyles/form/utils.ts`
-const inputFocusBase = (theme: Theme) => ({
+const inputFocusBase = (theme: DefaultTheme) => ({
   outline: '2px solid transparent',
   'outline-offset': '2px',
   '--ring-inset': 'var(--empty,/*!*/ /*!*/)',
@@ -30,14 +30,21 @@ const inputFocusBase = (theme: Theme) => ({
   '--ring-offset-width': '0px',
   '--ring-offset-color': '#fff',
   '--ring-color': transparentize(0.7, theme.colors.blue06),
-  '--ring-offset-shadow': 'var(--ring-inset) 0 0 0 var(--ring-offset-width) var(--ring-offset-color)',
+  '--ring-offset-shadow':
+    'var(--ring-inset) 0 0 0 var(--ring-offset-width) var(--ring-offset-color)',
   '--ring-shadow': `var(--ring-inset) 0 0 0 calc(var(--ring-width) + var(--ring-offset-width)) var(--ring-color)`,
   'box-shadow': 'var(--ring-offset-shadow), var(--ring-shadow), var(--shadow)',
 });
 
 // TODO: move to `componentStyles/form/text.ts`
 const inputText: ComponentThemeConfig = {
-  baseStyle: ({ theme, rounded }: { theme: Theme; rounded?: boolean }) => ({
+  baseStyle: ({
+    theme,
+    rounded,
+  }: {
+    theme: DefaultTheme;
+    rounded?: boolean;
+  }) => ({
     ...inputBase(theme, rounded),
     '&:focus': {
       ...inputFocusBase(theme),
@@ -66,7 +73,7 @@ const inputText: ComponentThemeConfig = {
       },
     },
     variants: {
-      default: ({ theme }: { theme: Theme }) => ({
+      default: ({ theme }: { theme: DefaultTheme }) => ({
         '&:not([disabled])': {
           '--form-bg-color': theme.colors.greylight01,
           '--form-border-color': theme.colors.greylight05,
@@ -84,7 +91,7 @@ const inputText: ComponentThemeConfig = {
           },
         },
       }),
-      error: ({ theme }: { theme: Theme }) => ({
+      error: ({ theme }: { theme: DefaultTheme }) => ({
         '&:not([disabled])': {
           '--form-bg-color': theme.colors.red01,
           '--form-border-color': theme.colors.red07,
@@ -108,7 +115,7 @@ const inputText: ComponentThemeConfig = {
 
 // TODO: move to `componentStyles/form/textarea.ts`
 const inputTextarea: ComponentThemeConfig = {
-  baseStyle: ({ theme }: { theme: Theme }) => ({
+  baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     ...inputBase(theme),
     '&:focus': {
       ...inputFocusBase(theme),
@@ -126,7 +133,7 @@ const inputTextarea: ComponentThemeConfig = {
   propToScaleMap: [['variant', 'variants']],
   scales: {
     variants: {
-      default: ({ theme }: { theme: Theme }) => ({
+      default: ({ theme }: { theme: DefaultTheme }) => ({
         '&:not([disabled])': {
           '--form-bg-color': theme.colors.greylight01,
           '--form-border-color': theme.colors.greylight05,
@@ -144,7 +151,7 @@ const inputTextarea: ComponentThemeConfig = {
           },
         },
       }),
-      error: ({ theme }: { theme: Theme }) => ({
+      error: ({ theme }: { theme: DefaultTheme }) => ({
         '&:not([disabled])': {
           '--form-bg-color': theme.colors.red01,
           '--form-border-color': theme.colors.red07,
@@ -168,7 +175,7 @@ const inputTextarea: ComponentThemeConfig = {
 
 // TODO: move to `componentStyles/form/tags.ts`
 const inputTags: ComponentThemeConfig = {
-  baseStyle: ({ theme }: { theme: Theme }) => ({
+  baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     ...inputBase(theme),
     '&:focus-within, &:focus, &:active': {
       ...inputFocusBase(theme),
@@ -186,7 +193,7 @@ const inputTags: ComponentThemeConfig = {
   propToScaleMap: [['variant', 'variants']],
   scales: {
     variants: {
-      default: ({ theme }: { theme: Theme }) => ({
+      default: ({ theme }: { theme: DefaultTheme }) => ({
         '&:not([disabled])': {
           '--form-bg-color': theme.colors.greylight01,
           '--form-border-color': theme.colors.greylight05,
@@ -204,7 +211,7 @@ const inputTags: ComponentThemeConfig = {
           },
         },
       }),
-      focused: ({ theme }: { theme: Theme }) => ({
+      focused: ({ theme }: { theme: DefaultTheme }) => ({
         '&:not([disabled])': {
           '--form-bg-color': theme.colors.greylight01,
           '--form-border-color': theme.colors.blue06,
@@ -219,7 +226,7 @@ const inputTags: ComponentThemeConfig = {
           },
         },
       }),
-      error: ({ theme }: { theme: Theme }) => ({
+      error: ({ theme }: { theme: DefaultTheme }) => ({
         '&:not([disabled])': {
           '--form-bg-color': theme.colors.red01,
           '--form-border-color': theme.colors.red07,
@@ -237,7 +244,7 @@ const inputTags: ComponentThemeConfig = {
           },
         },
       }),
-      disabled: ({ theme }: { theme: Theme }) => ({
+      disabled: ({ theme }: { theme: DefaultTheme }) => ({
         '--form-bg-color': theme.colors.greylight02,
         '--form-border-color': transparentize(0.5, theme.colors.greylight05),
         color: theme.colors.greymed01,

@@ -7,7 +7,9 @@ import WrapItem from './WrapItem';
 
 type Space = keyof typeof theme['space'];
 
-export interface WrapProps extends BoxProps, React.ComponentPropsWithoutRef<'div'> {
+export interface WrapProps
+  extends BoxProps,
+    React.ComponentPropsWithoutRef<'div'> {
   /** `align-items` value. */
   alignItems?: CSS.Property.AlignItems;
   /** `justify-content` value. */
@@ -19,9 +21,21 @@ export interface WrapProps extends BoxProps, React.ComponentPropsWithoutRef<'div
 }
 
 const Wrap = React.forwardRef<HTMLDivElement, WrapProps>(
-  ({ children, spacing = 'xs', alignItems, justifyContent, shouldWrapChildren, ...rest }, ref) => {
+  (
+    {
+      children,
+      spacing = 'xs',
+      alignItems,
+      justifyContent,
+      shouldWrapChildren,
+      ...rest
+    },
+    ref
+  ) => {
     const childrenToRender = shouldWrapChildren
-      ? React.Children.map(children, (child, index) => <WrapItem key={`wrap-child-${index}`}>{child}</WrapItem>)
+      ? React.Children.map(children, (child, index) => (
+          <WrapItem key={`wrap-child-${index}`}>{child}</WrapItem>
+        ))
       : children;
 
     return (
@@ -29,7 +43,8 @@ const Wrap = React.forwardRef<HTMLDivElement, WrapProps>(
         <Box
           as="ul"
           sx={{
-            '--var-wrap-spacing': (t: Theme) => t.space[spacing as Space] || spacing,
+            '--var-wrap-spacing': (t: Theme) =>
+              t.space[spacing as Space] || spacing,
             '--wrap-spacing': 'calc(var(--var-wrap-spacing) / 2)',
             display: 'flex',
             flexWrap: 'wrap',

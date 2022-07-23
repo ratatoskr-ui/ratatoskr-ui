@@ -6,12 +6,29 @@
         "packages/*"
     ],
     "scripts": {
-        "new-version": "lerna version --conventional-commits",
         "test": "lerna run test",
         "build": "lerna run build",
-        "npm-publish": "lerna publish from-git"
+        "lint": "lerna run lint",
+        "release": "lerna version --conventional-commits",
+        "publish": "lerna publish from-git",
+        "storybook": "yarn workspace @ratatoskr-ui/components run storybook",
+        "storybook:build": "yarn workspace @ratatoskr-ui/components run storybook:build",
+        "storybook:deploy": "yarn workspace @ratatoskr-ui/components run storybook:deploy"
     },
     "devDependencies": {
-        "lerna": "^4.0.0"
+        "@types/styled-components": "^5.1.25",
+        "@typescript-eslint/eslint-plugin": "^5.30.7",
+        "@typescript-eslint/parser": "^5.30.7",
+        "eslint": "^8.20.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-import-resolver-typescript": "^3.3.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jsx-a11y": "^6.6.1",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.30.1",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "lerna": "^4.0.0",
+        "prettier": "^2.7.1"
     }
 }
